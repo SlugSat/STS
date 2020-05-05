@@ -32,4 +32,3 @@ plot(f,P1)
 title('Single-Sided Amplitude Spectrum of Accleration')
 xlabel('f (Hz)')
 ylabel('|Acc(f)|')
-
