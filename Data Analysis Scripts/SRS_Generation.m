@@ -35,7 +35,7 @@ u_zeros = zeros(length(t_zeros),1);
 t = vertcat(t_pulse,t_zeros);
 u = vertcat(u_pulse,u_zeros);
 
-plot(t_pulse,u_pulse);
+%plot(t_pulse,u_pulse);
 
 %% Processing
 k = 1;
@@ -47,11 +47,12 @@ s = tf('s');
 sys_resp = zeros(length(w_n),length(t));
 for i = 1:length(w_n)
     sys = (k*w_n(i)^2)/(s^2+2*zeta*w_n(i)*s+w_n(i)^2);
-    sys_resp(i,:) = lsim(sys,u,t);
+    %sys_resp(i,:) = lsim(sys,u,t);
+    lsim(sys,u,t);
     %hold on;
     %lsim(sys,u,t);
 end
-
+%%
 % Extract Max Magnitude of Each Frequency
 acc_max_w_n = zeros(1,length(w_n));
 for i = 1:length(w_n)
@@ -64,6 +65,6 @@ plot(f_n,acc_g_n,'o-');
 set(gca, 'XScale', 'log', 'YScale', 'log');
 xlabel("Frequency (Hz)");
 ylabel("Acceleration (g)");
-legend("Two Boobs in MATLAB","NASA GEVS");
+legend("Simulation","NASA GEVS");
 
 delta_x = 0.5*a_peak_pulse*t_pulse_duration^2
