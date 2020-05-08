@@ -11,7 +11,7 @@ close all;
 clear all;
 clc;
 
-t_sim = 20E-3; %seconds
+t_sim = 40E-3; %seconds
 t_step = 0.00000005; %seconds
 
 % Constants
@@ -25,17 +25,20 @@ Q = 10;
 acc_g_n = [5, 100, 1500, 2400, 4000, 4000, 2000]; %G's
 
 % Half-Sine Shock Pulse
-t_pulse_duration = 0.3E-3; %seconds
-a_peak_pulse = 3000; %G's
+t_pulse_duration = 0.37E-3; %seconds
+a_peak_pulse = 3150; %G's
 
-[u_pulse,t_pulse] = gensig('sin', 2*t_pulse_duration, t_pulse_duration*2, t_step); %Half-Sine
+[u_pulse,t_pulse] = gensig('sin', 2*t_pulse_duration, 2*t_pulse_duration, t_step); %Half-Sine
 u_pulse = u_pulse*a_peak_pulse*g; %Scale to m/s^2
 t_zeros = ((length(t_pulse)*t_step):t_step:t_sim)';
 u_zeros = zeros(length(t_zeros),1);
 t = vertcat(t_pulse,t_zeros);
 u = vertcat(u_pulse,u_zeros);
 
+<<<<<<< Updated upstream
 %plot(t_pulse,u_pulse);
+=======
+>>>>>>> Stashed changes
 
 %% Processing
 k = 1;
@@ -65,6 +68,6 @@ plot(f_n,acc_g_n,'o-');
 set(gca, 'XScale', 'log', 'YScale', 'log');
 xlabel("Frequency (Hz)");
 ylabel("Acceleration (g)");
-legend("Simulation","NASA GEVS");
+legend("Proposed System","NASA GEVS");
 
 delta_x = 0.5*a_peak_pulse*t_pulse_duration^2
