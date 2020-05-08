@@ -24,7 +24,20 @@ int main(void)
 {
     CyGlobalIntEnable; /* Enable global interrupts. */
 
-    /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+    //UI
+    LCD_Start();
+    RGB_LED_Write(0b000);
+    BUZZER_Write(0b0);
+    
+    //Data Storage
+    //SD_CARD_Start();
+    
+    //Encoder
+    ARM_ANGLE_ENCODER_Start();
+    
+    //Accelerometer
+    ACC_ADC_Start();
+    
 
     for(;;)
     {
