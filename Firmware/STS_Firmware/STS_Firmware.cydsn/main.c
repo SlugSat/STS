@@ -20,14 +20,39 @@
 */
 #include "project.h"
 
+// Definitions
+#define BUZZER_ON BUZZER_PWM_WriteCompare(127)
+#define BUZZER_OFF BUZZER_PWM_WriteCompare(0)
+#define RED     0b001
+#define YELLOW  0b011
+#define GREEN   0b010
+#define CYAN    0b110
+#define BLUE    0b100
+#define MAGENTA 0b101
+
+typedef enum FSM_State{
+    INIT,
+    IDLE,
+    SD_ERROR,
+    TARE,
+    READY,
+    RECORD,
+    SAVE    
+}FSM_State;
+
+// Program Variables
+FSM_State state = INIT;
+
+// Main Program
 int main(void)
 {
     CyGlobalIntEnable; /* Enable global interrupts. */
 
     //UI
     LCD_Start();
-    RGB_LED_Write(0b000);
-    BUZZER_Write(0b0);
+    LED_Write(0b000);
+    BUZZER_PWM_Start();
+    BUZZER_OFF;
     
     //Data Storage
     //SD_CARD_Start();
@@ -38,10 +63,41 @@ int main(void)
     //Accelerometer
     ACC_ADC_Start();
     
-
+    LCD_PrintString("STS");
+    LED_Write(RED);
+    // Main Loop
     for(;;)
-    {
-        /* Place your application code here. */
+    {      
+        // Program State Machine
+        switch(state){
+            case INIT:
+                LED_Write(RED);
+                break;
+            
+            case IDLE:
+                LED_Write(GREEN);
+                break;
+            
+            case SD_ERROR:
+                LED_Write(RED);
+                break;
+            
+            case TARE:
+                LED_Write(CYAN);
+                break;
+            
+            case READY:
+                LED_Write(BLUE);
+                break;
+            
+            case RECORD:
+                LED_Write(MAGENTA);
+                break;
+            
+            case SAVE:
+                LED_Write(MAGENTA);
+                break;
+        }
     }
 }
 
