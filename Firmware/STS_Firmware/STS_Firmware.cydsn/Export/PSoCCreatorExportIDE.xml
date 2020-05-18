@@ -37,8 +37,10 @@
       <Folder BuildType="STRICT" Path="C:\Users\Caleb Cotter\Documents\GitHub\STS\Firmware\STS_Firmware\STS_Firmware.cydsn">
         <Files Root="C:\Users\Caleb Cotter\Documents\GitHub\STS\Firmware\STS_Firmware\STS_Firmware.cydsn">
           <File BuildType="BUILD" Toolchain="">main.c</File>
+          <File BuildType="BUILD" Toolchain="">eventQueue.c</File>
           <File BuildType="BUILD" Toolchain="">cyapicallbacks.h</File>
           <File BuildType="BUILD" Toolchain="">config.h</File>
+          <File BuildType="BUILD" Toolchain="">eventQueue.h</File>
         </Files>
       </Folder>
       <Folder BuildType="STRICT" Path="C:\Users\Caleb Cotter\Documents\GitHub\STS\Firmware\STS_Firmware\STS_Firmware.cydsn\Generated_Source\PSoC5">

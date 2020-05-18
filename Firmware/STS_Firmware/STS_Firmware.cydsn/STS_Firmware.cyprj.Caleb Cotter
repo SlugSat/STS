@@ -11,6 +11,12 @@
 <CyGuid_f44455c5-3770-4452-b988-0a7a7ff46256 type_name="CyDesigner.Common.ProjMgmt.Model.CyConfigDependencies" version="1">
 <dependency_info name="c9323d49-d323-40b8-9b59-cc008d68a989@Debug@CortexM3" xml_contents_version="2">
 <CyGuid_1173175f-1b9b-4ad4-a065-754a48a27021 type_name="CyDesigner.Common.Base.CyFileDeps" version="1">
+<file name=".\CortexM3\ARM_GCC_541\Debug\eventQueue.o">
+<dep name=".\eventQueue.c" />
+<dep name=".\eventQueue.h" />
+</file>
+<file name=".\eventQueue.c" />
+<file name=".\eventQueue.h" />
 <file name=".\CortexM3\ARM_GCC_541\Debug\main.o">
 <dep name=".\Generated_Source\PSoC5\ACC_ADC.h" />
 <dep name=".\Generated_Source\PSoC5\ACC_ADC_FinalBuf_dma.h" />
@@ -104,6 +110,7 @@
 <dep name=".\emFile_V322c\emFile_V322c\Code\Include\PSoC5\SEGGER.h" />
 <dep name=".\emFile_V322c\emFile_V322c\Code\Include\PSoC5\emf32nOS\FS_Conf.h" />
 <dep name=".\config.h" />
+<dep name=".\eventQueue.h" />
 <dep name=".\main.c" />
 </file>
 <file name=".\Generated_Source\PSoC5\ACC_ADC.h" />
@@ -1171,6 +1178,10 @@
 <dep name=".\Generated_Source\PSoC5\timer_clock.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\timer_clock.c" />
+<file name=".\CortexM3\ARM_GCC_541\Debug\queue.o">
+<dep name=".\queue.c" />
+</file>
+<file name=".\queue.c" />
 <file name=".\CortexM3\ARM_GCC_541\Debug\CyBootAsmGnu.o">
 <dep name=".\Generated_Source\PSoC5\CyBootAsmGnu.s" />
 <dep name=".\Generated_Source\PSoC5\cydevicegnu.inc" />
@@ -1510,6 +1521,7 @@
 <CyGuid_1173175f-1b9b-4ad4-a065-754a48a27021 type_name="CyDesigner.Common.Base.CyFileDeps" version="1">
 <file name=".\CortexM3\ARM_GCC_541\Debug\STS_Firmware.hex">
 <dep name=".\CortexM3\ARM_GCC_541\Debug\main.o" />
+<dep name=".\CortexM3\ARM_GCC_541\Debug\eventQueue.o" />
 <dep name=".\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o" />
 <dep name=".\CortexM3\ARM_GCC_541\Debug\cymetadata.o" />
 <dep name=".\CortexM3\ARM_GCC_541\Debug\LCD.o" />
@@ -1684,6 +1696,8 @@
 <name_val_pair name="Generated_Source\PSoC5\SD_CARD_SPI0_CS.c" v="-mcpu=cortex-m3 -mthumb -I.\emFile_V322c\emFile_V322c\Code\Include\PSoC5\emf32nOS -I.\emFile_V322c\emFile_V322c\Code\Include\PSoC5 -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og" />
 <name_val_pair name="Generated_Source\PSoC5\LCD_CustChars.c" v="-mcpu=cortex-m3 -mthumb -I.\emFile_V322c\emFile_V322c\Code\Include\PSoC5\emf32nOS -I.\emFile_V322c\emFile_V322c\Code\Include\PSoC5 -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og" />
 <name_val_pair name="Generated_Source\PSoC5\BTN_CLK.c" v="-mcpu=cortex-m3 -mthumb -I.\emFile_V322c\emFile_V322c\Code\Include\PSoC5\emf32nOS -I.\emFile_V322c\emFile_V322c\Code\Include\PSoC5 -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og" />
+<name_val_pair name="queue.c" v="-mcpu=cortex-m3 -mthumb -I.\emFile_V322c\emFile_V322c\Code\Include\PSoC5\emf32nOS -I.\emFile_V322c\emFile_V322c\Code\Include\PSoC5 -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og" />
+<name_val_pair name="eventQueue.c" v="-mcpu=cortex-m3 -mthumb -I.\emFile_V322c\emFile_V322c\Code\Include\PSoC5\emf32nOS -I.\emFile_V322c\emFile_V322c\Code\Include\PSoC5 -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og" />
 </name>
 </genericCmdLineData>
 <codeGenCmdLineTag v="-.appdatapath &quot;C:\Users\Caleb Cotter\AppData\Local\Cypress Semiconductor\PSoC Creator\4.2&quot; -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p &quot;C:\Users\Caleb Cotter\Documents\GitHub\STS\Firmware\STS_Firmware\STS_Firmware.cydsn\STS_Firmware.cyprj&quot; -d CY8C5888LTI-LP097 -s &quot;C:\Users\Caleb Cotter\Documents\GitHub\STS\Firmware\STS_Firmware\STS_Firmware.cydsn\Generated_Source\PSoC5&quot; -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE" />
@@ -2500,7 +2514,7 @@
 <v>C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif</v>
 <v>C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3.vif</v>
 </warp_dep>
-<deps_time v="132342631100520732" />
+<deps_time v="132343039476299948" />
 <top_block v="TopDesign" />
 <last_generation v="0" />
 <pdl_path v="" />
@@ -2510,7 +2524,7 @@
 <dataGuid v="769d31ea-68b1-4f0c-b90a-7c10a43ee563">
 <CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563 type_name="CyDesigner.Common.ProjMgmt.Model.CyLinkCustomData" version="1">
 <link_deps_times>
-<name_val_pair name="c9323d49-d323-40b8-9b59-cc008d68a989@Debug@CortexM3" v="132342648207292810" />
+<name_val_pair name="c9323d49-d323-40b8-9b59-cc008d68a989@Debug@CortexM3" v="132343069598196345" />
 </link_deps_times>
 </CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563>
 </dataGuid>
@@ -2530,6 +2544,8 @@
 <v>Cypress Component Catalog\Digital\Logic</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
+<v>Cypress Component Catalog\Communications\MDIO Interface</v>
+<v>Cypress Component Catalog\Communications\SMBus/PMBus Slave</v>
 <v>Cypress Component Catalog\Communications\Software Transmit UART [v1.50]</v>
 <v>Cypress Component Catalog\Communications\SPDIF Transmitter [v1.20]</v>
 <v>Cypress Component Catalog\Communications\SPI</v>
@@ -2538,12 +2554,14 @@
 <v>Cypress Component Catalog\Digital</v>
 <v>Cypress Component Catalog\Digital\Functions</v>
 <v>Cypress Component Catalog\Digital\Functions\Counter [v3.0]</v>
+<v>Cypress Component Catalog\Digital\Functions\CRC [v2.40]</v>
 <v>Cypress Component Catalog\Digital\Functions\CRC [v2.50]</v>
 <v>Cypress Component Catalog\Digital\Functions\PrISM [v2.20]</v>
 <v>Cypress Component Catalog\Digital\Functions\PRS [v2.40]</v>
 <v>Cypress Component Catalog\Digital\Functions\PWM [v3.30]</v>
 <v>Cypress Component Catalog\Digital\Functions\Quadrature Decoder [v3.0]</v>
 <v>Cypress Component Catalog\Digital\Functions\Shift Register [v2.30]</v>
+<v>Cypress Component Catalog\Digital\Functions\Timer [v2.70]</v>
 <v>Cypress Component Catalog\Digital\Functions\Timer [v2.80]</v>
 <v>Cypress Component Catalog\Digital\Logic</v>
 <v>Cypress Component Catalog\Digital\Logic\And [v1.0]</v>
@@ -2554,6 +2572,7 @@
 <v>Cypress Component Catalog\Digital\Logic\Digital Constant [v1.0]</v>
 <v>Cypress Component Catalog\Digital\Logic\Logic High '1' [v1.0]</v>
 <v>Cypress Component Catalog\Digital\Logic\Logic Low '0' [v1.0]</v>
+<v>Cypress Component Catalog\Digital\Logic\Lookup Table [v1.50]</v>
 <v>Cypress Component Catalog\Digital\Logic\Lookup Table [v1.60]</v>
 <v>Cypress Component Catalog\Digital\Logic\Multiplexer [v1.10]</v>
 <v>Cypress Component Catalog\Digital\Logic\Nand [v1.0]</v>
@@ -2601,6 +2620,11 @@
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </tree_states>
 </CyGuid_718b6b01-68ba-4a17-b632-d38dc61ebb3b>
+</dataGuid>
+<dataGuid v="2a4578c1-6f5e-41bc-81e4-e5d0befc4490">
+<CyGuid_2a4578c1-6f5e-41bc-81e4-e5d0befc4490 type_name="CyDesigner.Gde.Schematic.CyComponentCatalog+CyCompCatalogData" version="1" display_mode="ALL">
+<NOOP />
+</CyGuid_2a4578c1-6f5e-41bc-81e4-e5d0befc4490>
 </dataGuid>
 </userData>
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>

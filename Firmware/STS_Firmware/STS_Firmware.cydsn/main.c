@@ -20,6 +20,7 @@
 */
 #include "project.h"
 #include "config.h"
+#include "eventQueue.h"
 
 #include <FS.h>
 #include <stdlib.h>
@@ -47,15 +48,12 @@ typedef enum FSM_State{
     FORMAT_SELECT,
     FORMAT_CONFIRM,
     FORMAT,
-    SD_ERROR_DISPLAY
+    ARMED,
+    DROPPED,
+    RECORDING,
+    RESULTS,
+    ERROR_DISPLAY
 }FSM_State;
-
-typedef enum event_t{
-    NO_EVENT,
-    UP_CLICK,
-    DOWN_CLICK,
-    SELECT_CLICK
-}event_t;
 
 enum {
     X,
@@ -119,6 +117,7 @@ int main(void)
     
     FS_GetVolumeName(0u, &sdVolName[0], 9u);
     event = NO_EVENT;
+    
     // Main Loop
     for(;;)
     {   
@@ -135,15 +134,14 @@ int main(void)
         } else {
             BUZZER_OFF;
             
-        }
-        
+        }    
         
         // UI State Machine
         if(update_ui){
             switch(ui_state){
                 case SPLASH_SCREEN:
                     sprintf(LCD_MSG[0],"Shock Test Stand");
-                    sprintf(LCD_MSG[1]," ");
+                    sprintf(LCD_MSG[1],"");
                     UpdateLCD();
                     LED_Write(RED);
                     
@@ -323,8 +321,20 @@ int main(void)
                     ui_state = LIVE_READOUT;
                     event = NO_EVENT;
                     break;
+                    
+                case ARMED:
+                    break;
+                    
+                case DROPPED:
+                    break;
+                    
+                case RECORDING:
+                    break;
+                    
+                case RESULTS:
+                    break;
                 
-                case SD_ERROR_DISPLAY:
+                case ERROR_DISPLAY:
                     sprintf(LCD_MSG[0],"Error: ");
                     sprintf(LCD_MSG[1],"No SD Card Found");
                     LED_Write(RED);
