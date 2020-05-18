@@ -1,0 +1,2206 @@
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccJZwqv9.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"cymetadata.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.global	cy_meta_configecc
+  20              		.section	.cyconfigecc,"a",%progbits
+  21              		.align	2
+  22              		.type	cy_meta_configecc, %object
+  23              		.size	cy_meta_configecc, 1616
+  24              	cy_meta_configecc:
+  25 0000 02       		.byte	2
+  26 0001 40       		.byte	64
+  27 0002 00       		.byte	0
+  28 0003 00       		.byte	0
+  29 0004 00       		.byte	0
+  30 0005 00       		.byte	0
+  31 0006 00       		.byte	0
+  32 0007 00       		.byte	0
+  33 0008 00       		.byte	0
+  34 0009 64       		.byte	100
+  35 000a 00       		.byte	0
+  36 000b 00       		.byte	0
+  37 000c 24       		.byte	36
+  38 000d 10       		.byte	16
+  39 000e 10       		.byte	16
+  40 000f E5       		.byte	-27
+  41 0010 00       		.byte	0
+  42 0011 00       		.byte	0
+  43 0012 00       		.byte	0
+  44 0013 64       		.byte	100
+  45 0014 08       		.byte	8
+  46 0015 93       		.byte	-109
+  47 0016 00       		.byte	0
+  48 0017 60       		.byte	96
+  49 0018 A1       		.byte	-95
+  50 0019 64       		.byte	100
+  51 001a 1E       		.byte	30
+  52 001b 00       		.byte	0
+  53 001c B0       		.byte	-80
+  54 001d 08       		.byte	8
+  55 001e 0F       		.byte	15
+  56 001f 00       		.byte	0
+  57 0020 91       		.byte	-111
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccJZwqv9.s 			page 2
+
+
+  58 0021 24       		.byte	36
+  59 0022 22       		.byte	34
+  60 0023 40       		.byte	64
+  61 0024 5C       		.byte	92
+  62 0025 64       		.byte	100
+  63 0026 00       		.byte	0
+  64 0027 00       		.byte	0
+  65 0028 5C       		.byte	92
+  66 0029 40       		.byte	64
+  67 002a 00       		.byte	0
+  68 002b 02       		.byte	2
+  69 002c 54       		.byte	84
+  70 002d 24       		.byte	36
+  71 002e 08       		.byte	8
+  72 002f 00       		.byte	0
+  73 0030 50       		.byte	80
+  74 0031 77       		.byte	119
+  75 0032 0C       		.byte	12
+  76 0033 80       		.byte	-128
+  77 0034 0C       		.byte	12
+  78 0035 08       		.byte	8
+  79 0036 50       		.byte	80
+  80 0037 00       		.byte	0
+  81 0038 80       		.byte	-128
+  82 0039 F0       		.byte	-16
+  83 003a 30       		.byte	48
+  84 003b 07       		.byte	7
+  85 003c 0F       		.byte	15
+  86 003d 08       		.byte	8
+  87 003e 40       		.byte	64
+  88 003f 80       		.byte	-128
+  89 0040 00       		.byte	0
+  90 0041 22       		.byte	34
+  91 0042 08       		.byte	8
+  92 0043 0C       		.byte	12
+  93 0044 00       		.byte	0
+  94 0045 00       		.byte	0
+  95 0046 41       		.byte	65
+  96 0047 40       		.byte	64
+  97 0048 00       		.byte	0
+  98 0049 00       		.byte	0
+  99 004a 00       		.byte	0
+ 100 004b 00       		.byte	0
+ 101 004c 00       		.byte	0
+ 102 004d 00       		.byte	0
+ 103 004e 00       		.byte	0
+ 104 004f 00       		.byte	0
+ 105 0050 00       		.byte	0
+ 106 0051 00       		.byte	0
+ 107 0052 00       		.byte	0
+ 108 0053 00       		.byte	0
+ 109 0054 00       		.byte	0
+ 110 0055 00       		.byte	0
+ 111 0056 00       		.byte	0
+ 112 0057 00       		.byte	0
+ 113 0058 00       		.byte	0
+ 114 0059 00       		.byte	0
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccJZwqv9.s 			page 3
+
+
+ 115 005a 00       		.byte	0
+ 116 005b 00       		.byte	0
+ 117 005c 00       		.byte	0
+ 118 005d 00       		.byte	0
+ 119 005e 02       		.byte	2
+ 120 005f 24       		.byte	36
+ 121 0060 04       		.byte	4
+ 122 0061 04       		.byte	4
+ 123 0062 00       		.byte	0
+ 124 0063 04       		.byte	4
+ 125 0064 00       		.byte	0
+ 126 0065 00       		.byte	0
+ 127 0066 00       		.byte	0
+ 128 0067 01       		.byte	1
+ 129 0068 00       		.byte	0
+ 130 0069 00       		.byte	0
+ 131 006a 00       		.byte	0
+ 132 006b 00       		.byte	0
+ 133 006c 00       		.byte	0
+ 134 006d 00       		.byte	0
+ 135 006e 00       		.byte	0
+ 136 006f 00       		.byte	0
+ 137 0070 00       		.byte	0
+ 138 0071 00       		.byte	0
+ 139 0072 00       		.byte	0
+ 140 0073 00       		.byte	0
+ 141 0074 00       		.byte	0
+ 142 0075 00       		.byte	0
+ 143 0076 00       		.byte	0
+ 144 0077 00       		.byte	0
+ 145 0078 00       		.byte	0
+ 146 0079 00       		.byte	0
+ 147 007a 00       		.byte	0
+ 148 007b 00       		.byte	0
+ 149 007c 00       		.byte	0
+ 150 007d 00       		.byte	0
+ 151 007e 00       		.byte	0
+ 152 007f 00       		.byte	0
+ 153 0080 00       		.byte	0
+ 154 0081 00       		.byte	0
+ 155 0082 00       		.byte	0
+ 156 0083 00       		.byte	0
+ 157 0084 00       		.byte	0
+ 158 0085 00       		.byte	0
+ 159 0086 00       		.byte	0
+ 160 0087 00       		.byte	0
+ 161 0088 00       		.byte	0
+ 162 0089 01       		.byte	1
+ 163 008a 9F       		.byte	-97
+ 164 008b 00       		.byte	0
+ 165 008c 80       		.byte	-128
+ 166 008d 04       		.byte	4
+ 167 008e 00       		.byte	0
+ 168 008f 00       		.byte	0
+ 169 0090 1F       		.byte	31
+ 170 0091 A2       		.byte	-94
+ 171 0092 20       		.byte	32
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccJZwqv9.s 			page 4
+
+
+ 172 0093 08       		.byte	8
+ 173 0094 00       		.byte	0
+ 174 0095 08       		.byte	8
+ 175 0096 FF       		.byte	-1
+ 176 0097 61       		.byte	97
+ 177 0098 00       		.byte	0
+ 178 0099 00       		.byte	0
+ 179 009a 00       		.byte	0
+ 180 009b 00       		.byte	0
+ 181 009c 7F       		.byte	127
+ 182 009d 01       		.byte	1
+ 183 009e 80       		.byte	-128
+ 184 009f 00       		.byte	0
+ 185 00a0 00       		.byte	0
+ 186 00a1 01       		.byte	1
+ 187 00a2 60       		.byte	96
+ 188 00a3 00       		.byte	0
+ 189 00a4 C0       		.byte	-64
+ 190 00a5 00       		.byte	0
+ 191 00a6 01       		.byte	1
+ 192 00a7 40       		.byte	64
+ 193 00a8 C0       		.byte	-64
+ 194 00a9 01       		.byte	1
+ 195 00aa 02       		.byte	2
+ 196 00ab 00       		.byte	0
+ 197 00ac C0       		.byte	-64
+ 198 00ad 07       		.byte	7
+ 199 00ae 08       		.byte	8
+ 200 00af D8       		.byte	-40
+ 201 00b0 C0       		.byte	-64
+ 202 00b1 10       		.byte	16
+ 203 00b2 04       		.byte	4
+ 204 00b3 00       		.byte	0
+ 205 00b4 90       		.byte	-112
+ 206 00b5 01       		.byte	1
+ 207 00b6 40       		.byte	64
+ 208 00b7 00       		.byte	0
+ 209 00b8 00       		.byte	0
+ 210 00b9 E0       		.byte	-32
+ 211 00ba 00       		.byte	0
+ 212 00bb 00       		.byte	0
+ 213 00bc 00       		.byte	0
+ 214 00bd 3F       		.byte	63
+ 215 00be FF       		.byte	-1
+ 216 00bf 00       		.byte	0
+ 217 00c0 00       		.byte	0
+ 218 00c1 20       		.byte	32
+ 219 00c2 00       		.byte	0
+ 220 00c3 00       		.byte	0
+ 221 00c4 00       		.byte	0
+ 222 00c5 00       		.byte	0
+ 223 00c6 40       		.byte	64
+ 224 00c7 10       		.byte	16
+ 225 00c8 00       		.byte	0
+ 226 00c9 00       		.byte	0
+ 227 00ca 00       		.byte	0
+ 228 00cb 00       		.byte	0
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccJZwqv9.s 			page 5
+
+
+ 229 00cc 00       		.byte	0
+ 230 00cd 00       		.byte	0
+ 231 00ce 00       		.byte	0
+ 232 00cf 00       		.byte	0
+ 233 00d0 00       		.byte	0
+ 234 00d1 00       		.byte	0
+ 235 00d2 00       		.byte	0
+ 236 00d3 00       		.byte	0
+ 237 00d4 00       		.byte	0
+ 238 00d5 00       		.byte	0
+ 239 00d6 00       		.byte	0
+ 240 00d7 00       		.byte	0
+ 241 00d8 00       		.byte	0
+ 242 00d9 00       		.byte	0
+ 243 00da 00       		.byte	0
+ 244 00db 00       		.byte	0
+ 245 00dc 00       		.byte	0
+ 246 00dd 00       		.byte	0
+ 247 00de 00       		.byte	0
+ 248 00df 00       		.byte	0
+ 249 00e0 04       		.byte	4
+ 250 00e1 04       		.byte	4
+ 251 00e2 00       		.byte	0
+ 252 00e3 00       		.byte	0
+ 253 00e4 00       		.byte	0
+ 254 00e5 00       		.byte	0
+ 255 00e6 00       		.byte	0
+ 256 00e7 01       		.byte	1
+ 257 00e8 00       		.byte	0
+ 258 00e9 00       		.byte	0
+ 259 00ea 00       		.byte	0
+ 260 00eb 00       		.byte	0
+ 261 00ec 00       		.byte	0
+ 262 00ed 00       		.byte	0
+ 263 00ee 00       		.byte	0
+ 264 00ef 00       		.byte	0
+ 265 00f0 00       		.byte	0
+ 266 00f1 00       		.byte	0
+ 267 00f2 00       		.byte	0
+ 268 00f3 00       		.byte	0
+ 269 00f4 00       		.byte	0
+ 270 00f5 00       		.byte	0
+ 271 00f6 00       		.byte	0
+ 272 00f7 00       		.byte	0
+ 273 00f8 00       		.byte	0
+ 274 00f9 00       		.byte	0
+ 275 00fa 00       		.byte	0
+ 276 00fb 00       		.byte	0
+ 277 00fc 00       		.byte	0
+ 278 00fd 00       		.byte	0
+ 279 00fe 00       		.byte	0
+ 280 00ff 00       		.byte	0
+ 281 0100 00       		.byte	0
+ 282 0101 00       		.byte	0
+ 283 0102 00       		.byte	0
+ 284 0103 00       		.byte	0
+ 285 0104 00       		.byte	0
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccJZwqv9.s 			page 6
+
+
+ 286 0105 00       		.byte	0
+ 287 0106 00       		.byte	0
+ 288 0107 00       		.byte	0
+ 289 0108 00       		.byte	0
+ 290 0109 00       		.byte	0
+ 291 010a 80       		.byte	-128
+ 292 010b 00       		.byte	0
+ 293 010c 02       		.byte	2
+ 294 010d 00       		.byte	0
+ 295 010e 0D       		.byte	13
+ 296 010f 00       		.byte	0
+ 297 0110 11       		.byte	17
+ 298 0111 88       		.byte	-120
+ 299 0112 22       		.byte	34
+ 300 0113 03       		.byte	3
+ 301 0114 8D       		.byte	-115
+ 302 0115 04       		.byte	4
+ 303 0116 00       		.byte	0
+ 304 0117 43       		.byte	67
+ 305 0118 12       		.byte	18
+ 306 0119 E0       		.byte	-32
+ 307 011a 44       		.byte	68
+ 308 011b 00       		.byte	0
+ 309 011c 22       		.byte	34
+ 310 011d 00       		.byte	0
+ 311 011e 18       		.byte	24
+ 312 011f 00       		.byte	0
+ 313 0120 00       		.byte	0
+ 314 0121 00       		.byte	0
+ 315 0122 00       		.byte	0
+ 316 0123 EC       		.byte	-20
+ 317 0124 60       		.byte	96
+ 318 0125 00       		.byte	0
+ 319 0126 00       		.byte	0
+ 320 0127 01       		.byte	1
+ 321 0128 8D       		.byte	-115
+ 322 0129 00       		.byte	0
+ 323 012a 00       		.byte	0
+ 324 012b 00       		.byte	0
+ 325 012c 8D       		.byte	-115
+ 326 012d 21       		.byte	33
+ 327 012e 00       		.byte	0
+ 328 012f 02       		.byte	2
+ 329 0130 8D       		.byte	-115
+ 330 0131 00       		.byte	0
+ 331 0132 00       		.byte	0
+ 332 0133 12       		.byte	18
+ 333 0134 0D       		.byte	13
+ 334 0135 00       		.byte	0
+ 335 0136 80       		.byte	-128
+ 336 0137 00       		.byte	0
+ 337 0138 00       		.byte	0
+ 338 0139 00       		.byte	0
+ 339 013a 0F       		.byte	15
+ 340 013b E0       		.byte	-32
+ 341 013c 80       		.byte	-128
+ 342 013d 0F       		.byte	15
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccJZwqv9.s 			page 7
+
+
+ 343 013e 70       		.byte	112
+ 344 013f 10       		.byte	16
+ 345 0140 80       		.byte	-128
+ 346 0141 00       		.byte	0
+ 347 0142 08       		.byte	8
+ 348 0143 00       		.byte	0
+ 349 0144 00       		.byte	0
+ 350 0145 00       		.byte	0
+ 351 0146 10       		.byte	16
+ 352 0147 04       		.byte	4
+ 353 0148 43       		.byte	67
+ 354 0149 06       		.byte	6
+ 355 014a 50       		.byte	80
+ 356 014b 00       		.byte	0
+ 357 014c 01       		.byte	1
+ 358 014d DE       		.byte	-34
+ 359 014e FB       		.byte	-5
+ 360 014f CB       		.byte	-53
+ 361 0150 3F       		.byte	63
+ 362 0151 FF       		.byte	-1
+ 363 0152 FF       		.byte	-1
+ 364 0153 FF       		.byte	-1
+ 365 0154 22       		.byte	34
+ 366 0155 00       		.byte	0
+ 367 0156 F0       		.byte	-16
+ 368 0157 08       		.byte	8
+ 369 0158 04       		.byte	4
+ 370 0159 00       		.byte	0
+ 371 015a 00       		.byte	0
+ 372 015b 00       		.byte	0
+ 373 015c 40       		.byte	64
+ 374 015d 00       		.byte	0
+ 375 015e 00       		.byte	0
+ 376 015f 00       		.byte	0
+ 377 0160 04       		.byte	4
+ 378 0161 04       		.byte	4
+ 379 0162 04       		.byte	4
+ 380 0163 04       		.byte	4
+ 381 0164 00       		.byte	0
+ 382 0165 00       		.byte	0
+ 383 0166 00       		.byte	0
+ 384 0167 01       		.byte	1
+ 385 0168 00       		.byte	0
+ 386 0169 00       		.byte	0
+ 387 016a C0       		.byte	-64
+ 388 016b 00       		.byte	0
+ 389 016c 40       		.byte	64
+ 390 016d 01       		.byte	1
+ 391 016e 10       		.byte	16
+ 392 016f 11       		.byte	17
+ 393 0170 C0       		.byte	-64
+ 394 0171 01       		.byte	1
+ 395 0172 00       		.byte	0
+ 396 0173 11       		.byte	17
+ 397 0174 40       		.byte	64
+ 398 0175 01       		.byte	1
+ 399 0176 40       		.byte	64
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccJZwqv9.s 			page 8
+
+
+ 400 0177 01       		.byte	1
+ 401 0178 00       		.byte	0
+ 402 0179 00       		.byte	0
+ 403 017a 00       		.byte	0
+ 404 017b 00       		.byte	0
+ 405 017c 00       		.byte	0
+ 406 017d 00       		.byte	0
+ 407 017e 00       		.byte	0
+ 408 017f 00       		.byte	0
+ 409 0180 00       		.byte	0
+ 410 0181 00       		.byte	0
+ 411 0182 00       		.byte	0
+ 412 0183 00       		.byte	0
+ 413 0184 00       		.byte	0
+ 414 0185 00       		.byte	0
+ 415 0186 00       		.byte	0
+ 416 0187 00       		.byte	0
+ 417 0188 00       		.byte	0
+ 418 0189 00       		.byte	0
+ 419 018a 00       		.byte	0
+ 420 018b 00       		.byte	0
+ 421 018c 00       		.byte	0
+ 422 018d 00       		.byte	0
+ 423 018e 00       		.byte	0
+ 424 018f 00       		.byte	0
+ 425 0190 01       		.byte	1
+ 426 0191 00       		.byte	0
+ 427 0192 06       		.byte	6
+ 428 0193 00       		.byte	0
+ 429 0194 00       		.byte	0
+ 430 0195 00       		.byte	0
+ 431 0196 00       		.byte	0
+ 432 0197 00       		.byte	0
+ 433 0198 03       		.byte	3
+ 434 0199 00       		.byte	0
+ 435 019a 04       		.byte	4
+ 436 019b 00       		.byte	0
+ 437 019c 05       		.byte	5
+ 438 019d 00       		.byte	0
+ 439 019e 02       		.byte	2
+ 440 019f 00       		.byte	0
+ 441 01a0 04       		.byte	4
+ 442 01a1 00       		.byte	0
+ 443 01a2 03       		.byte	3
+ 444 01a3 00       		.byte	0
+ 445 01a4 00       		.byte	0
+ 446 01a5 00       		.byte	0
+ 447 01a6 00       		.byte	0
+ 448 01a7 00       		.byte	0
+ 449 01a8 00       		.byte	0
+ 450 01a9 00       		.byte	0
+ 451 01aa 00       		.byte	0
+ 452 01ab 00       		.byte	0
+ 453 01ac 00       		.byte	0
+ 454 01ad 00       		.byte	0
+ 455 01ae 00       		.byte	0
+ 456 01af 00       		.byte	0
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccJZwqv9.s 			page 9
+
+
+ 457 01b0 00       		.byte	0
+ 458 01b1 00       		.byte	0
+ 459 01b2 00       		.byte	0
+ 460 01b3 00       		.byte	0
+ 461 01b4 00       		.byte	0
+ 462 01b5 00       		.byte	0
+ 463 01b6 00       		.byte	0
+ 464 01b7 00       		.byte	0
+ 465 01b8 00       		.byte	0
+ 466 01b9 00       		.byte	0
+ 467 01ba 00       		.byte	0
+ 468 01bb 00       		.byte	0
+ 469 01bc 07       		.byte	7
+ 470 01bd 00       		.byte	0
+ 471 01be 00       		.byte	0
+ 472 01bf 00       		.byte	0
+ 473 01c0 00       		.byte	0
+ 474 01c1 00       		.byte	0
+ 475 01c2 20       		.byte	32
+ 476 01c3 00       		.byte	0
+ 477 01c4 00       		.byte	0
+ 478 01c5 00       		.byte	0
+ 479 01c6 00       		.byte	0
+ 480 01c7 00       		.byte	0
+ 481 01c8 00       		.byte	0
+ 482 01c9 00       		.byte	0
+ 483 01ca 00       		.byte	0
+ 484 01cb 00       		.byte	0
+ 485 01cc 00       		.byte	0
+ 486 01cd 00       		.byte	0
+ 487 01ce 00       		.byte	0
+ 488 01cf 00       		.byte	0
+ 489 01d0 00       		.byte	0
+ 490 01d1 00       		.byte	0
+ 491 01d2 00       		.byte	0
+ 492 01d3 00       		.byte	0
+ 493 01d4 00       		.byte	0
+ 494 01d5 00       		.byte	0
+ 495 01d6 00       		.byte	0
+ 496 01d7 00       		.byte	0
+ 497 01d8 00       		.byte	0
+ 498 01d9 00       		.byte	0
+ 499 01da 00       		.byte	0
+ 500 01db 00       		.byte	0
+ 501 01dc 09       		.byte	9
+ 502 01dd 00       		.byte	0
+ 503 01de 00       		.byte	0
+ 504 01df 00       		.byte	0
+ 505 01e0 04       		.byte	4
+ 506 01e1 00       		.byte	0
+ 507 01e2 00       		.byte	0
+ 508 01e3 04       		.byte	4
+ 509 01e4 00       		.byte	0
+ 510 01e5 00       		.byte	0
+ 511 01e6 00       		.byte	0
+ 512 01e7 01       		.byte	1
+ 513 01e8 00       		.byte	0
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccJZwqv9.s 			page 10
+
+
+ 514 01e9 00       		.byte	0
+ 515 01ea 00       		.byte	0
+ 516 01eb 00       		.byte	0
+ 517 01ec 00       		.byte	0
+ 518 01ed 00       		.byte	0
+ 519 01ee 00       		.byte	0
+ 520 01ef 00       		.byte	0
+ 521 01f0 00       		.byte	0
+ 522 01f1 00       		.byte	0
+ 523 01f2 00       		.byte	0
+ 524 01f3 00       		.byte	0
+ 525 01f4 00       		.byte	0
+ 526 01f5 00       		.byte	0
+ 527 01f6 00       		.byte	0
+ 528 01f7 00       		.byte	0
+ 529 01f8 00       		.byte	0
+ 530 01f9 00       		.byte	0
+ 531 01fa 00       		.byte	0
+ 532 01fb 00       		.byte	0
+ 533 01fc 00       		.byte	0
+ 534 01fd 00       		.byte	0
+ 535 01fe 00       		.byte	0
+ 536 01ff 00       		.byte	0
+ 537 0200 00       		.byte	0
+ 538 0201 00       		.byte	0
+ 539 0202 00       		.byte	0
+ 540 0203 00       		.byte	0
+ 541 0204 00       		.byte	0
+ 542 0205 00       		.byte	0
+ 543 0206 00       		.byte	0
+ 544 0207 00       		.byte	0
+ 545 0208 00       		.byte	0
+ 546 0209 00       		.byte	0
+ 547 020a 00       		.byte	0
+ 548 020b 00       		.byte	0
+ 549 020c 00       		.byte	0
+ 550 020d 00       		.byte	0
+ 551 020e 00       		.byte	0
+ 552 020f 00       		.byte	0
+ 553 0210 00       		.byte	0
+ 554 0211 00       		.byte	0
+ 555 0212 00       		.byte	0
+ 556 0213 00       		.byte	0
+ 557 0214 00       		.byte	0
+ 558 0215 00       		.byte	0
+ 559 0216 00       		.byte	0
+ 560 0217 00       		.byte	0
+ 561 0218 0F       		.byte	15
+ 562 0219 00       		.byte	0
+ 563 021a 00       		.byte	0
+ 564 021b 00       		.byte	0
+ 565 021c 00       		.byte	0
+ 566 021d 00       		.byte	0
+ 567 021e 00       		.byte	0
+ 568 021f 00       		.byte	0
+ 569 0220 00       		.byte	0
+ 570 0221 00       		.byte	0
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccJZwqv9.s 			page 11
+
+
+ 571 0222 00       		.byte	0
+ 572 0223 00       		.byte	0
+ 573 0224 00       		.byte	0
+ 574 0225 00       		.byte	0
+ 575 0226 00       		.byte	0
+ 576 0227 00       		.byte	0
+ 577 0228 01       		.byte	1
+ 578 0229 00       		.byte	0
+ 579 022a 00       		.byte	0
+ 580 022b 00       		.byte	0
+ 581 022c 00       		.byte	0
+ 582 022d 00       		.byte	0
+ 583 022e 00       		.byte	0
+ 584 022f 00       		.byte	0
+ 585 0230 01       		.byte	1
+ 586 0231 00       		.byte	0
+ 587 0232 00       		.byte	0
+ 588 0233 00       		.byte	0
+ 589 0234 00       		.byte	0
+ 590 0235 00       		.byte	0
+ 591 0236 00       		.byte	0
+ 592 0237 00       		.byte	0
+ 593 0238 00       		.byte	0
+ 594 0239 00       		.byte	0
+ 595 023a 00       		.byte	0
+ 596 023b 00       		.byte	0
+ 597 023c 00       		.byte	0
+ 598 023d 00       		.byte	0
+ 599 023e 00       		.byte	0
+ 600 023f 00       		.byte	0
+ 601 0240 00       		.byte	0
+ 602 0241 00       		.byte	0
+ 603 0242 00       		.byte	0
+ 604 0243 00       		.byte	0
+ 605 0244 00       		.byte	0
+ 606 0245 00       		.byte	0
+ 607 0246 00       		.byte	0
+ 608 0247 00       		.byte	0
+ 609 0248 00       		.byte	0
+ 610 0249 00       		.byte	0
+ 611 024a 00       		.byte	0
+ 612 024b 00       		.byte	0
+ 613 024c 00       		.byte	0
+ 614 024d 00       		.byte	0
+ 615 024e 00       		.byte	0
+ 616 024f 00       		.byte	0
+ 617 0250 00       		.byte	0
+ 618 0251 00       		.byte	0
+ 619 0252 00       		.byte	0
+ 620 0253 00       		.byte	0
+ 621 0254 00       		.byte	0
+ 622 0255 00       		.byte	0
+ 623 0256 00       		.byte	0
+ 624 0257 00       		.byte	0
+ 625 0258 00       		.byte	0
+ 626 0259 00       		.byte	0
+ 627 025a 00       		.byte	0
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccJZwqv9.s 			page 12
+
+
+ 628 025b 00       		.byte	0
+ 629 025c 00       		.byte	0
+ 630 025d 00       		.byte	0
+ 631 025e 00       		.byte	0
+ 632 025f 00       		.byte	0
+ 633 0260 00       		.byte	0
+ 634 0261 00       		.byte	0
+ 635 0262 04       		.byte	4
+ 636 0263 00       		.byte	0
+ 637 0264 00       		.byte	0
+ 638 0265 00       		.byte	0
+ 639 0266 00       		.byte	0
+ 640 0267 00       		.byte	0
+ 641 0268 21       		.byte	33
+ 642 0269 00       		.byte	0
+ 643 026a 00       		.byte	0
+ 644 026b 00       		.byte	0
+ 645 026c 00       		.byte	0
+ 646 026d 00       		.byte	0
+ 647 026e 00       		.byte	0
+ 648 026f 00       		.byte	0
+ 649 0270 00       		.byte	0
+ 650 0271 00       		.byte	0
+ 651 0272 00       		.byte	0
+ 652 0273 00       		.byte	0
+ 653 0274 00       		.byte	0
+ 654 0275 00       		.byte	0
+ 655 0276 00       		.byte	0
+ 656 0277 00       		.byte	0
+ 657 0278 00       		.byte	0
+ 658 0279 00       		.byte	0
+ 659 027a 00       		.byte	0
+ 660 027b 00       		.byte	0
+ 661 027c 00       		.byte	0
+ 662 027d 00       		.byte	0
+ 663 027e 00       		.byte	0
+ 664 027f 00       		.byte	0
+ 665 0280 00       		.byte	0
+ 666 0281 00       		.byte	0
+ 667 0282 00       		.byte	0
+ 668 0283 00       		.byte	0
+ 669 0284 00       		.byte	0
+ 670 0285 00       		.byte	0
+ 671 0286 00       		.byte	0
+ 672 0287 00       		.byte	0
+ 673 0288 00       		.byte	0
+ 674 0289 00       		.byte	0
+ 675 028a 00       		.byte	0
+ 676 028b 00       		.byte	0
+ 677 028c 00       		.byte	0
+ 678 028d 00       		.byte	0
+ 679 028e 00       		.byte	0
+ 680 028f 00       		.byte	0
+ 681 0290 00       		.byte	0
+ 682 0291 00       		.byte	0
+ 683 0292 00       		.byte	0
+ 684 0293 00       		.byte	0
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccJZwqv9.s 			page 13
+
+
+ 685 0294 00       		.byte	0
+ 686 0295 00       		.byte	0
+ 687 0296 00       		.byte	0
+ 688 0297 00       		.byte	0
+ 689 0298 00       		.byte	0
+ 690 0299 00       		.byte	0
+ 691 029a 00       		.byte	0
+ 692 029b 00       		.byte	0
+ 693 029c 00       		.byte	0
+ 694 029d 00       		.byte	0
+ 695 029e 00       		.byte	0
+ 696 029f 00       		.byte	0
+ 697 02a0 00       		.byte	0
+ 698 02a1 00       		.byte	0
+ 699 02a2 00       		.byte	0
+ 700 02a3 00       		.byte	0
+ 701 02a4 00       		.byte	0
+ 702 02a5 00       		.byte	0
+ 703 02a6 00       		.byte	0
+ 704 02a7 00       		.byte	0
+ 705 02a8 00       		.byte	0
+ 706 02a9 00       		.byte	0
+ 707 02aa 00       		.byte	0
+ 708 02ab 00       		.byte	0
+ 709 02ac 00       		.byte	0
+ 710 02ad 00       		.byte	0
+ 711 02ae 00       		.byte	0
+ 712 02af 00       		.byte	0
+ 713 02b0 00       		.byte	0
+ 714 02b1 00       		.byte	0
+ 715 02b2 00       		.byte	0
+ 716 02b3 00       		.byte	0
+ 717 02b4 00       		.byte	0
+ 718 02b5 00       		.byte	0
+ 719 02b6 00       		.byte	0
+ 720 02b7 00       		.byte	0
+ 721 02b8 00       		.byte	0
+ 722 02b9 20       		.byte	32
+ 723 02ba 00       		.byte	0
+ 724 02bb 00       		.byte	0
+ 725 02bc 00       		.byte	0
+ 726 02bd 26       		.byte	38
+ 727 02be 42       		.byte	66
+ 728 02bf 00       		.byte	0
+ 729 02c0 00       		.byte	0
+ 730 02c1 0A       		.byte	10
+ 731 02c2 04       		.byte	4
+ 732 02c3 00       		.byte	0
+ 733 02c4 00       		.byte	0
+ 734 02c5 0A       		.byte	10
+ 735 02c6 02       		.byte	2
+ 736 02c7 00       		.byte	0
+ 737 02c8 00       		.byte	0
+ 738 02c9 00       		.byte	0
+ 739 02ca 00       		.byte	0
+ 740 02cb 00       		.byte	0
+ 741 02cc 00       		.byte	0
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccJZwqv9.s 			page 14
+
+
+ 742 02cd 41       		.byte	65
+ 743 02ce 00       		.byte	0
+ 744 02cf 18       		.byte	24
+ 745 02d0 04       		.byte	4
+ 746 02d1 00       		.byte	0
+ 747 02d2 04       		.byte	4
+ 748 02d3 00       		.byte	0
+ 749 02d4 00       		.byte	0
+ 750 02d5 04       		.byte	4
+ 751 02d6 02       		.byte	2
+ 752 02d7 10       		.byte	16
+ 753 02d8 00       		.byte	0
+ 754 02d9 00       		.byte	0
+ 755 02da 00       		.byte	0
+ 756 02db 00       		.byte	0
+ 757 02dc 00       		.byte	0
+ 758 02dd 00       		.byte	0
+ 759 02de A4       		.byte	-92
+ 760 02df 00       		.byte	0
+ 761 02e0 00       		.byte	0
+ 762 02e1 00       		.byte	0
+ 763 02e2 00       		.byte	0
+ 764 02e3 00       		.byte	0
+ 765 02e4 00       		.byte	0
+ 766 02e5 00       		.byte	0
+ 767 02e6 00       		.byte	0
+ 768 02e7 28       		.byte	40
+ 769 02e8 00       		.byte	0
+ 770 02e9 00       		.byte	0
+ 771 02ea 00       		.byte	0
+ 772 02eb 00       		.byte	0
+ 773 02ec 00       		.byte	0
+ 774 02ed 00       		.byte	0
+ 775 02ee A1       		.byte	-95
+ 776 02ef 00       		.byte	0
+ 777 02f0 00       		.byte	0
+ 778 02f1 00       		.byte	0
+ 779 02f2 00       		.byte	0
+ 780 02f3 00       		.byte	0
+ 781 02f4 40       		.byte	64
+ 782 02f5 00       		.byte	0
+ 783 02f6 00       		.byte	0
+ 784 02f7 10       		.byte	16
+ 785 02f8 00       		.byte	0
+ 786 02f9 00       		.byte	0
+ 787 02fa 00       		.byte	0
+ 788 02fb 00       		.byte	0
+ 789 02fc 00       		.byte	0
+ 790 02fd 8A       		.byte	-118
+ 791 02fe 00       		.byte	0
+ 792 02ff 00       		.byte	0
+ 793 0300 00       		.byte	0
+ 794 0301 00       		.byte	0
+ 795 0302 00       		.byte	0
+ 796 0303 00       		.byte	0
+ 797 0304 00       		.byte	0
+ 798 0305 2A       		.byte	42
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccJZwqv9.s 			page 15
+
+
+ 799 0306 00       		.byte	0
+ 800 0307 80       		.byte	-128
+ 801 0308 00       		.byte	0
+ 802 0309 00       		.byte	0
+ 803 030a 00       		.byte	0
+ 804 030b 00       		.byte	0
+ 805 030c 01       		.byte	1
+ 806 030d 00       		.byte	0
+ 807 030e 91       		.byte	-111
+ 808 030f 08       		.byte	8
+ 809 0310 20       		.byte	32
+ 810 0311 08       		.byte	8
+ 811 0312 82       		.byte	-126
+ 812 0313 00       		.byte	0
+ 813 0314 00       		.byte	0
+ 814 0315 00       		.byte	0
+ 815 0316 00       		.byte	0
+ 816 0317 00       		.byte	0
+ 817 0318 00       		.byte	0
+ 818 0319 00       		.byte	0
+ 819 031a 00       		.byte	0
+ 820 031b 02       		.byte	2
+ 821 031c 00       		.byte	0
+ 822 031d 00       		.byte	0
+ 823 031e 50       		.byte	80
+ 824 031f 20       		.byte	32
+ 825 0320 00       		.byte	0
+ 826 0321 00       		.byte	0
+ 827 0322 00       		.byte	0
+ 828 0323 00       		.byte	0
+ 829 0324 00       		.byte	0
+ 830 0325 00       		.byte	0
+ 831 0326 00       		.byte	0
+ 832 0327 00       		.byte	0
+ 833 0328 00       		.byte	0
+ 834 0329 00       		.byte	0
+ 835 032a 00       		.byte	0
+ 836 032b 00       		.byte	0
+ 837 032c 00       		.byte	0
+ 838 032d 00       		.byte	0
+ 839 032e 00       		.byte	0
+ 840 032f 00       		.byte	0
+ 841 0330 00       		.byte	0
+ 842 0331 00       		.byte	0
+ 843 0332 00       		.byte	0
+ 844 0333 00       		.byte	0
+ 845 0334 00       		.byte	0
+ 846 0335 00       		.byte	0
+ 847 0336 00       		.byte	0
+ 848 0337 00       		.byte	0
+ 849 0338 00       		.byte	0
+ 850 0339 00       		.byte	0
+ 851 033a 00       		.byte	0
+ 852 033b 00       		.byte	0
+ 853 033c 00       		.byte	0
+ 854 033d 00       		.byte	0
+ 855 033e 00       		.byte	0
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccJZwqv9.s 			page 16
+
+
+ 856 033f 00       		.byte	0
+ 857 0340 00       		.byte	0
+ 858 0341 80       		.byte	-128
+ 859 0342 00       		.byte	0
+ 860 0343 00       		.byte	0
+ 861 0344 00       		.byte	0
+ 862 0345 00       		.byte	0
+ 863 0346 00       		.byte	0
+ 864 0347 00       		.byte	0
+ 865 0348 40       		.byte	64
+ 866 0349 41       		.byte	65
+ 867 034a 82       		.byte	-126
+ 868 034b 10       		.byte	16
+ 869 034c 04       		.byte	4
+ 870 034d 00       		.byte	0
+ 871 034e 00       		.byte	0
+ 872 034f 00       		.byte	0
+ 873 0350 00       		.byte	0
+ 874 0351 20       		.byte	32
+ 875 0352 02       		.byte	2
+ 876 0353 18       		.byte	24
+ 877 0354 00       		.byte	0
+ 878 0355 00       		.byte	0
+ 879 0356 81       		.byte	-127
+ 880 0357 00       		.byte	0
+ 881 0358 00       		.byte	0
+ 882 0359 0A       		.byte	10
+ 883 035a 00       		.byte	0
+ 884 035b 61       		.byte	97
+ 885 035c 00       		.byte	0
+ 886 035d 00       		.byte	0
+ 887 035e 00       		.byte	0
+ 888 035f 08       		.byte	8
+ 889 0360 00       		.byte	0
+ 890 0361 00       		.byte	0
+ 891 0362 00       		.byte	0
+ 892 0363 00       		.byte	0
+ 893 0364 00       		.byte	0
+ 894 0365 00       		.byte	0
+ 895 0366 00       		.byte	0
+ 896 0367 00       		.byte	0
+ 897 0368 00       		.byte	0
+ 898 0369 00       		.byte	0
+ 899 036a 00       		.byte	0
+ 900 036b 00       		.byte	0
+ 901 036c 00       		.byte	0
+ 902 036d 00       		.byte	0
+ 903 036e 00       		.byte	0
+ 904 036f 80       		.byte	-128
+ 905 0370 00       		.byte	0
+ 906 0371 00       		.byte	0
+ 907 0372 00       		.byte	0
+ 908 0373 00       		.byte	0
+ 909 0374 00       		.byte	0
+ 910 0375 00       		.byte	0
+ 911 0376 00       		.byte	0
+ 912 0377 00       		.byte	0
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccJZwqv9.s 			page 17
+
+
+ 913 0378 F2       		.byte	-14
+ 914 0379 00       		.byte	0
+ 915 037a BE       		.byte	-66
+ 916 037b 00       		.byte	0
+ 917 037c F0       		.byte	-16
+ 918 037d 00       		.byte	0
+ 919 037e 00       		.byte	0
+ 920 037f 00       		.byte	0
+ 921 0380 00       		.byte	0
+ 922 0381 00       		.byte	0
+ 923 0382 60       		.byte	96
+ 924 0383 00       		.byte	0
+ 925 0384 B0       		.byte	-80
+ 926 0385 00       		.byte	0
+ 927 0386 30       		.byte	48
+ 928 0387 00       		.byte	0
+ 929 0388 D0       		.byte	-48
+ 930 0389 00       		.byte	0
+ 931 038a 30       		.byte	48
+ 932 038b 00       		.byte	0
+ 933 038c 00       		.byte	0
+ 934 038d 00       		.byte	0
+ 935 038e 0F       		.byte	15
+ 936 038f 00       		.byte	0
+ 937 0390 78       		.byte	120
+ 938 0391 00       		.byte	0
+ 939 0392 00       		.byte	0
+ 940 0393 00       		.byte	0
+ 941 0394 00       		.byte	0
+ 942 0395 00       		.byte	0
+ 943 0396 00       		.byte	0
+ 944 0397 00       		.byte	0
+ 945 0398 20       		.byte	32
+ 946 0399 00       		.byte	0
+ 947 039a 00       		.byte	0
+ 948 039b 00       		.byte	0
+ 949 039c 00       		.byte	0
+ 950 039d 00       		.byte	0
+ 951 039e 00       		.byte	0
+ 952 039f 00       		.byte	0
+ 953 03a0 00       		.byte	0
+ 954 03a1 00       		.byte	0
+ 955 03a2 00       		.byte	0
+ 956 03a3 00       		.byte	0
+ 957 03a4 00       		.byte	0
+ 958 03a5 00       		.byte	0
+ 959 03a6 10       		.byte	16
+ 960 03a7 00       		.byte	0
+ 961 03a8 00       		.byte	0
+ 962 03a9 00       		.byte	0
+ 963 03aa 00       		.byte	0
+ 964 03ab 00       		.byte	0
+ 965 03ac 00       		.byte	0
+ 966 03ad 00       		.byte	0
+ 967 03ae 00       		.byte	0
+ 968 03af 00       		.byte	0
+ 969 03b0 00       		.byte	0
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccJZwqv9.s 			page 18
+
+
+ 970 03b1 00       		.byte	0
+ 971 03b2 00       		.byte	0
+ 972 03b3 00       		.byte	0
+ 973 03b4 00       		.byte	0
+ 974 03b5 00       		.byte	0
+ 975 03b6 00       		.byte	0
+ 976 03b7 00       		.byte	0
+ 977 03b8 00       		.byte	0
+ 978 03b9 08       		.byte	8
+ 979 03ba 01       		.byte	1
+ 980 03bb 00       		.byte	0
+ 981 03bc 40       		.byte	64
+ 982 03bd 28       		.byte	40
+ 983 03be 80       		.byte	-128
+ 984 03bf 00       		.byte	0
+ 985 03c0 00       		.byte	0
+ 986 03c1 8A       		.byte	-118
+ 987 03c2 08       		.byte	8
+ 988 03c3 00       		.byte	0
+ 989 03c4 00       		.byte	0
+ 990 03c5 80       		.byte	-128
+ 991 03c6 00       		.byte	0
+ 992 03c7 14       		.byte	20
+ 993 03c8 2A       		.byte	42
+ 994 03c9 01       		.byte	1
+ 995 03ca 00       		.byte	0
+ 996 03cb 00       		.byte	0
+ 997 03cc 00       		.byte	0
+ 998 03cd 41       		.byte	65
+ 999 03ce 00       		.byte	0
+ 1000 03cf 18       		.byte	24
+ 1001 03d0 00       		.byte	0
+ 1002 03d1 28       		.byte	40
+ 1003 03d2 0A       		.byte	10
+ 1004 03d3 61       		.byte	97
+ 1005 03d4 00       		.byte	0
+ 1006 03d5 40       		.byte	64
+ 1007 03d6 00       		.byte	0
+ 1008 03d7 00       		.byte	0
+ 1009 03d8 40       		.byte	64
+ 1010 03d9 0E       		.byte	14
+ 1011 03da 40       		.byte	64
+ 1012 03db 14       		.byte	20
+ 1013 03dc 00       		.byte	0
+ 1014 03dd 00       		.byte	0
+ 1015 03de 00       		.byte	0
+ 1016 03df 84       		.byte	-124
+ 1017 03e0 00       		.byte	0
+ 1018 03e1 68       		.byte	104
+ 1019 03e2 01       		.byte	1
+ 1020 03e3 00       		.byte	0
+ 1021 03e4 00       		.byte	0
+ 1022 03e5 40       		.byte	64
+ 1023 03e6 02       		.byte	2
+ 1024 03e7 28       		.byte	40
+ 1025 03e8 22       		.byte	34
+ 1026 03e9 80       		.byte	-128
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccJZwqv9.s 			page 19
+
+
+ 1027 03ea 00       		.byte	0
+ 1028 03eb 04       		.byte	4
+ 1029 03ec 00       		.byte	0
+ 1030 03ed 08       		.byte	8
+ 1031 03ee 00       		.byte	0
+ 1032 03ef 90       		.byte	-112
+ 1033 03f0 40       		.byte	64
+ 1034 03f1 19       		.byte	25
+ 1035 03f2 00       		.byte	0
+ 1036 03f3 00       		.byte	0
+ 1037 03f4 40       		.byte	64
+ 1038 03f5 01       		.byte	1
+ 1039 03f6 00       		.byte	0
+ 1040 03f7 14       		.byte	20
+ 1041 03f8 00       		.byte	0
+ 1042 03f9 00       		.byte	0
+ 1043 03fa 00       		.byte	0
+ 1044 03fb 00       		.byte	0
+ 1045 03fc 00       		.byte	0
+ 1046 03fd 00       		.byte	0
+ 1047 03fe 00       		.byte	0
+ 1048 03ff 00       		.byte	0
+ 1049 0400 00       		.byte	0
+ 1050 0401 00       		.byte	0
+ 1051 0402 00       		.byte	0
+ 1052 0403 00       		.byte	0
+ 1053 0404 00       		.byte	0
+ 1054 0405 00       		.byte	0
+ 1055 0406 00       		.byte	0
+ 1056 0407 00       		.byte	0
+ 1057 0408 00       		.byte	0
+ 1058 0409 00       		.byte	0
+ 1059 040a 00       		.byte	0
+ 1060 040b 00       		.byte	0
+ 1061 040c 00       		.byte	0
+ 1062 040d 00       		.byte	0
+ 1063 040e 00       		.byte	0
+ 1064 040f 00       		.byte	0
+ 1065 0410 00       		.byte	0
+ 1066 0411 00       		.byte	0
+ 1067 0412 00       		.byte	0
+ 1068 0413 00       		.byte	0
+ 1069 0414 00       		.byte	0
+ 1070 0415 00       		.byte	0
+ 1071 0416 00       		.byte	0
+ 1072 0417 00       		.byte	0
+ 1073 0418 04       		.byte	4
+ 1074 0419 00       		.byte	0
+ 1075 041a 00       		.byte	0
+ 1076 041b 00       		.byte	0
+ 1077 041c 00       		.byte	0
+ 1078 041d 00       		.byte	0
+ 1079 041e 00       		.byte	0
+ 1080 041f 00       		.byte	0
+ 1081 0420 2A       		.byte	42
+ 1082 0421 51       		.byte	81
+ 1083 0422 00       		.byte	0
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccJZwqv9.s 			page 20
+
+
+ 1084 0423 18       		.byte	24
+ 1085 0424 00       		.byte	0
+ 1086 0425 00       		.byte	0
+ 1087 0426 00       		.byte	0
+ 1088 0427 00       		.byte	0
+ 1089 0428 00       		.byte	0
+ 1090 0429 80       		.byte	-128
+ 1091 042a 02       		.byte	2
+ 1092 042b 00       		.byte	0
+ 1093 042c 00       		.byte	0
+ 1094 042d 00       		.byte	0
+ 1095 042e 00       		.byte	0
+ 1096 042f 00       		.byte	0
+ 1097 0430 00       		.byte	0
+ 1098 0431 00       		.byte	0
+ 1099 0432 00       		.byte	0
+ 1100 0433 00       		.byte	0
+ 1101 0434 00       		.byte	0
+ 1102 0435 00       		.byte	0
+ 1103 0436 00       		.byte	0
+ 1104 0437 00       		.byte	0
+ 1105 0438 00       		.byte	0
+ 1106 0439 00       		.byte	0
+ 1107 043a 00       		.byte	0
+ 1108 043b 00       		.byte	0
+ 1109 043c 00       		.byte	0
+ 1110 043d 00       		.byte	0
+ 1111 043e 00       		.byte	0
+ 1112 043f 00       		.byte	0
+ 1113 0440 00       		.byte	0
+ 1114 0441 00       		.byte	0
+ 1115 0442 00       		.byte	0
+ 1116 0443 00       		.byte	0
+ 1117 0444 00       		.byte	0
+ 1118 0445 00       		.byte	0
+ 1119 0446 00       		.byte	0
+ 1120 0447 00       		.byte	0
+ 1121 0448 00       		.byte	0
+ 1122 0449 00       		.byte	0
+ 1123 044a 00       		.byte	0
+ 1124 044b 00       		.byte	0
+ 1125 044c 00       		.byte	0
+ 1126 044d 00       		.byte	0
+ 1127 044e 00       		.byte	0
+ 1128 044f 00       		.byte	0
+ 1129 0450 00       		.byte	0
+ 1130 0451 00       		.byte	0
+ 1131 0452 00       		.byte	0
+ 1132 0453 00       		.byte	0
+ 1133 0454 00       		.byte	0
+ 1134 0455 00       		.byte	0
+ 1135 0456 00       		.byte	0
+ 1136 0457 00       		.byte	0
+ 1137 0458 00       		.byte	0
+ 1138 0459 00       		.byte	0
+ 1139 045a 00       		.byte	0
+ 1140 045b 00       		.byte	0
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccJZwqv9.s 			page 21
+
+
+ 1141 045c 00       		.byte	0
+ 1142 045d 00       		.byte	0
+ 1143 045e 00       		.byte	0
+ 1144 045f 00       		.byte	0
+ 1145 0460 00       		.byte	0
+ 1146 0461 00       		.byte	0
+ 1147 0462 00       		.byte	0
+ 1148 0463 00       		.byte	0
+ 1149 0464 00       		.byte	0
+ 1150 0465 00       		.byte	0
+ 1151 0466 00       		.byte	0
+ 1152 0467 00       		.byte	0
+ 1153 0468 00       		.byte	0
+ 1154 0469 00       		.byte	0
+ 1155 046a 00       		.byte	0
+ 1156 046b 00       		.byte	0
+ 1157 046c 00       		.byte	0
+ 1158 046d 00       		.byte	0
+ 1159 046e 00       		.byte	0
+ 1160 046f 00       		.byte	0
+ 1161 0470 00       		.byte	0
+ 1162 0471 00       		.byte	0
+ 1163 0472 00       		.byte	0
+ 1164 0473 00       		.byte	0
+ 1165 0474 00       		.byte	0
+ 1166 0475 00       		.byte	0
+ 1167 0476 00       		.byte	0
+ 1168 0477 00       		.byte	0
+ 1169 0478 F5       		.byte	-11
+ 1170 0479 00       		.byte	0
+ 1171 047a EF       		.byte	-17
+ 1172 047b 00       		.byte	0
+ 1173 047c FF       		.byte	-1
+ 1174 047d 00       		.byte	0
+ 1175 047e 00       		.byte	0
+ 1176 047f 00       		.byte	0
+ 1177 0480 00       		.byte	0
+ 1178 0481 00       		.byte	0
+ 1179 0482 FF       		.byte	-1
+ 1180 0483 00       		.byte	0
+ 1181 0484 7F       		.byte	127
+ 1182 0485 00       		.byte	0
+ 1183 0486 FF       		.byte	-1
+ 1184 0487 00       		.byte	0
+ 1185 0488 00       		.byte	0
+ 1186 0489 00       		.byte	0
+ 1187 048a 00       		.byte	0
+ 1188 048b 00       		.byte	0
+ 1189 048c 00       		.byte	0
+ 1190 048d 00       		.byte	0
+ 1191 048e 00       		.byte	0
+ 1192 048f 00       		.byte	0
+ 1193 0490 04       		.byte	4
+ 1194 0491 00       		.byte	0
+ 1195 0492 00       		.byte	0
+ 1196 0493 00       		.byte	0
+ 1197 0494 00       		.byte	0
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccJZwqv9.s 			page 22
+
+
+ 1198 0495 00       		.byte	0
+ 1199 0496 00       		.byte	0
+ 1200 0497 00       		.byte	0
+ 1201 0498 00       		.byte	0
+ 1202 0499 00       		.byte	0
+ 1203 049a 00       		.byte	0
+ 1204 049b 00       		.byte	0
+ 1205 049c 00       		.byte	0
+ 1206 049d 00       		.byte	0
+ 1207 049e 00       		.byte	0
+ 1208 049f 00       		.byte	0
+ 1209 04a0 00       		.byte	0
+ 1210 04a1 00       		.byte	0
+ 1211 04a2 00       		.byte	0
+ 1212 04a3 00       		.byte	0
+ 1213 04a4 00       		.byte	0
+ 1214 04a5 00       		.byte	0
+ 1215 04a6 00       		.byte	0
+ 1216 04a7 00       		.byte	0
+ 1217 04a8 00       		.byte	0
+ 1218 04a9 00       		.byte	0
+ 1219 04aa 00       		.byte	0
+ 1220 04ab 00       		.byte	0
+ 1221 04ac 00       		.byte	0
+ 1222 04ad 00       		.byte	0
+ 1223 04ae 00       		.byte	0
+ 1224 04af 00       		.byte	0
+ 1225 04b0 00       		.byte	0
+ 1226 04b1 00       		.byte	0
+ 1227 04b2 00       		.byte	0
+ 1228 04b3 00       		.byte	0
+ 1229 04b4 00       		.byte	0
+ 1230 04b5 00       		.byte	0
+ 1231 04b6 00       		.byte	0
+ 1232 04b7 00       		.byte	0
+ 1233 04b8 00       		.byte	0
+ 1234 04b9 00       		.byte	0
+ 1235 04ba 00       		.byte	0
+ 1236 04bb 00       		.byte	0
+ 1237 04bc 00       		.byte	0
+ 1238 04bd 00       		.byte	0
+ 1239 04be 00       		.byte	0
+ 1240 04bf 00       		.byte	0
+ 1241 04c0 00       		.byte	0
+ 1242 04c1 00       		.byte	0
+ 1243 04c2 00       		.byte	0
+ 1244 04c3 00       		.byte	0
+ 1245 04c4 00       		.byte	0
+ 1246 04c5 00       		.byte	0
+ 1247 04c6 00       		.byte	0
+ 1248 04c7 00       		.byte	0
+ 1249 04c8 00       		.byte	0
+ 1250 04c9 00       		.byte	0
+ 1251 04ca 00       		.byte	0
+ 1252 04cb 00       		.byte	0
+ 1253 04cc 00       		.byte	0
+ 1254 04cd 00       		.byte	0
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccJZwqv9.s 			page 23
+
+
+ 1255 04ce 00       		.byte	0
+ 1256 04cf 00       		.byte	0
+ 1257 04d0 00       		.byte	0
+ 1258 04d1 00       		.byte	0
+ 1259 04d2 00       		.byte	0
+ 1260 04d3 00       		.byte	0
+ 1261 04d4 00       		.byte	0
+ 1262 04d5 00       		.byte	0
+ 1263 04d6 00       		.byte	0
+ 1264 04d7 00       		.byte	0
+ 1265 04d8 00       		.byte	0
+ 1266 04d9 00       		.byte	0
+ 1267 04da 00       		.byte	0
+ 1268 04db 00       		.byte	0
+ 1269 04dc 00       		.byte	0
+ 1270 04dd 00       		.byte	0
+ 1271 04de 00       		.byte	0
+ 1272 04df 00       		.byte	0
+ 1273 04e0 00       		.byte	0
+ 1274 04e1 00       		.byte	0
+ 1275 04e2 00       		.byte	0
+ 1276 04e3 04       		.byte	4
+ 1277 04e4 00       		.byte	0
+ 1278 04e5 00       		.byte	0
+ 1279 04e6 00       		.byte	0
+ 1280 04e7 00       		.byte	0
+ 1281 04e8 00       		.byte	0
+ 1282 04e9 00       		.byte	0
+ 1283 04ea 00       		.byte	0
+ 1284 04eb 00       		.byte	0
+ 1285 04ec 00       		.byte	0
+ 1286 04ed 00       		.byte	0
+ 1287 04ee 00       		.byte	0
+ 1288 04ef 00       		.byte	0
+ 1289 04f0 00       		.byte	0
+ 1290 04f1 00       		.byte	0
+ 1291 04f2 00       		.byte	0
+ 1292 04f3 00       		.byte	0
+ 1293 04f4 00       		.byte	0
+ 1294 04f5 00       		.byte	0
+ 1295 04f6 00       		.byte	0
+ 1296 04f7 00       		.byte	0
+ 1297 04f8 00       		.byte	0
+ 1298 04f9 00       		.byte	0
+ 1299 04fa 00       		.byte	0
+ 1300 04fb 00       		.byte	0
+ 1301 04fc 00       		.byte	0
+ 1302 04fd 00       		.byte	0
+ 1303 04fe 00       		.byte	0
+ 1304 04ff 00       		.byte	0
+ 1305 0500 00       		.byte	0
+ 1306 0501 00       		.byte	0
+ 1307 0502 00       		.byte	0
+ 1308 0503 00       		.byte	0
+ 1309 0504 00       		.byte	0
+ 1310 0505 00       		.byte	0
+ 1311 0506 00       		.byte	0
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccJZwqv9.s 			page 24
+
+
+ 1312 0507 00       		.byte	0
+ 1313 0508 00       		.byte	0
+ 1314 0509 00       		.byte	0
+ 1315 050a 00       		.byte	0
+ 1316 050b 00       		.byte	0
+ 1317 050c 00       		.byte	0
+ 1318 050d 00       		.byte	0
+ 1319 050e 00       		.byte	0
+ 1320 050f 00       		.byte	0
+ 1321 0510 00       		.byte	0
+ 1322 0511 00       		.byte	0
+ 1323 0512 00       		.byte	0
+ 1324 0513 00       		.byte	0
+ 1325 0514 00       		.byte	0
+ 1326 0515 00       		.byte	0
+ 1327 0516 00       		.byte	0
+ 1328 0517 00       		.byte	0
+ 1329 0518 00       		.byte	0
+ 1330 0519 00       		.byte	0
+ 1331 051a 00       		.byte	0
+ 1332 051b 00       		.byte	0
+ 1333 051c 00       		.byte	0
+ 1334 051d 00       		.byte	0
+ 1335 051e 00       		.byte	0
+ 1336 051f 00       		.byte	0
+ 1337 0520 00       		.byte	0
+ 1338 0521 00       		.byte	0
+ 1339 0522 00       		.byte	0
+ 1340 0523 00       		.byte	0
+ 1341 0524 00       		.byte	0
+ 1342 0525 00       		.byte	0
+ 1343 0526 20       		.byte	32
+ 1344 0527 00       		.byte	0
+ 1345 0528 00       		.byte	0
+ 1346 0529 00       		.byte	0
+ 1347 052a 00       		.byte	0
+ 1348 052b 00       		.byte	0
+ 1349 052c 00       		.byte	0
+ 1350 052d 00       		.byte	0
+ 1351 052e 00       		.byte	0
+ 1352 052f 00       		.byte	0
+ 1353 0530 00       		.byte	0
+ 1354 0531 00       		.byte	0
+ 1355 0532 00       		.byte	0
+ 1356 0533 00       		.byte	0
+ 1357 0534 00       		.byte	0
+ 1358 0535 00       		.byte	0
+ 1359 0536 00       		.byte	0
+ 1360 0537 00       		.byte	0
+ 1361 0538 08       		.byte	8
+ 1362 0539 00       		.byte	0
+ 1363 053a 00       		.byte	0
+ 1364 053b 00       		.byte	0
+ 1365 053c 00       		.byte	0
+ 1366 053d 00       		.byte	0
+ 1367 053e 00       		.byte	0
+ 1368 053f 00       		.byte	0
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccJZwqv9.s 			page 25
+
+
+ 1369 0540 00       		.byte	0
+ 1370 0541 00       		.byte	0
+ 1371 0542 00       		.byte	0
+ 1372 0543 00       		.byte	0
+ 1373 0544 00       		.byte	0
+ 1374 0545 00       		.byte	0
+ 1375 0546 00       		.byte	0
+ 1376 0547 00       		.byte	0
+ 1377 0548 00       		.byte	0
+ 1378 0549 00       		.byte	0
+ 1379 054a 00       		.byte	0
+ 1380 054b 00       		.byte	0
+ 1381 054c 00       		.byte	0
+ 1382 054d 00       		.byte	0
+ 1383 054e 00       		.byte	0
+ 1384 054f 00       		.byte	0
+ 1385 0550 00       		.byte	0
+ 1386 0551 00       		.byte	0
+ 1387 0552 00       		.byte	0
+ 1388 0553 00       		.byte	0
+ 1389 0554 00       		.byte	0
+ 1390 0555 00       		.byte	0
+ 1391 0556 00       		.byte	0
+ 1392 0557 00       		.byte	0
+ 1393 0558 00       		.byte	0
+ 1394 0559 00       		.byte	0
+ 1395 055a 00       		.byte	0
+ 1396 055b 00       		.byte	0
+ 1397 055c 00       		.byte	0
+ 1398 055d 00       		.byte	0
+ 1399 055e 00       		.byte	0
+ 1400 055f 00       		.byte	0
+ 1401 0560 00       		.byte	0
+ 1402 0561 00       		.byte	0
+ 1403 0562 00       		.byte	0
+ 1404 0563 00       		.byte	0
+ 1405 0564 00       		.byte	0
+ 1406 0565 00       		.byte	0
+ 1407 0566 00       		.byte	0
+ 1408 0567 00       		.byte	0
+ 1409 0568 00       		.byte	0
+ 1410 0569 00       		.byte	0
+ 1411 056a 00       		.byte	0
+ 1412 056b 00       		.byte	0
+ 1413 056c 00       		.byte	0
+ 1414 056d 00       		.byte	0
+ 1415 056e 00       		.byte	0
+ 1416 056f 00       		.byte	0
+ 1417 0570 00       		.byte	0
+ 1418 0571 00       		.byte	0
+ 1419 0572 00       		.byte	0
+ 1420 0573 00       		.byte	0
+ 1421 0574 00       		.byte	0
+ 1422 0575 00       		.byte	0
+ 1423 0576 00       		.byte	0
+ 1424 0577 00       		.byte	0
+ 1425 0578 00       		.byte	0
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccJZwqv9.s 			page 26
+
+
+ 1426 0579 00       		.byte	0
+ 1427 057a 00       		.byte	0
+ 1428 057b 00       		.byte	0
+ 1429 057c 00       		.byte	0
+ 1430 057d 00       		.byte	0
+ 1431 057e 00       		.byte	0
+ 1432 057f 00       		.byte	0
+ 1433 0580 00       		.byte	0
+ 1434 0581 00       		.byte	0
+ 1435 0582 00       		.byte	0
+ 1436 0583 00       		.byte	0
+ 1437 0584 00       		.byte	0
+ 1438 0585 00       		.byte	0
+ 1439 0586 00       		.byte	0
+ 1440 0587 00       		.byte	0
+ 1441 0588 00       		.byte	0
+ 1442 0589 00       		.byte	0
+ 1443 058a 00       		.byte	0
+ 1444 058b 00       		.byte	0
+ 1445 058c 00       		.byte	0
+ 1446 058d 00       		.byte	0
+ 1447 058e 04       		.byte	4
+ 1448 058f 00       		.byte	0
+ 1449 0590 00       		.byte	0
+ 1450 0591 00       		.byte	0
+ 1451 0592 00       		.byte	0
+ 1452 0593 00       		.byte	0
+ 1453 0594 00       		.byte	0
+ 1454 0595 00       		.byte	0
+ 1455 0596 00       		.byte	0
+ 1456 0597 00       		.byte	0
+ 1457 0598 00       		.byte	0
+ 1458 0599 00       		.byte	0
+ 1459 059a 00       		.byte	0
+ 1460 059b 08       		.byte	8
+ 1461 059c 00       		.byte	0
+ 1462 059d 00       		.byte	0
+ 1463 059e 00       		.byte	0
+ 1464 059f 00       		.byte	0
+ 1465 05a0 00       		.byte	0
+ 1466 05a1 00       		.byte	0
+ 1467 05a2 00       		.byte	0
+ 1468 05a3 00       		.byte	0
+ 1469 05a4 00       		.byte	0
+ 1470 05a5 00       		.byte	0
+ 1471 05a6 00       		.byte	0
+ 1472 05a7 00       		.byte	0
+ 1473 05a8 00       		.byte	0
+ 1474 05a9 00       		.byte	0
+ 1475 05aa 00       		.byte	0
+ 1476 05ab 00       		.byte	0
+ 1477 05ac 00       		.byte	0
+ 1478 05ad 00       		.byte	0
+ 1479 05ae 00       		.byte	0
+ 1480 05af 00       		.byte	0
+ 1481 05b0 00       		.byte	0
+ 1482 05b1 00       		.byte	0
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccJZwqv9.s 			page 27
+
+
+ 1483 05b2 00       		.byte	0
+ 1484 05b3 00       		.byte	0
+ 1485 05b4 00       		.byte	0
+ 1486 05b5 00       		.byte	0
+ 1487 05b6 00       		.byte	0
+ 1488 05b7 00       		.byte	0
+ 1489 05b8 00       		.byte	0
+ 1490 05b9 00       		.byte	0
+ 1491 05ba 00       		.byte	0
+ 1492 05bb 00       		.byte	0
+ 1493 05bc 00       		.byte	0
+ 1494 05bd 00       		.byte	0
+ 1495 05be 00       		.byte	0
+ 1496 05bf 00       		.byte	0
+ 1497 05c0 04       		.byte	4
+ 1498 05c1 00       		.byte	0
+ 1499 05c2 00       		.byte	0
+ 1500 05c3 00       		.byte	0
+ 1501 05c4 00       		.byte	0
+ 1502 05c5 00       		.byte	0
+ 1503 05c6 00       		.byte	0
+ 1504 05c7 00       		.byte	0
+ 1505 05c8 00       		.byte	0
+ 1506 05c9 00       		.byte	0
+ 1507 05ca 00       		.byte	0
+ 1508 05cb 00       		.byte	0
+ 1509 05cc 00       		.byte	0
+ 1510 05cd 00       		.byte	0
+ 1511 05ce 00       		.byte	0
+ 1512 05cf 00       		.byte	0
+ 1513 05d0 00       		.byte	0
+ 1514 05d1 00       		.byte	0
+ 1515 05d2 04       		.byte	4
+ 1516 05d3 00       		.byte	0
+ 1517 05d4 00       		.byte	0
+ 1518 05d5 00       		.byte	0
+ 1519 05d6 00       		.byte	0
+ 1520 05d7 00       		.byte	0
+ 1521 05d8 00       		.byte	0
+ 1522 05d9 00       		.byte	0
+ 1523 05da 00       		.byte	0
+ 1524 05db 00       		.byte	0
+ 1525 05dc 00       		.byte	0
+ 1526 05dd 00       		.byte	0
+ 1527 05de 00       		.byte	0
+ 1528 05df 00       		.byte	0
+ 1529 05e0 00       		.byte	0
+ 1530 05e1 00       		.byte	0
+ 1531 05e2 00       		.byte	0
+ 1532 05e3 00       		.byte	0
+ 1533 05e4 00       		.byte	0
+ 1534 05e5 00       		.byte	0
+ 1535 05e6 00       		.byte	0
+ 1536 05e7 00       		.byte	0
+ 1537 05e8 00       		.byte	0
+ 1538 05e9 00       		.byte	0
+ 1539 05ea 00       		.byte	0
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccJZwqv9.s 			page 28
+
+
+ 1540 05eb 00       		.byte	0
+ 1541 05ec 00       		.byte	0
+ 1542 05ed 00       		.byte	0
+ 1543 05ee 04       		.byte	4
+ 1544 05ef 00       		.byte	0
+ 1545 05f0 00       		.byte	0
+ 1546 05f1 00       		.byte	0
+ 1547 05f2 00       		.byte	0
+ 1548 05f3 00       		.byte	0
+ 1549 05f4 00       		.byte	0
+ 1550 05f5 00       		.byte	0
+ 1551 05f6 00       		.byte	0
+ 1552 05f7 00       		.byte	0
+ 1553 05f8 10       		.byte	16
+ 1554 05f9 00       		.byte	0
+ 1555 05fa 00       		.byte	0
+ 1556 05fb 00       		.byte	0
+ 1557 05fc 00       		.byte	0
+ 1558 05fd 00       		.byte	0
+ 1559 05fe 00       		.byte	0
+ 1560 05ff 00       		.byte	0
+ 1561 0600 00       		.byte	0
+ 1562 0601 00       		.byte	0
+ 1563 0602 00       		.byte	0
+ 1564 0603 00       		.byte	0
+ 1565 0604 00       		.byte	0
+ 1566 0605 00       		.byte	0
+ 1567 0606 00       		.byte	0
+ 1568 0607 00       		.byte	0
+ 1569 0608 00       		.byte	0
+ 1570 0609 00       		.byte	0
+ 1571 060a 00       		.byte	0
+ 1572 060b 00       		.byte	0
+ 1573 060c 40       		.byte	64
+ 1574 060d 00       		.byte	0
+ 1575 060e 00       		.byte	0
+ 1576 060f 00       		.byte	0
+ 1577 0610 40       		.byte	64
+ 1578 0611 00       		.byte	0
+ 1579 0612 00       		.byte	0
+ 1580 0613 00       		.byte	0
+ 1581 0614 00       		.byte	0
+ 1582 0615 00       		.byte	0
+ 1583 0616 00       		.byte	0
+ 1584 0617 00       		.byte	0
+ 1585 0618 00       		.byte	0
+ 1586 0619 00       		.byte	0
+ 1587 061a 00       		.byte	0
+ 1588 061b 00       		.byte	0
+ 1589 061c 00       		.byte	0
+ 1590 061d 00       		.byte	0
+ 1591 061e 00       		.byte	0
+ 1592 061f 00       		.byte	0
+ 1593 0620 00       		.byte	0
+ 1594 0621 00       		.byte	0
+ 1595 0622 00       		.byte	0
+ 1596 0623 00       		.byte	0
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccJZwqv9.s 			page 29
+
+
+ 1597 0624 00       		.byte	0
+ 1598 0625 00       		.byte	0
+ 1599 0626 00       		.byte	0
+ 1600 0627 00       		.byte	0
+ 1601 0628 00       		.byte	0
+ 1602 0629 00       		.byte	0
+ 1603 062a 00       		.byte	0
+ 1604 062b 00       		.byte	0
+ 1605 062c 00       		.byte	0
+ 1606 062d 00       		.byte	0
+ 1607 062e 00       		.byte	0
+ 1608 062f 00       		.byte	0
+ 1609 0630 00       		.byte	0
+ 1610 0631 00       		.byte	0
+ 1611 0632 00       		.byte	0
+ 1612 0633 00       		.byte	0
+ 1613 0634 00       		.byte	0
+ 1614 0635 00       		.byte	0
+ 1615 0636 00       		.byte	0
+ 1616 0637 00       		.byte	0
+ 1617 0638 01       		.byte	1
+ 1618 0639 C2       		.byte	-62
+ 1619 063a C2       		.byte	-62
+ 1620 063b 00       		.byte	0
+ 1621 063c 42       		.byte	66
+ 1622 063d 00       		.byte	0
+ 1623 063e 00       		.byte	0
+ 1624 063f 00       		.byte	0
+ 1625 0640 00       		.byte	0
+ 1626 0641 0B       		.byte	11
+ 1627 0642 0B       		.byte	11
+ 1628 0643 00       		.byte	0
+ 1629 0644 00       		.byte	0
+ 1630 0645 00       		.byte	0
+ 1631 0646 00       		.byte	0
+ 1632 0647 00       		.byte	0
+ 1633 0648 00       		.byte	0
+ 1634 0649 7F       		.byte	127
+ 1635 064a 7F       		.byte	127
+ 1636 064b 00       		.byte	0
+ 1637 064c 00       		.byte	0
+ 1638 064d 00       		.byte	0
+ 1639 064e 00       		.byte	0
+ 1640 064f 00       		.byte	0
+ 1641              		.global	cy_meta_custnvl
+ 1642              		.section	.cycustnvl,"a",%progbits
+ 1643              		.align	2
+ 1644              		.type	cy_meta_custnvl, %object
+ 1645              		.size	cy_meta_custnvl, 4
+ 1646              	cy_meta_custnvl:
+ 1647 0000 00       		.byte	0
+ 1648 0001 00       		.byte	0
+ 1649 0002 40       		.byte	64
+ 1650 0003 05       		.byte	5
+ 1651              		.global	cy_meta_wonvl
+ 1652              		.section	.cywolatch,"a",%progbits
+ 1653              		.align	2
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccJZwqv9.s 			page 30
+
+
+ 1654              		.type	cy_meta_wonvl, %object
+ 1655              		.size	cy_meta_wonvl, 4
+ 1656              	cy_meta_wonvl:
+ 1657 0000 BC       		.byte	-68
+ 1658 0001 90       		.byte	-112
+ 1659 0002 AC       		.byte	-84
+ 1660 0003 AF       		.byte	-81
+ 1661              		.global	cy_meta_flashprotect
+ 1662              		.section	.cyflashprotect,"a",%progbits
+ 1663              		.align	2
+ 1664              		.type	cy_meta_flashprotect, %object
+ 1665              		.size	cy_meta_flashprotect, 256
+ 1666              	cy_meta_flashprotect:
+ 1667 0000 00000000 		.space	256
+ 1667      00000000 
+ 1667      00000000 
+ 1667      00000000 
+ 1667      00000000 
+ 1668              		.global	cy_metadata
+ 1669              		.section	.cymeta,"a",%progbits
+ 1670              		.align	2
+ 1671              		.type	cy_metadata, %object
+ 1672              		.size	cy_metadata, 12
+ 1673              	cy_metadata:
+ 1674 0000 00       		.byte	0
+ 1675 0001 01       		.byte	1
+ 1676 0002 2E       		.byte	46
+ 1677 0003 16       		.byte	22
+ 1678 0004 10       		.byte	16
+ 1679 0005 69       		.byte	105
+ 1680 0006 00       		.byte	0
+ 1681 0007 01       		.byte	1
+ 1682 0008 00       		.byte	0
+ 1683 0009 00       		.byte	0
+ 1684 000a 00       		.byte	0
+ 1685 000b 00       		.byte	0
+ 1686              		.text
+ 1687              	.Letext0:
+ 1688              		.file 1 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
+ 1689              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
+ 1690              		.file 3 "Generated_Source\\PSoC5\\cymetadata.c"
+ 1691              		.section	.debug_info,"",%progbits
+ 1692              	.Ldebug_info0:
+ 1693 0000 34010000 		.4byte	0x134
+ 1694 0004 0400     		.2byte	0x4
+ 1695 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 1696 000a 04       		.byte	0x4
+ 1697 000b 01       		.uleb128 0x1
+ 1698 000c 0A000000 		.4byte	.LASF17
+ 1699 0010 0C       		.byte	0xc
+ 1700 0011 D4010000 		.4byte	.LASF18
+ 1701 0015 98000000 		.4byte	.LASF19
+ 1702 0019 00000000 		.4byte	.Ldebug_line0
+ 1703 001d 02       		.uleb128 0x2
+ 1704 001e 01       		.byte	0x1
+ 1705 001f 06       		.byte	0x6
+ 1706 0020 C8010000 		.4byte	.LASF0
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccJZwqv9.s 			page 31
+
+
+ 1707 0024 03       		.uleb128 0x3
+ 1708 0025 00000000 		.4byte	.LASF9
+ 1709 0029 01       		.byte	0x1
+ 1710 002a 1D       		.byte	0x1d
+ 1711 002b 2F000000 		.4byte	0x2f
+ 1712 002f 02       		.uleb128 0x2
+ 1713 0030 01       		.byte	0x1
+ 1714 0031 08       		.byte	0x8
+ 1715 0032 FA000000 		.4byte	.LASF1
+ 1716 0036 02       		.uleb128 0x2
+ 1717 0037 02       		.byte	0x2
+ 1718 0038 05       		.byte	0x5
+ 1719 0039 B5010000 		.4byte	.LASF2
+ 1720 003d 02       		.uleb128 0x2
+ 1721 003e 02       		.byte	0x2
+ 1722 003f 07       		.byte	0x7
+ 1723 0040 1A010000 		.4byte	.LASF3
+ 1724 0044 02       		.uleb128 0x2
+ 1725 0045 04       		.byte	0x4
+ 1726 0046 05       		.byte	0x5
+ 1727 0047 BF010000 		.4byte	.LASF4
+ 1728 004b 02       		.uleb128 0x2
+ 1729 004c 04       		.byte	0x4
+ 1730 004d 07       		.byte	0x7
+ 1731 004e 08010000 		.4byte	.LASF5
+ 1732 0052 02       		.uleb128 0x2
+ 1733 0053 08       		.byte	0x8
+ 1734 0054 05       		.byte	0x5
+ 1735 0055 A7010000 		.4byte	.LASF6
+ 1736 0059 02       		.uleb128 0x2
+ 1737 005a 08       		.byte	0x8
+ 1738 005b 07       		.byte	0x7
+ 1739 005c 5C010000 		.4byte	.LASF7
+ 1740 0060 04       		.uleb128 0x4
+ 1741 0061 04       		.byte	0x4
+ 1742 0062 05       		.byte	0x5
+ 1743 0063 696E7400 		.ascii	"int\000"
+ 1744 0067 02       		.uleb128 0x2
+ 1745 0068 04       		.byte	0x4
+ 1746 0069 07       		.byte	0x7
+ 1747 006a 4F010000 		.4byte	.LASF8
+ 1748 006e 03       		.uleb128 0x3
+ 1749 006f 73010000 		.4byte	.LASF10
+ 1750 0073 02       		.byte	0x2
+ 1751 0074 18       		.byte	0x18
+ 1752 0075 24000000 		.4byte	0x24
+ 1753 0079 05       		.uleb128 0x5
+ 1754 007a 91000000 		.4byte	0x91
+ 1755 007e 8A000000 		.4byte	0x8a
+ 1756 0082 06       		.uleb128 0x6
+ 1757 0083 8A000000 		.4byte	0x8a
+ 1758 0087 4F06     		.2byte	0x64f
+ 1759 0089 00       		.byte	0
+ 1760 008a 02       		.uleb128 0x2
+ 1761 008b 04       		.byte	0x4
+ 1762 008c 07       		.byte	0x7
+ 1763 008d 9E010000 		.4byte	.LASF11
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccJZwqv9.s 			page 32
+
+
+ 1764 0091 07       		.uleb128 0x7
+ 1765 0092 6E000000 		.4byte	0x6e
+ 1766 0096 08       		.uleb128 0x8
+ 1767 0097 3D010000 		.4byte	.LASF12
+ 1768 009b 03       		.byte	0x3
+ 1769 009c 1F       		.byte	0x1f
+ 1770 009d A7000000 		.4byte	0xa7
+ 1771 00a1 05       		.uleb128 0x5
+ 1772 00a2 03       		.byte	0x3
+ 1773 00a3 00000000 		.4byte	cy_meta_configecc
+ 1774 00a7 07       		.uleb128 0x7
+ 1775 00a8 79000000 		.4byte	0x79
+ 1776 00ac 05       		.uleb128 0x5
+ 1777 00ad 91000000 		.4byte	0x91
+ 1778 00b1 BC000000 		.4byte	0xbc
+ 1779 00b5 09       		.uleb128 0x9
+ 1780 00b6 8A000000 		.4byte	0x8a
+ 1781 00ba 03       		.byte	0x3
+ 1782 00bb 00       		.byte	0
+ 1783 00bc 08       		.uleb128 0x8
+ 1784 00bd 2D010000 		.4byte	.LASF13
+ 1785 00c1 03       		.byte	0x3
+ 1786 00c2 F6       		.byte	0xf6
+ 1787 00c3 CD000000 		.4byte	0xcd
+ 1788 00c7 05       		.uleb128 0x5
+ 1789 00c8 03       		.byte	0x3
+ 1790 00c9 00000000 		.4byte	cy_meta_custnvl
+ 1791 00cd 07       		.uleb128 0x7
+ 1792 00ce AC000000 		.4byte	0xac
+ 1793 00d2 0A       		.uleb128 0xa
+ 1794 00d3 90010000 		.4byte	.LASF14
+ 1795 00d7 03       		.byte	0x3
+ 1796 00d8 0401     		.2byte	0x104
+ 1797 00da E4000000 		.4byte	0xe4
+ 1798 00de 05       		.uleb128 0x5
+ 1799 00df 03       		.byte	0x3
+ 1800 00e0 00000000 		.4byte	cy_meta_wonvl
+ 1801 00e4 07       		.uleb128 0x7
+ 1802 00e5 AC000000 		.4byte	0xac
+ 1803 00e9 05       		.uleb128 0x5
+ 1804 00ea 91000000 		.4byte	0x91
+ 1805 00ee F9000000 		.4byte	0xf9
+ 1806 00f2 09       		.uleb128 0x9
+ 1807 00f3 8A000000 		.4byte	0x8a
+ 1808 00f7 FF       		.byte	0xff
+ 1809 00f8 00       		.byte	0
+ 1810 00f9 0A       		.uleb128 0xa
+ 1811 00fa 7B010000 		.4byte	.LASF15
+ 1812 00fe 03       		.byte	0x3
+ 1813 00ff 1201     		.2byte	0x112
+ 1814 0101 0B010000 		.4byte	0x10b
+ 1815 0105 05       		.uleb128 0x5
+ 1816 0106 03       		.byte	0x3
+ 1817 0107 00000000 		.4byte	cy_meta_flashprotect
+ 1818 010b 07       		.uleb128 0x7
+ 1819 010c E9000000 		.4byte	0xe9
+ 1820 0110 05       		.uleb128 0x5
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccJZwqv9.s 			page 33
+
+
+ 1821 0111 91000000 		.4byte	0x91
+ 1822 0115 20010000 		.4byte	0x120
+ 1823 0119 09       		.uleb128 0x9
+ 1824 011a 8A000000 		.4byte	0x8a
+ 1825 011e 0B       		.byte	0xb
+ 1826 011f 00       		.byte	0
+ 1827 0120 0A       		.uleb128 0xa
+ 1828 0121 EE000000 		.4byte	.LASF16
+ 1829 0125 03       		.byte	0x3
+ 1830 0126 3F01     		.2byte	0x13f
+ 1831 0128 32010000 		.4byte	0x132
+ 1832 012c 05       		.uleb128 0x5
+ 1833 012d 03       		.byte	0x3
+ 1834 012e 00000000 		.4byte	cy_metadata
+ 1835 0132 07       		.uleb128 0x7
+ 1836 0133 10010000 		.4byte	0x110
+ 1837 0137 00       		.byte	0
+ 1838              		.section	.debug_abbrev,"",%progbits
+ 1839              	.Ldebug_abbrev0:
+ 1840 0000 01       		.uleb128 0x1
+ 1841 0001 11       		.uleb128 0x11
+ 1842 0002 01       		.byte	0x1
+ 1843 0003 25       		.uleb128 0x25
+ 1844 0004 0E       		.uleb128 0xe
+ 1845 0005 13       		.uleb128 0x13
+ 1846 0006 0B       		.uleb128 0xb
+ 1847 0007 03       		.uleb128 0x3
+ 1848 0008 0E       		.uleb128 0xe
+ 1849 0009 1B       		.uleb128 0x1b
+ 1850 000a 0E       		.uleb128 0xe
+ 1851 000b 10       		.uleb128 0x10
+ 1852 000c 17       		.uleb128 0x17
+ 1853 000d 00       		.byte	0
+ 1854 000e 00       		.byte	0
+ 1855 000f 02       		.uleb128 0x2
+ 1856 0010 24       		.uleb128 0x24
+ 1857 0011 00       		.byte	0
+ 1858 0012 0B       		.uleb128 0xb
+ 1859 0013 0B       		.uleb128 0xb
+ 1860 0014 3E       		.uleb128 0x3e
+ 1861 0015 0B       		.uleb128 0xb
+ 1862 0016 03       		.uleb128 0x3
+ 1863 0017 0E       		.uleb128 0xe
+ 1864 0018 00       		.byte	0
+ 1865 0019 00       		.byte	0
+ 1866 001a 03       		.uleb128 0x3
+ 1867 001b 16       		.uleb128 0x16
+ 1868 001c 00       		.byte	0
+ 1869 001d 03       		.uleb128 0x3
+ 1870 001e 0E       		.uleb128 0xe
+ 1871 001f 3A       		.uleb128 0x3a
+ 1872 0020 0B       		.uleb128 0xb
+ 1873 0021 3B       		.uleb128 0x3b
+ 1874 0022 0B       		.uleb128 0xb
+ 1875 0023 49       		.uleb128 0x49
+ 1876 0024 13       		.uleb128 0x13
+ 1877 0025 00       		.byte	0
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccJZwqv9.s 			page 34
+
+
+ 1878 0026 00       		.byte	0
+ 1879 0027 04       		.uleb128 0x4
+ 1880 0028 24       		.uleb128 0x24
+ 1881 0029 00       		.byte	0
+ 1882 002a 0B       		.uleb128 0xb
+ 1883 002b 0B       		.uleb128 0xb
+ 1884 002c 3E       		.uleb128 0x3e
+ 1885 002d 0B       		.uleb128 0xb
+ 1886 002e 03       		.uleb128 0x3
+ 1887 002f 08       		.uleb128 0x8
+ 1888 0030 00       		.byte	0
+ 1889 0031 00       		.byte	0
+ 1890 0032 05       		.uleb128 0x5
+ 1891 0033 01       		.uleb128 0x1
+ 1892 0034 01       		.byte	0x1
+ 1893 0035 49       		.uleb128 0x49
+ 1894 0036 13       		.uleb128 0x13
+ 1895 0037 01       		.uleb128 0x1
+ 1896 0038 13       		.uleb128 0x13
+ 1897 0039 00       		.byte	0
+ 1898 003a 00       		.byte	0
+ 1899 003b 06       		.uleb128 0x6
+ 1900 003c 21       		.uleb128 0x21
+ 1901 003d 00       		.byte	0
+ 1902 003e 49       		.uleb128 0x49
+ 1903 003f 13       		.uleb128 0x13
+ 1904 0040 2F       		.uleb128 0x2f
+ 1905 0041 05       		.uleb128 0x5
+ 1906 0042 00       		.byte	0
+ 1907 0043 00       		.byte	0
+ 1908 0044 07       		.uleb128 0x7
+ 1909 0045 26       		.uleb128 0x26
+ 1910 0046 00       		.byte	0
+ 1911 0047 49       		.uleb128 0x49
+ 1912 0048 13       		.uleb128 0x13
+ 1913 0049 00       		.byte	0
+ 1914 004a 00       		.byte	0
+ 1915 004b 08       		.uleb128 0x8
+ 1916 004c 34       		.uleb128 0x34
+ 1917 004d 00       		.byte	0
+ 1918 004e 03       		.uleb128 0x3
+ 1919 004f 0E       		.uleb128 0xe
+ 1920 0050 3A       		.uleb128 0x3a
+ 1921 0051 0B       		.uleb128 0xb
+ 1922 0052 3B       		.uleb128 0x3b
+ 1923 0053 0B       		.uleb128 0xb
+ 1924 0054 49       		.uleb128 0x49
+ 1925 0055 13       		.uleb128 0x13
+ 1926 0056 3F       		.uleb128 0x3f
+ 1927 0057 19       		.uleb128 0x19
+ 1928 0058 02       		.uleb128 0x2
+ 1929 0059 18       		.uleb128 0x18
+ 1930 005a 00       		.byte	0
+ 1931 005b 00       		.byte	0
+ 1932 005c 09       		.uleb128 0x9
+ 1933 005d 21       		.uleb128 0x21
+ 1934 005e 00       		.byte	0
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccJZwqv9.s 			page 35
+
+
+ 1935 005f 49       		.uleb128 0x49
+ 1936 0060 13       		.uleb128 0x13
+ 1937 0061 2F       		.uleb128 0x2f
+ 1938 0062 0B       		.uleb128 0xb
+ 1939 0063 00       		.byte	0
+ 1940 0064 00       		.byte	0
+ 1941 0065 0A       		.uleb128 0xa
+ 1942 0066 34       		.uleb128 0x34
+ 1943 0067 00       		.byte	0
+ 1944 0068 03       		.uleb128 0x3
+ 1945 0069 0E       		.uleb128 0xe
+ 1946 006a 3A       		.uleb128 0x3a
+ 1947 006b 0B       		.uleb128 0xb
+ 1948 006c 3B       		.uleb128 0x3b
+ 1949 006d 05       		.uleb128 0x5
+ 1950 006e 49       		.uleb128 0x49
+ 1951 006f 13       		.uleb128 0x13
+ 1952 0070 3F       		.uleb128 0x3f
+ 1953 0071 19       		.uleb128 0x19
+ 1954 0072 02       		.uleb128 0x2
+ 1955 0073 18       		.uleb128 0x18
+ 1956 0074 00       		.byte	0
+ 1957 0075 00       		.byte	0
+ 1958 0076 00       		.byte	0
+ 1959              		.section	.debug_aranges,"",%progbits
+ 1960 0000 14000000 		.4byte	0x14
+ 1961 0004 0200     		.2byte	0x2
+ 1962 0006 00000000 		.4byte	.Ldebug_info0
+ 1963 000a 04       		.byte	0x4
+ 1964 000b 00       		.byte	0
+ 1965 000c 0000     		.2byte	0
+ 1966 000e 0000     		.2byte	0
+ 1967 0010 00000000 		.4byte	0
+ 1968 0014 00000000 		.4byte	0
+ 1969              		.section	.debug_line,"",%progbits
+ 1970              	.Ldebug_line0:
+ 1971 0000 3D010000 		.section	.debug_str,"MS",%progbits,1
+ 1971      02003701 
+ 1971      00000201 
+ 1971      FB0E0D00 
+ 1971      01010101 
+ 1972              	.LASF9:
+ 1973 0000 5F5F7569 		.ascii	"__uint8_t\000"
+ 1973      6E74385F 
+ 1973      7400
+ 1974              	.LASF17:
+ 1975 000a 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1975      43313120 
+ 1975      352E342E 
+ 1975      31203230 
+ 1975      31363036 
+ 1976 003d 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 1976      20726576 
+ 1976      6973696F 
+ 1976      6E203233 
+ 1976      37373135 
+ 1977 0070 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccJZwqv9.s 			page 36
+
+
+ 1977      66756E63 
+ 1977      74696F6E 
+ 1977      2D736563 
+ 1977      74696F6E 
+ 1978              	.LASF19:
+ 1979 0098 433A5C55 		.ascii	"C:\\Users\\Caleb Cotter\\Documents\\GitHub\\STS\\Fi"
+ 1979      73657273 
+ 1979      5C43616C 
+ 1979      65622043 
+ 1979      6F747465 
+ 1980 00c5 726D7761 		.ascii	"rmware\\STS_Firmware\\emFile_Example.cydsn\000"
+ 1980      72655C53 
+ 1980      54535F46 
+ 1980      69726D77 
+ 1980      6172655C 
+ 1981              	.LASF16:
+ 1982 00ee 63795F6D 		.ascii	"cy_metadata\000"
+ 1982      65746164 
+ 1982      61746100 
+ 1983              	.LASF1:
+ 1984 00fa 756E7369 		.ascii	"unsigned char\000"
+ 1984      676E6564 
+ 1984      20636861 
+ 1984      7200
+ 1985              	.LASF5:
+ 1986 0108 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1986      20756E73 
+ 1986      69676E65 
+ 1986      6420696E 
+ 1986      7400
+ 1987              	.LASF3:
+ 1988 011a 73686F72 		.ascii	"short unsigned int\000"
+ 1988      7420756E 
+ 1988      7369676E 
+ 1988      65642069 
+ 1988      6E7400
+ 1989              	.LASF13:
+ 1990 012d 63795F6D 		.ascii	"cy_meta_custnvl\000"
+ 1990      6574615F 
+ 1990      63757374 
+ 1990      6E766C00 
+ 1991              	.LASF12:
+ 1992 013d 63795F6D 		.ascii	"cy_meta_configecc\000"
+ 1992      6574615F 
+ 1992      636F6E66 
+ 1992      69676563 
+ 1992      6300
+ 1993              	.LASF8:
+ 1994 014f 756E7369 		.ascii	"unsigned int\000"
+ 1994      676E6564 
+ 1994      20696E74 
+ 1994      00
+ 1995              	.LASF7:
+ 1996 015c 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1996      206C6F6E 
+ 1996      6720756E 
+ 1996      7369676E 
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccJZwqv9.s 			page 37
+
+
+ 1996      65642069 
+ 1997              	.LASF10:
+ 1998 0173 75696E74 		.ascii	"uint8_t\000"
+ 1998      385F7400 
+ 1999              	.LASF15:
+ 2000 017b 63795F6D 		.ascii	"cy_meta_flashprotect\000"
+ 2000      6574615F 
+ 2000      666C6173 
+ 2000      6870726F 
+ 2000      74656374 
+ 2001              	.LASF14:
+ 2002 0190 63795F6D 		.ascii	"cy_meta_wonvl\000"
+ 2002      6574615F 
+ 2002      776F6E76 
+ 2002      6C00
+ 2003              	.LASF11:
+ 2004 019e 73697A65 		.ascii	"sizetype\000"
+ 2004      74797065 
+ 2004      00
+ 2005              	.LASF6:
+ 2006 01a7 6C6F6E67 		.ascii	"long long int\000"
+ 2006      206C6F6E 
+ 2006      6720696E 
+ 2006      7400
+ 2007              	.LASF2:
+ 2008 01b5 73686F72 		.ascii	"short int\000"
+ 2008      7420696E 
+ 2008      7400
+ 2009              	.LASF4:
+ 2010 01bf 6C6F6E67 		.ascii	"long int\000"
+ 2010      20696E74 
+ 2010      00
+ 2011              	.LASF0:
+ 2012 01c8 7369676E 		.ascii	"signed char\000"
+ 2012      65642063 
+ 2012      68617200 
+ 2013              	.LASF18:
+ 2014 01d4 47656E65 		.ascii	"Generated_Source\\PSoC5\\cymetadata.c\000"
+ 2014      72617465 
+ 2014      645F536F 
+ 2014      75726365 
+ 2014      5C50536F 
+ 2015              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

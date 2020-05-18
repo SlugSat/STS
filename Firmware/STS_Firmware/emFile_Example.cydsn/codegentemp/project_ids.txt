@@ -1,0 +1,8 @@
+C:\Users\Caleb Cotter\Documents\GitHub\STS\Firmware\STS_Firmware\emFile_Example.cydsn\emFile_Example.cyprj|dc371c92-59af-41db-ac69-e642631bd767
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|12b8595c-b038-4a86-8b75-4be4af6ca759
+C:\Users\Caleb Cotter\Documents\PSoC Creator\4.2\Downloads ( 4.2).cylib\Downloads ( 4.2).cyprj|14e29df5-77fd-4b12-b40c-df263a9be454
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|f836cef2-d473-41ca-890f-adcc4a48415f
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|aa27faec-3932-4848-a1e2-95a68304f72e
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|c98d8c04-60a4-41f8-920f-273b21a65519
+C:\Users\Caleb Cotter\Documents\GitHub\STS\Firmware\STS_Firmware\STS_Firmware.cydsn\STS_Firmware.cyprj|e2bd05de-b506-4cc7-b719-41c4cd1588c0
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\default\CyReferenceLibrary\CyReferenceLibrary.cylib\CyReferenceLibrary.cyprj|6307302f-132e-4e21-a95f-5d9ada18c4f0

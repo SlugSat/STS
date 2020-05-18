@@ -1,0 +1,1569 @@
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccnUhIRC.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"main.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.global	sdFile
+  20              		.data
+  21              		.align	2
+  22              		.type	sdFile, %object
+  23              		.size	sdFile, 9
+  24              	sdFile:
+  25 0000 46696C65 		.ascii	"File.txt\000"
+  25      2E747874 
+  25      00
+  26              		.section	.rodata
+  27              		.align	2
+  28              	.LC0:
+  29 0000 53746570 		.ascii	"Step#\000"
+  29      2300
+  30              		.section	.text.NextStep,"ax",%progbits
+  31              		.align	2
+  32              		.global	NextStep
+  33              		.thumb
+  34              		.thumb_func
+  35              		.type	NextStep, %function
+  36              	NextStep:
+  37              	.LFB63:
+  38              		.file 1 "main.c"
+   1:main.c        **** /*******************************************************************************
+   2:main.c        **** * File Name: main.c
+   3:main.c        **** *
+   4:main.c        **** * Version: 1.10
+   5:main.c        **** *
+   6:main.c        **** * Description:
+   7:main.c        **** *  The example project consists of 5 simple steps. Each of the steps performs 
+   8:main.c        **** *  single File System operation. 
+   9:main.c        **** *  Step#1: Gets SD card name and displays it on the LCD.
+  10:main.c        **** *  Step#2: Performs Format SD operation and displays the status of the format 
+  11:main.c        **** *  operation execution.
+  12:main.c        **** *  Step#3: Creates directory with the name - "Dir" and displays a status of 
+  13:main.c        **** *  directory creation operation.
+  14:main.c        **** *  Step#4: Creates a file - "File.txt" in the root directory and writes the 
+  15:main.c        **** *  following string to the file -"123456789". Displays a status of operations 
+  16:main.c        **** *  execution.
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccnUhIRC.s 			page 2
+
+
+  17:main.c        **** *  Step#5: Copies newly created file ("File.txt") to directory "Dir" with the 
+  18:main.c        **** *  name - "File1.txt". 
+  19:main.c        **** *
+  20:main.c        **** ********************************************************************************
+  21:main.c        **** * Copyright 2011-2012, Cypress Semiconductor Corporation. All rights reserved.
+  22:main.c        **** * This software is owned by Cypress Semiconductor Corporation and is protected
+  23:main.c        **** * by and subject to worldwide patent and copyright laws and treaties.
+  24:main.c        **** * Therefore, you may use this software only as provided in the license agreement
+  25:main.c        **** * accompanying the software package from which you obtained this software.
+  26:main.c        **** * CYPRESS AND ITS SUPPLIERS MAKE NO WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+  27:main.c        **** * WITH REGARD TO THIS SOFTWARE, INCLUDING, BUT NOT LIMITED TO, NONINFRINGEMENT,
+  28:main.c        **** * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+  29:main.c        **** *******************************************************************************/
+  30:main.c        **** 
+  31:main.c        **** #include <project.h>
+  32:main.c        **** #include <FS.h>
+  33:main.c        **** #include <string.h>
+  34:main.c        **** #include <Global.h>
+  35:main.c        **** 
+  36:main.c        **** 
+  37:main.c        **** char sdFile[9] = "File.txt";
+  38:main.c        **** 
+  39:main.c        **** 
+  40:main.c        **** void NextStep(U16 step, char * str)
+  41:main.c        **** {
+  39              		.loc 1 41 0
+  40              		.cfi_startproc
+  41              		@ args = 0, pretend = 0, frame = 8
+  42              		@ frame_needed = 1, uses_anonymous_args = 0
+  43 0000 80B5     		push	{r7, lr}
+  44              		.cfi_def_cfa_offset 8
+  45              		.cfi_offset 7, -8
+  46              		.cfi_offset 14, -4
+  47 0002 82B0     		sub	sp, sp, #8
+  48              		.cfi_def_cfa_offset 16
+  49 0004 00AF     		add	r7, sp, #0
+  50              		.cfi_def_cfa_register 7
+  51 0006 0346     		mov	r3, r0
+  52 0008 3960     		str	r1, [r7]
+  53 000a FB80     		strh	r3, [r7, #6]	@ movhi
+  42:main.c        ****     /* Clear LCD after previously completed operation */
+  43:main.c        ****     LCD_ClearDisplay();
+  54              		.loc 1 43 0
+  55 000c 0120     		movs	r0, #1
+  56 000e FFF7FEFF 		bl	LCD_WriteControl
+  44:main.c        ****     
+  45:main.c        ****     /* This will display step number on the LCD prior
+  46:main.c        ****     * every operation on the SD card.
+  47:main.c        ****     */
+  48:main.c        ****     LCD_Position(0u, 0u);
+  57              		.loc 1 48 0
+  58 0012 0021     		movs	r1, #0
+  59 0014 0020     		movs	r0, #0
+  60 0016 FFF7FEFF 		bl	LCD_Position
+  49:main.c        ****     LCD_PrintString("Step#");
+  61              		.loc 1 49 0
+  62 001a 0C48     		ldr	r0, .L2
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccnUhIRC.s 			page 3
+
+
+  63 001c FFF7FEFF 		bl	LCD_PrintString
+  50:main.c        ****     LCD_PrintDecUint16(step);
+  64              		.loc 1 50 0
+  65 0020 FB88     		ldrh	r3, [r7, #6]
+  66 0022 1846     		mov	r0, r3
+  67 0024 FFF7FEFF 		bl	LCD_PrintU32Number
+  51:main.c        ****     LCD_Position(1u, 0u);
+  68              		.loc 1 51 0
+  69 0028 0021     		movs	r1, #0
+  70 002a 0120     		movs	r0, #1
+  71 002c FFF7FEFF 		bl	LCD_Position
+  52:main.c        ****     LCD_PrintString(str);
+  72              		.loc 1 52 0
+  73 0030 3868     		ldr	r0, [r7]
+  74 0032 FFF7FEFF 		bl	LCD_PrintString
+  53:main.c        ****     
+  54:main.c        ****     /* Need some delay to make step number visible */
+  55:main.c        ****     CyDelay(2000u);
+  75              		.loc 1 55 0
+  76 0036 4FF4FA60 		mov	r0, #2000
+  77 003a FFF7FEFF 		bl	CyDelay
+  56:main.c        ****     
+  57:main.c        ****     /* Clear LCD after step number was prompted */
+  58:main.c        ****     LCD_ClearDisplay();
+  78              		.loc 1 58 0
+  79 003e 0120     		movs	r0, #1
+  80 0040 FFF7FEFF 		bl	LCD_WriteControl
+  59:main.c        **** }
+  81              		.loc 1 59 0
+  82 0044 00BF     		nop
+  83 0046 0837     		adds	r7, r7, #8
+  84              		.cfi_def_cfa_offset 8
+  85 0048 BD46     		mov	sp, r7
+  86              		.cfi_def_cfa_register 13
+  87              		@ sp needed
+  88 004a 80BD     		pop	{r7, pc}
+  89              	.L3:
+  90              		.align	2
+  91              	.L2:
+  92 004c 00000000 		.word	.LC0
+  93              		.cfi_endproc
+  94              	.LFE63:
+  95              		.size	NextStep, .-NextStep
+  96              		.section	.rodata
+  97 0006 0000     		.align	2
+  98              	.LC1:
+  99 0008 53442043 		.ascii	"SD CARD NAME\000"
+  99      41524420 
+  99      4E414D45 
+  99      00
+ 100 0015 000000   		.align	2
+ 101              	.LC2:
+ 102 0018 53442063 		.ascii	"SD card name:\000"
+ 102      61726420 
+ 102      6E616D65 
+ 102      3A00
+ 103 0026 0000     		.align	2
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccnUhIRC.s 			page 4
+
+
+ 104              	.LC3:
+ 105 0028 4661696C 		.ascii	"Failed to get\000"
+ 105      65642074 
+ 105      6F206765 
+ 105      7400
+ 106 0036 0000     		.align	2
+ 107              	.LC4:
+ 108 0038 53442063 		.ascii	"SD card name\000"
+ 108      61726420 
+ 108      6E616D65 
+ 108      00
+ 109 0045 000000   		.align	2
+ 110              	.LC5:
+ 111 0048 53442043 		.ascii	"SD CARD FORMAT\000"
+ 111      41524420 
+ 111      464F524D 
+ 111      415400
+ 112 0057 00       		.align	2
+ 113              	.LC6:
+ 114 0058 53442063 		.ascii	"SD card format\000"
+ 114      61726420 
+ 114      666F726D 
+ 114      617400
+ 115 0067 00       		.align	2
+ 116              	.LC7:
+ 117 0068 53756363 		.ascii	"Succeeded\000"
+ 117      65656465 
+ 117      6400
+ 118 0072 0000     		.align	2
+ 119              	.LC8:
+ 120 0074 4661696C 		.ascii	"Failed\000"
+ 120      656400
+ 121 007b 00       		.align	2
+ 122              	.LC9:
+ 123 007c 44495245 		.ascii	"DIRECTORY\000"
+ 123      43544F52 
+ 123      5900
+ 124 0086 0000     		.align	2
+ 125              	.LC10:
+ 126 0088 44697200 		.ascii	"Dir\000"
+ 127              		.align	2
+ 128              	.LC11:
+ 129 008c 22446972 		.ascii	"\"Dir\" created\000"
+ 129      22206372 
+ 129      65617465 
+ 129      6400
+ 130 009a 0000     		.align	2
+ 131              	.LC12:
+ 132 009c 4661696C 		.ascii	"Failed to create\000"
+ 132      65642074 
+ 132      6F206372 
+ 132      65617465 
+ 132      00
+ 133 00ad 000000   		.align	2
+ 134              	.LC13:
+ 135 00b0 64697265 		.ascii	"directory\000"
+ 135      63746F72 
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccnUhIRC.s 			page 5
+
+
+ 135      7900
+ 136 00ba 0000     		.align	2
+ 137              	.LC14:
+ 138 00bc 46494C45 		.ascii	"FILE\000"
+ 138      00
+ 139 00c1 000000   		.align	2
+ 140              	.LC15:
+ 141 00c4 7700     		.ascii	"w\000"
+ 142 00c6 0000     		.align	2
+ 143              	.LC16:
+ 144 00c8 46696C65 		.ascii	"File \000"
+ 144      2000
+ 145 00ce 0000     		.align	2
+ 146              	.LC17:
+ 147 00d0 77617320 		.ascii	"was opened\000"
+ 147      6F70656E 
+ 147      656400
+ 148 00db 00       		.align	2
+ 149              	.LC18:
+ 150 00dc 30313233 		.ascii	"0123456789\000"
+ 150      34353637 
+ 150      383900
+ 151 00e7 00       		.align	2
+ 152              	.LC19:
+ 153 00e8 22303132 		.ascii	"\"0123456789\"\000"
+ 153      33343536 
+ 153      37383922 
+ 153      00
+ 154 00f5 000000   		.align	2
+ 155              	.LC20:
+ 156 00f8 77726974 		.ascii	"written to file\000"
+ 156      74656E20 
+ 156      746F2066 
+ 156      696C6500 
+ 157              		.align	2
+ 158              	.LC21:
+ 159 0108 4661696C 		.ascii	"Failed to write\000"
+ 159      65642074 
+ 159      6F207772 
+ 159      69746500 
+ 160              		.align	2
+ 161              	.LC22:
+ 162 0118 64617461 		.ascii	"data to file\000"
+ 162      20746F20 
+ 162      66696C65 
+ 162      00
+ 163 0125 000000   		.align	2
+ 164              	.LC23:
+ 165 0128 46696C65 		.ascii	"File was closed\000"
+ 165      20776173 
+ 165      20636C6F 
+ 165      73656400 
+ 166              		.align	2
+ 167              	.LC24:
+ 168 0138 4661696C 		.ascii	"Failed to close\000"
+ 168      65642074 
+ 168      6F20636C 
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccnUhIRC.s 			page 6
+
+
+ 168      6F736500 
+ 169              		.align	2
+ 170              	.LC25:
+ 171 0148 66696C65 		.ascii	"file\000"
+ 171      00
+ 172 014d 000000   		.align	2
+ 173              	.LC26:
+ 174 0150 434F5059 		.ascii	"COPY\000"
+ 174      00
+ 175 0155 000000   		.align	2
+ 176              	.LC27:
+ 177 0158 5C446972 		.ascii	"\\Dir\\file1.txt\000"
+ 177      5C66696C 
+ 177      65312E74 
+ 177      787400
+ 178 0167 00       		.align	2
+ 179              	.LC28:
+ 180 0168 46696C65 		.ascii	"File was \000"
+ 180      20776173 
+ 180      2000
+ 181 0172 0000     		.align	2
+ 182              	.LC29:
+ 183 0174 636F7069 		.ascii	"copied to \"DIR\"\000"
+ 183      65642074 
+ 183      6F202244 
+ 183      49522200 
+ 184              		.align	2
+ 185              	.LC30:
+ 186 0184 4661696C 		.ascii	"Failed to copy\000"
+ 186      65642074 
+ 186      6F20636F 
+ 186      707900
+ 187 0193 00       		.align	2
+ 188              	.LC31:
+ 189 0194 4578616D 		.ascii	"Example project\000"
+ 189      706C6520 
+ 189      70726F6A 
+ 189      65637400 
+ 190              		.align	2
+ 191              	.LC32:
+ 192 01a4 636F6D70 		.ascii	"completed\000"
+ 192      6C657465 
+ 192      6400
+ 193              		.section	.text.main,"ax",%progbits
+ 194              		.align	2
+ 195              		.global	main
+ 196              		.thumb
+ 197              		.thumb_func
+ 198              		.type	main, %function
+ 199              	main:
+ 200              	.LFB64:
+  60:main.c        **** 
+  61:main.c        **** int main()
+  62:main.c        **** {
+ 201              		.loc 1 62 0
+ 202              		.cfi_startproc
+ 203              		@ args = 0, pretend = 0, frame = 24
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccnUhIRC.s 			page 7
+
+
+ 204              		@ frame_needed = 1, uses_anonymous_args = 0
+ 205 0000 80B5     		push	{r7, lr}
+ 206              		.cfi_def_cfa_offset 8
+ 207              		.cfi_offset 7, -8
+ 208              		.cfi_offset 14, -4
+ 209 0002 86B0     		sub	sp, sp, #24
+ 210              		.cfi_def_cfa_offset 32
+ 211 0004 00AF     		add	r7, sp, #0
+ 212              		.cfi_def_cfa_register 7
+  63:main.c        ****     char sdVolName[10];     /* Buffer that will hold SD card Volume name */
+  64:main.c        ****     U16 step = 1u;
+ 213              		.loc 1 64 0
+ 214 0006 0123     		movs	r3, #1
+ 215 0008 FB82     		strh	r3, [r7, #22]	@ movhi
+  65:main.c        ****     FS_FILE * pFile;
+  66:main.c        ****     
+  67:main.c        ****     /* Start LCD */
+  68:main.c        ****     LCD_Start();
+ 216              		.loc 1 68 0
+ 217 000a FFF7FEFF 		bl	LCD_Start
+  69:main.c        ****     
+  70:main.c        ****     /* Initialize file system */
+  71:main.c        ****     FS_Init();
+ 218              		.loc 1 71 0
+ 219 000e FFF7FEFF 		bl	FS_Init
+  72:main.c        ****     
+  73:main.c        ****     /* Display step number */
+  74:main.c        ****     NextStep(step++, "SD CARD NAME");
+ 220              		.loc 1 74 0
+ 221 0012 FB8A     		ldrh	r3, [r7, #22]
+ 222 0014 5A1C     		adds	r2, r3, #1
+ 223 0016 FA82     		strh	r2, [r7, #22]	@ movhi
+ 224 0018 9749     		ldr	r1, .L20
+ 225 001a 1846     		mov	r0, r3
+ 226 001c FFF7FEFF 		bl	NextStep
+  75:main.c        ****     
+  76:main.c        ****     LCD_Position(0u, 0u);
+ 227              		.loc 1 76 0
+ 228 0020 0021     		movs	r1, #0
+ 229 0022 0020     		movs	r0, #0
+ 230 0024 FFF7FEFF 		bl	LCD_Position
+  77:main.c        ****     
+  78:main.c        ****     /* Get volume name of SD card #0 */
+  79:main.c        ****     if(0 != FS_GetVolumeName(0u, &sdVolName[0], 9u))
+ 231              		.loc 1 79 0
+ 232 0028 3B1D     		adds	r3, r7, #4
+ 233 002a 0922     		movs	r2, #9
+ 234 002c 1946     		mov	r1, r3
+ 235 002e 0020     		movs	r0, #0
+ 236 0030 FFF7FEFF 		bl	FS_GetVolumeName
+ 237 0034 0346     		mov	r3, r0
+ 238 0036 002B     		cmp	r3, #0
+ 239 0038 0BD0     		beq	.L5
+  80:main.c        ****     {
+  81:main.c        ****         /* Getting volume name succeeded so prompt it on the LCD */
+  82:main.c        ****         LCD_PrintString("SD card name:");
+ 240              		.loc 1 82 0
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccnUhIRC.s 			page 8
+
+
+ 241 003a 9048     		ldr	r0, .L20+4
+ 242 003c FFF7FEFF 		bl	LCD_PrintString
+  83:main.c        ****         LCD_Position(1u, 0u);
+ 243              		.loc 1 83 0
+ 244 0040 0021     		movs	r1, #0
+ 245 0042 0120     		movs	r0, #1
+ 246 0044 FFF7FEFF 		bl	LCD_Position
+  84:main.c        ****         LCD_PrintString(sdVolName);
+ 247              		.loc 1 84 0
+ 248 0048 3B1D     		adds	r3, r7, #4
+ 249 004a 1846     		mov	r0, r3
+ 250 004c FFF7FEFF 		bl	LCD_PrintString
+ 251 0050 09E0     		b	.L6
+ 252              	.L5:
+  85:main.c        ****     }
+  86:main.c        ****     else
+  87:main.c        ****     {
+  88:main.c        ****         /* Operation Failed - indicate this */
+  89:main.c        ****         LCD_PrintString("Failed to get");
+ 253              		.loc 1 89 0
+ 254 0052 8B48     		ldr	r0, .L20+8
+ 255 0054 FFF7FEFF 		bl	LCD_PrintString
+  90:main.c        ****         LCD_Position(1u, 0u);
+ 256              		.loc 1 90 0
+ 257 0058 0021     		movs	r1, #0
+ 258 005a 0120     		movs	r0, #1
+ 259 005c FFF7FEFF 		bl	LCD_Position
+  91:main.c        ****         LCD_PrintString("SD card name");
+ 260              		.loc 1 91 0
+ 261 0060 8848     		ldr	r0, .L20+12
+ 262 0062 FFF7FEFF 		bl	LCD_PrintString
+ 263              	.L6:
+  92:main.c        ****     }
+  93:main.c        ****     
+  94:main.c        ****     /* Need some delay to indicate output on the LCD */
+  95:main.c        ****     CyDelay(2000u);
+ 264              		.loc 1 95 0
+ 265 0066 4FF4FA60 		mov	r0, #2000
+ 266 006a FFF7FEFF 		bl	CyDelay
+  96:main.c        ****     
+  97:main.c        ****     NextStep(step++, "SD CARD FORMAT");
+ 267              		.loc 1 97 0
+ 268 006e FB8A     		ldrh	r3, [r7, #22]
+ 269 0070 5A1C     		adds	r2, r3, #1
+ 270 0072 FA82     		strh	r2, [r7, #22]	@ movhi
+ 271 0074 8449     		ldr	r1, .L20+16
+ 272 0076 1846     		mov	r0, r3
+ 273 0078 FFF7FEFF 		bl	NextStep
+  98:main.c        ****         
+  99:main.c        ****     LCD_Position(0u, 0u);
+ 274              		.loc 1 99 0
+ 275 007c 0021     		movs	r1, #0
+ 276 007e 0020     		movs	r0, #0
+ 277 0080 FFF7FEFF 		bl	LCD_Position
+ 100:main.c        ****     LCD_PrintString("SD card format");
+ 278              		.loc 1 100 0
+ 279 0084 8148     		ldr	r0, .L20+20
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccnUhIRC.s 			page 9
+
+
+ 280 0086 FFF7FEFF 		bl	LCD_PrintString
+ 101:main.c        ****     
+ 102:main.c        ****     if(0 == FS_FormatSD(sdVolName))
+ 281              		.loc 1 102 0
+ 282 008a 3B1D     		adds	r3, r7, #4
+ 283 008c 1846     		mov	r0, r3
+ 284 008e FFF7FEFF 		bl	FS_FormatSD
+ 285 0092 0346     		mov	r3, r0
+ 286 0094 002B     		cmp	r3, #0
+ 287 0096 07D1     		bne	.L7
+ 103:main.c        ****     {
+ 104:main.c        ****         LCD_Position(1u, 0u);
+ 288              		.loc 1 104 0
+ 289 0098 0021     		movs	r1, #0
+ 290 009a 0120     		movs	r0, #1
+ 291 009c FFF7FEFF 		bl	LCD_Position
+ 105:main.c        ****         LCD_PrintString("Succeeded");
+ 292              		.loc 1 105 0
+ 293 00a0 7B48     		ldr	r0, .L20+24
+ 294 00a2 FFF7FEFF 		bl	LCD_PrintString
+ 295 00a6 06E0     		b	.L8
+ 296              	.L7:
+ 106:main.c        ****     }
+ 107:main.c        ****     else
+ 108:main.c        ****     {
+ 109:main.c        ****         LCD_Position(1u, 0u);
+ 297              		.loc 1 109 0
+ 298 00a8 0021     		movs	r1, #0
+ 299 00aa 0120     		movs	r0, #1
+ 300 00ac FFF7FEFF 		bl	LCD_Position
+ 110:main.c        ****         LCD_PrintString("Failed");
+ 301              		.loc 1 110 0
+ 302 00b0 7848     		ldr	r0, .L20+28
+ 303 00b2 FFF7FEFF 		bl	LCD_PrintString
+ 304              	.L8:
+ 111:main.c        ****     }
+ 112:main.c        ****     
+ 113:main.c        ****     /* Need some delay to indicate output on the LCD */
+ 114:main.c        ****     CyDelay(2000u);
+ 305              		.loc 1 114 0
+ 306 00b6 4FF4FA60 		mov	r0, #2000
+ 307 00ba FFF7FEFF 		bl	CyDelay
+ 115:main.c        ****     
+ 116:main.c        ****     NextStep(step++, "DIRECTORY");
+ 308              		.loc 1 116 0
+ 309 00be FB8A     		ldrh	r3, [r7, #22]
+ 310 00c0 5A1C     		adds	r2, r3, #1
+ 311 00c2 FA82     		strh	r2, [r7, #22]	@ movhi
+ 312 00c4 7449     		ldr	r1, .L20+32
+ 313 00c6 1846     		mov	r0, r3
+ 314 00c8 FFF7FEFF 		bl	NextStep
+ 117:main.c        ****     
+ 118:main.c        ****     LCD_Position(0u, 0u);
+ 315              		.loc 1 118 0
+ 316 00cc 0021     		movs	r1, #0
+ 317 00ce 0020     		movs	r0, #0
+ 318 00d0 FFF7FEFF 		bl	LCD_Position
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccnUhIRC.s 			page 10
+
+
+ 119:main.c        ****     
+ 120:main.c        ****     /* This will create directory "Dir" on SD card */
+ 121:main.c        ****     if(0 == FS_MkDir("Dir"))
+ 319              		.loc 1 121 0
+ 320 00d4 7148     		ldr	r0, .L20+36
+ 321 00d6 FFF7FEFF 		bl	FS_MkDir
+ 322 00da 0346     		mov	r3, r0
+ 323 00dc 002B     		cmp	r3, #0
+ 324 00de 03D1     		bne	.L9
+ 122:main.c        ****     {
+ 123:main.c        ****         /* Display successful directory creation message */
+ 124:main.c        ****         LCD_PrintString("\"Dir\" created");
+ 325              		.loc 1 124 0
+ 326 00e0 6F48     		ldr	r0, .L20+40
+ 327 00e2 FFF7FEFF 		bl	LCD_PrintString
+ 328 00e6 09E0     		b	.L10
+ 329              	.L9:
+ 125:main.c        ****     }
+ 126:main.c        ****     else
+ 127:main.c        ****     {
+ 128:main.c        ****         /* Display failure message */
+ 129:main.c        ****         LCD_PrintString("Failed to create");
+ 330              		.loc 1 129 0
+ 331 00e8 6E48     		ldr	r0, .L20+44
+ 332 00ea FFF7FEFF 		bl	LCD_PrintString
+ 130:main.c        ****         LCD_Position(1u, 0u);
+ 333              		.loc 1 130 0
+ 334 00ee 0021     		movs	r1, #0
+ 335 00f0 0120     		movs	r0, #1
+ 336 00f2 FFF7FEFF 		bl	LCD_Position
+ 131:main.c        ****         LCD_PrintString("directory");
+ 337              		.loc 1 131 0
+ 338 00f6 6C48     		ldr	r0, .L20+48
+ 339 00f8 FFF7FEFF 		bl	LCD_PrintString
+ 340              	.L10:
+ 132:main.c        ****     }
+ 133:main.c        ****     
+ 134:main.c        ****     /* Need some delay to indicate output on the LCD */
+ 135:main.c        ****     CyDelay(2000u);
+ 341              		.loc 1 135 0
+ 342 00fc 4FF4FA60 		mov	r0, #2000
+ 343 0100 FFF7FEFF 		bl	CyDelay
+ 136:main.c        ****     
+ 137:main.c        ****     NextStep(step++, "FILE");
+ 344              		.loc 1 137 0
+ 345 0104 FB8A     		ldrh	r3, [r7, #22]
+ 346 0106 5A1C     		adds	r2, r3, #1
+ 347 0108 FA82     		strh	r2, [r7, #22]	@ movhi
+ 348 010a 6849     		ldr	r1, .L20+52
+ 349 010c 1846     		mov	r0, r3
+ 350 010e FFF7FEFF 		bl	NextStep
+ 138:main.c        ****     
+ 139:main.c        ****     /* Create specific file for modification */
+ 140:main.c        ****     pFile = FS_FOpen(sdFile, "w");
+ 351              		.loc 1 140 0
+ 352 0112 6749     		ldr	r1, .L20+56
+ 353 0114 6748     		ldr	r0, .L20+60
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccnUhIRC.s 			page 11
+
+
+ 354 0116 FFF7FEFF 		bl	FS_FOpen
+ 355 011a 3861     		str	r0, [r7, #16]
+ 141:main.c        ****     
+ 142:main.c        ****     LCD_Position(0u, 0u);
+ 356              		.loc 1 142 0
+ 357 011c 0021     		movs	r1, #0
+ 358 011e 0020     		movs	r0, #0
+ 359 0120 FFF7FEFF 		bl	LCD_Position
+ 143:main.c        ****     
+ 144:main.c        ****     /* Check if file was created */
+ 145:main.c        ****     if(pFile)
+ 360              		.loc 1 145 0
+ 361 0124 3B69     		ldr	r3, [r7, #16]
+ 362 0126 002B     		cmp	r3, #0
+ 363 0128 57D0     		beq	.L11
+ 146:main.c        ****     {
+ 147:main.c        ****         /* Indicate successful file creation message */
+ 148:main.c        ****         LCD_PrintString("File ");
+ 364              		.loc 1 148 0
+ 365 012a 6348     		ldr	r0, .L20+64
+ 366 012c FFF7FEFF 		bl	LCD_PrintString
+ 149:main.c        ****         LCD_PrintString(sdFile);
+ 367              		.loc 1 149 0
+ 368 0130 6048     		ldr	r0, .L20+60
+ 369 0132 FFF7FEFF 		bl	LCD_PrintString
+ 150:main.c        ****         LCD_Position(1u, 0u);
+ 370              		.loc 1 150 0
+ 371 0136 0021     		movs	r1, #0
+ 372 0138 0120     		movs	r0, #1
+ 373 013a FFF7FEFF 		bl	LCD_Position
+ 151:main.c        ****         LCD_PrintString("was opened");
+ 374              		.loc 1 151 0
+ 375 013e 5F48     		ldr	r0, .L20+68
+ 376 0140 FFF7FEFF 		bl	LCD_PrintString
+ 152:main.c        ****         
+ 153:main.c        ****         /* Need some delay to indicate output on the LCD */
+ 154:main.c        ****         CyDelay(2000u);
+ 377              		.loc 1 154 0
+ 378 0144 4FF4FA60 		mov	r0, #2000
+ 379 0148 FFF7FEFF 		bl	CyDelay
+ 155:main.c        ****         
+ 156:main.c        ****         LCD_ClearDisplay();
+ 380              		.loc 1 156 0
+ 381 014c 0120     		movs	r0, #1
+ 382 014e FFF7FEFF 		bl	LCD_WriteControl
+ 157:main.c        ****         
+ 158:main.c        ****         LCD_Position(0u, 0u);
+ 383              		.loc 1 158 0
+ 384 0152 0021     		movs	r1, #0
+ 385 0154 0020     		movs	r0, #0
+ 386 0156 FFF7FEFF 		bl	LCD_Position
+ 159:main.c        ****         
+ 160:main.c        ****         if(0 != FS_Write(pFile, "0123456789", 10u)) 
+ 387              		.loc 1 160 0
+ 388 015a 0A22     		movs	r2, #10
+ 389 015c 5849     		ldr	r1, .L20+72
+ 390 015e 3869     		ldr	r0, [r7, #16]
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccnUhIRC.s 			page 12
+
+
+ 391 0160 FFF7FEFF 		bl	FS_Write
+ 392 0164 0346     		mov	r3, r0
+ 393 0166 002B     		cmp	r3, #0
+ 394 0168 0DD0     		beq	.L12
+ 161:main.c        ****         {
+ 162:main.c        ****             /* Inditate that data was written to a file */
+ 163:main.c        ****             LCD_PrintString("\"0123456789\"");
+ 395              		.loc 1 163 0
+ 396 016a 5648     		ldr	r0, .L20+76
+ 397 016c FFF7FEFF 		bl	LCD_PrintString
+ 164:main.c        ****             LCD_PrintString(sdFile);
+ 398              		.loc 1 164 0
+ 399 0170 5048     		ldr	r0, .L20+60
+ 400 0172 FFF7FEFF 		bl	LCD_PrintString
+ 165:main.c        ****             LCD_Position(1u, 0u);
+ 401              		.loc 1 165 0
+ 402 0176 0021     		movs	r1, #0
+ 403 0178 0120     		movs	r0, #1
+ 404 017a FFF7FEFF 		bl	LCD_Position
+ 166:main.c        ****             LCD_PrintString("written to file");
+ 405              		.loc 1 166 0
+ 406 017e 5248     		ldr	r0, .L20+80
+ 407 0180 FFF7FEFF 		bl	LCD_PrintString
+ 408 0184 09E0     		b	.L13
+ 409              	.L12:
+ 167:main.c        ****         }
+ 168:main.c        ****         else
+ 169:main.c        ****         {
+ 170:main.c        ****             LCD_PrintString("Failed to write");
+ 410              		.loc 1 170 0
+ 411 0186 5148     		ldr	r0, .L20+84
+ 412 0188 FFF7FEFF 		bl	LCD_PrintString
+ 171:main.c        ****             LCD_Position(1u, 0u);
+ 413              		.loc 1 171 0
+ 414 018c 0021     		movs	r1, #0
+ 415 018e 0120     		movs	r0, #1
+ 416 0190 FFF7FEFF 		bl	LCD_Position
+ 172:main.c        ****             LCD_PrintString("data to file");
+ 417              		.loc 1 172 0
+ 418 0194 4E48     		ldr	r0, .L20+88
+ 419 0196 FFF7FEFF 		bl	LCD_PrintString
+ 420              	.L13:
+ 173:main.c        ****         }
+ 174:main.c        ****         
+ 175:main.c        ****         /* Need some delay to indicate output on the LCD */
+ 176:main.c        ****         CyDelay(2000u);
+ 421              		.loc 1 176 0
+ 422 019a 4FF4FA60 		mov	r0, #2000
+ 423 019e FFF7FEFF 		bl	CyDelay
+ 177:main.c        ****         
+ 178:main.c        ****         LCD_ClearDisplay();
+ 424              		.loc 1 178 0
+ 425 01a2 0120     		movs	r0, #1
+ 426 01a4 FFF7FEFF 		bl	LCD_WriteControl
+ 179:main.c        ****         
+ 180:main.c        ****         LCD_Position(0u, 0u);
+ 427              		.loc 1 180 0
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccnUhIRC.s 			page 13
+
+
+ 428 01a8 0021     		movs	r1, #0
+ 429 01aa 0020     		movs	r0, #0
+ 430 01ac FFF7FEFF 		bl	LCD_Position
+ 181:main.c        ****         
+ 182:main.c        ****         if(0 == FS_FClose(pFile))
+ 431              		.loc 1 182 0
+ 432 01b0 3869     		ldr	r0, [r7, #16]
+ 433 01b2 FFF7FEFF 		bl	FS_FClose
+ 434 01b6 0346     		mov	r3, r0
+ 435 01b8 002B     		cmp	r3, #0
+ 436 01ba 03D1     		bne	.L14
+ 183:main.c        ****         {
+ 184:main.c        ****             LCD_PrintString("File was closed");
+ 437              		.loc 1 184 0
+ 438 01bc 4548     		ldr	r0, .L20+92
+ 439 01be FFF7FEFF 		bl	LCD_PrintString
+ 440 01c2 14E0     		b	.L16
+ 441              	.L14:
+ 185:main.c        ****         }
+ 186:main.c        ****         else
+ 187:main.c        ****         {
+ 188:main.c        ****             LCD_PrintString("Failed to close");
+ 442              		.loc 1 188 0
+ 443 01c4 4448     		ldr	r0, .L20+96
+ 444 01c6 FFF7FEFF 		bl	LCD_PrintString
+ 189:main.c        ****             LCD_Position(1u, 0u);
+ 445              		.loc 1 189 0
+ 446 01ca 0021     		movs	r1, #0
+ 447 01cc 0120     		movs	r0, #1
+ 448 01ce FFF7FEFF 		bl	LCD_Position
+ 190:main.c        ****             LCD_PrintString("file");
+ 449              		.loc 1 190 0
+ 450 01d2 4248     		ldr	r0, .L20+100
+ 451 01d4 FFF7FEFF 		bl	LCD_PrintString
+ 452 01d8 09E0     		b	.L16
+ 453              	.L11:
+ 191:main.c        ****         }
+ 192:main.c        ****     }
+ 193:main.c        ****     else
+ 194:main.c        ****     {
+ 195:main.c        ****         LCD_PrintString("Failed to create");
+ 454              		.loc 1 195 0
+ 455 01da 3248     		ldr	r0, .L20+44
+ 456 01dc FFF7FEFF 		bl	LCD_PrintString
+ 196:main.c        ****         LCD_Position(1u, 0u);
+ 457              		.loc 1 196 0
+ 458 01e0 0021     		movs	r1, #0
+ 459 01e2 0120     		movs	r0, #1
+ 460 01e4 FFF7FEFF 		bl	LCD_Position
+ 197:main.c        ****         LCD_PrintString("file");
+ 461              		.loc 1 197 0
+ 462 01e8 3C48     		ldr	r0, .L20+100
+ 463 01ea FFF7FEFF 		bl	LCD_PrintString
+ 464              	.L16:
+ 198:main.c        ****     }
+ 199:main.c        ****     
+ 200:main.c        ****     /* Need some delay to indicate output on the LCD */
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccnUhIRC.s 			page 14
+
+
+ 201:main.c        ****     CyDelay(2000u);
+ 465              		.loc 1 201 0
+ 466 01ee 4FF4FA60 		mov	r0, #2000
+ 467 01f2 FFF7FEFF 		bl	CyDelay
+ 202:main.c        ****         
+ 203:main.c        ****     LCD_ClearDisplay();
+ 468              		.loc 1 203 0
+ 469 01f6 0120     		movs	r0, #1
+ 470 01f8 FFF7FEFF 		bl	LCD_WriteControl
+ 204:main.c        ****     
+ 205:main.c        ****     NextStep(step++, "COPY");
+ 471              		.loc 1 205 0
+ 472 01fc FB8A     		ldrh	r3, [r7, #22]
+ 473 01fe 5A1C     		adds	r2, r3, #1
+ 474 0200 FA82     		strh	r2, [r7, #22]	@ movhi
+ 475 0202 3749     		ldr	r1, .L20+104
+ 476 0204 1846     		mov	r0, r3
+ 477 0206 FFF7FEFF 		bl	NextStep
+ 206:main.c        ****     
+ 207:main.c        ****     LCD_Position(0u, 0u);
+ 478              		.loc 1 207 0
+ 479 020a 0021     		movs	r1, #0
+ 480 020c 0020     		movs	r0, #0
+ 481 020e FFF7FEFF 		bl	LCD_Position
+ 208:main.c        ****     
+ 209:main.c        ****     /* Copy a file to a previously created directory */
+ 210:main.c        ****     if(0 == FS_CopyFile(sdFile, "\\Dir\\file1.txt"))
+ 482              		.loc 1 210 0
+ 483 0212 3449     		ldr	r1, .L20+108
+ 484 0214 2748     		ldr	r0, .L20+60
+ 485 0216 FFF7FEFF 		bl	FS_CopyFile
+ 486 021a 0346     		mov	r3, r0
+ 487 021c 002B     		cmp	r3, #0
+ 488 021e 0AD1     		bne	.L17
+ 211:main.c        ****     {
+ 212:main.c        ****         LCD_PrintString("File was ");
+ 489              		.loc 1 212 0
+ 490 0220 3148     		ldr	r0, .L20+112
+ 491 0222 FFF7FEFF 		bl	LCD_PrintString
+ 213:main.c        ****         LCD_Position(1u, 0u);
+ 492              		.loc 1 213 0
+ 493 0226 0021     		movs	r1, #0
+ 494 0228 0120     		movs	r0, #1
+ 495 022a FFF7FEFF 		bl	LCD_Position
+ 214:main.c        ****         LCD_PrintString("copied to \"DIR\"");
+ 496              		.loc 1 214 0
+ 497 022e 2F48     		ldr	r0, .L20+116
+ 498 0230 FFF7FEFF 		bl	LCD_PrintString
+ 499 0234 09E0     		b	.L18
+ 500              	.L17:
+ 215:main.c        ****     }
+ 216:main.c        ****     else
+ 217:main.c        ****     {
+ 218:main.c        ****         LCD_PrintString("Failed to copy");
+ 501              		.loc 1 218 0
+ 502 0236 2E48     		ldr	r0, .L20+120
+ 503 0238 FFF7FEFF 		bl	LCD_PrintString
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccnUhIRC.s 			page 15
+
+
+ 219:main.c        ****         LCD_Position(1u, 0u);
+ 504              		.loc 1 219 0
+ 505 023c 0021     		movs	r1, #0
+ 506 023e 0120     		movs	r0, #1
+ 507 0240 FFF7FEFF 		bl	LCD_Position
+ 220:main.c        ****         LCD_PrintString("file");
+ 508              		.loc 1 220 0
+ 509 0244 2548     		ldr	r0, .L20+100
+ 510 0246 FFF7FEFF 		bl	LCD_PrintString
+ 511              	.L18:
+ 221:main.c        ****     }
+ 222:main.c        ****     
+ 223:main.c        ****     /* Need some delay to indicate output on the LCD */
+ 224:main.c        ****     CyDelay(2000);
+ 512              		.loc 1 224 0
+ 513 024a 4FF4FA60 		mov	r0, #2000
+ 514 024e FFF7FEFF 		bl	CyDelay
+ 225:main.c        ****     
+ 226:main.c        ****     LCD_ClearDisplay();
+ 515              		.loc 1 226 0
+ 516 0252 0120     		movs	r0, #1
+ 517 0254 FFF7FEFF 		bl	LCD_WriteControl
+ 227:main.c        ****     
+ 228:main.c        ****     LCD_Position(0u, 0u);
+ 518              		.loc 1 228 0
+ 519 0258 0021     		movs	r1, #0
+ 520 025a 0020     		movs	r0, #0
+ 521 025c FFF7FEFF 		bl	LCD_Position
+ 229:main.c        ****     LCD_PrintString("Example project");
+ 522              		.loc 1 229 0
+ 523 0260 2448     		ldr	r0, .L20+124
+ 524 0262 FFF7FEFF 		bl	LCD_PrintString
+ 230:main.c        ****     LCD_Position(1u, 0u);
+ 525              		.loc 1 230 0
+ 526 0266 0021     		movs	r1, #0
+ 527 0268 0120     		movs	r0, #1
+ 528 026a FFF7FEFF 		bl	LCD_Position
+ 231:main.c        ****     LCD_PrintString("completed");
+ 529              		.loc 1 231 0
+ 530 026e 2248     		ldr	r0, .L20+128
+ 531 0270 FFF7FEFF 		bl	LCD_PrintString
+ 532              	.L19:
+ 232:main.c        ****     
+ 233:main.c        ****     for(;;)
+ 234:main.c        ****     {
+ 235:main.c        **** 
+ 236:main.c        ****     }
+ 533              		.loc 1 236 0 discriminator 1
+ 534 0274 FEE7     		b	.L19
+ 535              	.L21:
+ 536 0276 00BF     		.align	2
+ 537              	.L20:
+ 538 0278 08000000 		.word	.LC1
+ 539 027c 18000000 		.word	.LC2
+ 540 0280 28000000 		.word	.LC3
+ 541 0284 38000000 		.word	.LC4
+ 542 0288 48000000 		.word	.LC5
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccnUhIRC.s 			page 16
+
+
+ 543 028c 58000000 		.word	.LC6
+ 544 0290 68000000 		.word	.LC7
+ 545 0294 74000000 		.word	.LC8
+ 546 0298 7C000000 		.word	.LC9
+ 547 029c 88000000 		.word	.LC10
+ 548 02a0 8C000000 		.word	.LC11
+ 549 02a4 9C000000 		.word	.LC12
+ 550 02a8 B0000000 		.word	.LC13
+ 551 02ac BC000000 		.word	.LC14
+ 552 02b0 C4000000 		.word	.LC15
+ 553 02b4 00000000 		.word	sdFile
+ 554 02b8 C8000000 		.word	.LC16
+ 555 02bc D0000000 		.word	.LC17
+ 556 02c0 DC000000 		.word	.LC18
+ 557 02c4 E8000000 		.word	.LC19
+ 558 02c8 F8000000 		.word	.LC20
+ 559 02cc 08010000 		.word	.LC21
+ 560 02d0 18010000 		.word	.LC22
+ 561 02d4 28010000 		.word	.LC23
+ 562 02d8 38010000 		.word	.LC24
+ 563 02dc 48010000 		.word	.LC25
+ 564 02e0 50010000 		.word	.LC26
+ 565 02e4 58010000 		.word	.LC27
+ 566 02e8 68010000 		.word	.LC28
+ 567 02ec 74010000 		.word	.LC29
+ 568 02f0 84010000 		.word	.LC30
+ 569 02f4 94010000 		.word	.LC31
+ 570 02f8 A4010000 		.word	.LC32
+ 571              		.cfi_endproc
+ 572              	.LFE64:
+ 573              		.size	main, .-main
+ 574              		.text
+ 575              	.Letext0:
+ 576              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
+ 577              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
+ 578              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 579              		.file 5 ".\\emFile_V322c\\Code\\Include\\PSoC5/FS_Types.h"
+ 580              		.file 6 "Generated_Source\\PSoC5/core_cm3.h"
+ 581              		.section	.debug_info,"",%progbits
+ 582              	.Ldebug_info0:
+ 583 0000 81010000 		.4byte	0x181
+ 584 0004 0400     		.2byte	0x4
+ 585 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 586 000a 04       		.byte	0x4
+ 587 000b 01       		.uleb128 0x1
+ 588 000c CE000000 		.4byte	.LASF25
+ 589 0010 0C       		.byte	0xc
+ 590 0011 28000000 		.4byte	.LASF26
+ 591 0015 78000000 		.4byte	.LASF27
+ 592 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 593 001d 00000000 		.4byte	0
+ 594 0021 00000000 		.4byte	.Ldebug_line0
+ 595 0025 02       		.uleb128 0x2
+ 596 0026 01       		.byte	0x1
+ 597 0027 06       		.byte	0x6
+ 598 0028 91010000 		.4byte	.LASF0
+ 599 002c 02       		.uleb128 0x2
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccnUhIRC.s 			page 17
+
+
+ 600 002d 01       		.byte	0x1
+ 601 002e 08       		.byte	0x8
+ 602 002f 5C010000 		.4byte	.LASF1
+ 603 0033 02       		.uleb128 0x2
+ 604 0034 02       		.byte	0x2
+ 605 0035 05       		.byte	0x5
+ 606 0036 CC010000 		.4byte	.LASF2
+ 607 003a 02       		.uleb128 0x2
+ 608 003b 02       		.byte	0x2
+ 609 003c 07       		.byte	0x7
+ 610 003d 5D000000 		.4byte	.LASF3
+ 611 0041 03       		.uleb128 0x3
+ 612 0042 A9010000 		.4byte	.LASF9
+ 613 0046 02       		.byte	0x2
+ 614 0047 3F       		.byte	0x3f
+ 615 0048 4C000000 		.4byte	0x4c
+ 616 004c 02       		.uleb128 0x2
+ 617 004d 04       		.byte	0x4
+ 618 004e 05       		.byte	0x5
+ 619 004f 6F010000 		.4byte	.LASF4
+ 620 0053 02       		.uleb128 0x2
+ 621 0054 04       		.byte	0x4
+ 622 0055 07       		.byte	0x7
+ 623 0056 34000000 		.4byte	.LASF5
+ 624 005a 02       		.uleb128 0x2
+ 625 005b 08       		.byte	0x8
+ 626 005c 05       		.byte	0x5
+ 627 005d 00000000 		.4byte	.LASF6
+ 628 0061 02       		.uleb128 0x2
+ 629 0062 08       		.byte	0x8
+ 630 0063 07       		.byte	0x7
+ 631 0064 46000000 		.4byte	.LASF7
+ 632 0068 04       		.uleb128 0x4
+ 633 0069 04       		.byte	0x4
+ 634 006a 05       		.byte	0x5
+ 635 006b 696E7400 		.ascii	"int\000"
+ 636 006f 02       		.uleb128 0x2
+ 637 0070 04       		.byte	0x4
+ 638 0071 07       		.byte	0x7
+ 639 0072 14000000 		.4byte	.LASF8
+ 640 0076 03       		.uleb128 0x3
+ 641 0077 DD010000 		.4byte	.LASF10
+ 642 007b 03       		.byte	0x3
+ 643 007c 2C       		.byte	0x2c
+ 644 007d 41000000 		.4byte	0x41
+ 645 0081 05       		.uleb128 0x5
+ 646 0082 D6010000 		.4byte	.LASF11
+ 647 0086 04       		.byte	0x4
+ 648 0087 9301     		.2byte	0x193
+ 649 0089 3A000000 		.4byte	0x3a
+ 650 008d 02       		.uleb128 0x2
+ 651 008e 04       		.byte	0x4
+ 652 008f 04       		.byte	0x4
+ 653 0090 BD010000 		.4byte	.LASF12
+ 654 0094 02       		.uleb128 0x2
+ 655 0095 08       		.byte	0x8
+ 656 0096 04       		.byte	0x4
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccnUhIRC.s 			page 18
+
+
+ 657 0097 78010000 		.4byte	.LASF13
+ 658 009b 02       		.uleb128 0x2
+ 659 009c 01       		.byte	0x1
+ 660 009d 08       		.byte	0x8
+ 661 009e 6A010000 		.4byte	.LASF14
+ 662 00a2 02       		.uleb128 0x2
+ 663 00a3 08       		.byte	0x8
+ 664 00a4 04       		.byte	0x4
+ 665 00a5 9D010000 		.4byte	.LASF15
+ 666 00a9 02       		.uleb128 0x2
+ 667 00aa 04       		.byte	0x4
+ 668 00ab 07       		.byte	0x7
+ 669 00ac E5010000 		.4byte	.LASF16
+ 670 00b0 06       		.uleb128 0x6
+ 671 00b1 04       		.byte	0x4
+ 672 00b2 9B000000 		.4byte	0x9b
+ 673 00b6 03       		.uleb128 0x3
+ 674 00b7 70000000 		.4byte	.LASF17
+ 675 00bb 05       		.byte	0x5
+ 676 00bc 7E       		.byte	0x7e
+ 677 00bd C1000000 		.4byte	0xc1
+ 678 00c1 07       		.uleb128 0x7
+ 679 00c2 70000000 		.4byte	.LASF17
+ 680 00c6 06       		.uleb128 0x6
+ 681 00c7 04       		.byte	0x4
+ 682 00c8 B6000000 		.4byte	0xb6
+ 683 00cc 08       		.uleb128 0x8
+ 684 00cd C3010000 		.4byte	.LASF19
+ 685 00d1 01       		.byte	0x1
+ 686 00d2 28       		.byte	0x28
+ 687 00d3 00000000 		.4byte	.LFB63
+ 688 00d7 50000000 		.4byte	.LFE63-.LFB63
+ 689 00db 01       		.uleb128 0x1
+ 690 00dc 9C       		.byte	0x9c
+ 691 00dd FE000000 		.4byte	0xfe
+ 692 00e1 09       		.uleb128 0x9
+ 693 00e2 7F010000 		.4byte	.LASF18
+ 694 00e6 01       		.byte	0x1
+ 695 00e7 28       		.byte	0x28
+ 696 00e8 3A000000 		.4byte	0x3a
+ 697 00ec 02       		.uleb128 0x2
+ 698 00ed 91       		.byte	0x91
+ 699 00ee 76       		.sleb128 -10
+ 700 00ef 0A       		.uleb128 0xa
+ 701 00f0 73747200 		.ascii	"str\000"
+ 702 00f4 01       		.byte	0x1
+ 703 00f5 28       		.byte	0x28
+ 704 00f6 B0000000 		.4byte	0xb0
+ 705 00fa 02       		.uleb128 0x2
+ 706 00fb 91       		.byte	0x91
+ 707 00fc 70       		.sleb128 -16
+ 708 00fd 00       		.byte	0
+ 709 00fe 0B       		.uleb128 0xb
+ 710 00ff 2F000000 		.4byte	.LASF20
+ 711 0103 01       		.byte	0x1
+ 712 0104 3D       		.byte	0x3d
+ 713 0105 68000000 		.4byte	0x68
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccnUhIRC.s 			page 19
+
+
+ 714 0109 00000000 		.4byte	.LFB64
+ 715 010d FC020000 		.4byte	.LFE64-.LFB64
+ 716 0111 01       		.uleb128 0x1
+ 717 0112 9C       		.byte	0x9c
+ 718 0113 42010000 		.4byte	0x142
+ 719 0117 0C       		.uleb128 0xc
+ 720 0118 B3010000 		.4byte	.LASF21
+ 721 011c 01       		.byte	0x1
+ 722 011d 3F       		.byte	0x3f
+ 723 011e 42010000 		.4byte	0x142
+ 724 0122 02       		.uleb128 0x2
+ 725 0123 91       		.byte	0x91
+ 726 0124 64       		.sleb128 -28
+ 727 0125 0C       		.uleb128 0xc
+ 728 0126 7F010000 		.4byte	.LASF18
+ 729 012a 01       		.byte	0x1
+ 730 012b 40       		.byte	0x40
+ 731 012c 3A000000 		.4byte	0x3a
+ 732 0130 02       		.uleb128 0x2
+ 733 0131 91       		.byte	0x91
+ 734 0132 76       		.sleb128 -10
+ 735 0133 0C       		.uleb128 0xc
+ 736 0134 0E000000 		.4byte	.LASF22
+ 737 0138 01       		.byte	0x1
+ 738 0139 41       		.byte	0x41
+ 739 013a C6000000 		.4byte	0xc6
+ 740 013e 02       		.uleb128 0x2
+ 741 013f 91       		.byte	0x91
+ 742 0140 70       		.sleb128 -16
+ 743 0141 00       		.byte	0
+ 744 0142 0D       		.uleb128 0xd
+ 745 0143 9B000000 		.4byte	0x9b
+ 746 0147 52010000 		.4byte	0x152
+ 747 014b 0E       		.uleb128 0xe
+ 748 014c A9000000 		.4byte	0xa9
+ 749 0150 09       		.byte	0x9
+ 750 0151 00       		.byte	0
+ 751 0152 0F       		.uleb128 0xf
+ 752 0153 84010000 		.4byte	.LASF23
+ 753 0157 06       		.byte	0x6
+ 754 0158 1207     		.2byte	0x712
+ 755 015a 5E010000 		.4byte	0x15e
+ 756 015e 10       		.uleb128 0x10
+ 757 015f 76000000 		.4byte	0x76
+ 758 0163 0D       		.uleb128 0xd
+ 759 0164 9B000000 		.4byte	0x9b
+ 760 0168 73010000 		.4byte	0x173
+ 761 016c 0E       		.uleb128 0xe
+ 762 016d A9000000 		.4byte	0xa9
+ 763 0171 08       		.byte	0x8
+ 764 0172 00       		.byte	0
+ 765 0173 11       		.uleb128 0x11
+ 766 0174 21000000 		.4byte	.LASF24
+ 767 0178 01       		.byte	0x1
+ 768 0179 25       		.byte	0x25
+ 769 017a 63010000 		.4byte	0x163
+ 770 017e 05       		.uleb128 0x5
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccnUhIRC.s 			page 20
+
+
+ 771 017f 03       		.byte	0x3
+ 772 0180 00000000 		.4byte	sdFile
+ 773 0184 00       		.byte	0
+ 774              		.section	.debug_abbrev,"",%progbits
+ 775              	.Ldebug_abbrev0:
+ 776 0000 01       		.uleb128 0x1
+ 777 0001 11       		.uleb128 0x11
+ 778 0002 01       		.byte	0x1
+ 779 0003 25       		.uleb128 0x25
+ 780 0004 0E       		.uleb128 0xe
+ 781 0005 13       		.uleb128 0x13
+ 782 0006 0B       		.uleb128 0xb
+ 783 0007 03       		.uleb128 0x3
+ 784 0008 0E       		.uleb128 0xe
+ 785 0009 1B       		.uleb128 0x1b
+ 786 000a 0E       		.uleb128 0xe
+ 787 000b 55       		.uleb128 0x55
+ 788 000c 17       		.uleb128 0x17
+ 789 000d 11       		.uleb128 0x11
+ 790 000e 01       		.uleb128 0x1
+ 791 000f 10       		.uleb128 0x10
+ 792 0010 17       		.uleb128 0x17
+ 793 0011 00       		.byte	0
+ 794 0012 00       		.byte	0
+ 795 0013 02       		.uleb128 0x2
+ 796 0014 24       		.uleb128 0x24
+ 797 0015 00       		.byte	0
+ 798 0016 0B       		.uleb128 0xb
+ 799 0017 0B       		.uleb128 0xb
+ 800 0018 3E       		.uleb128 0x3e
+ 801 0019 0B       		.uleb128 0xb
+ 802 001a 03       		.uleb128 0x3
+ 803 001b 0E       		.uleb128 0xe
+ 804 001c 00       		.byte	0
+ 805 001d 00       		.byte	0
+ 806 001e 03       		.uleb128 0x3
+ 807 001f 16       		.uleb128 0x16
+ 808 0020 00       		.byte	0
+ 809 0021 03       		.uleb128 0x3
+ 810 0022 0E       		.uleb128 0xe
+ 811 0023 3A       		.uleb128 0x3a
+ 812 0024 0B       		.uleb128 0xb
+ 813 0025 3B       		.uleb128 0x3b
+ 814 0026 0B       		.uleb128 0xb
+ 815 0027 49       		.uleb128 0x49
+ 816 0028 13       		.uleb128 0x13
+ 817 0029 00       		.byte	0
+ 818 002a 00       		.byte	0
+ 819 002b 04       		.uleb128 0x4
+ 820 002c 24       		.uleb128 0x24
+ 821 002d 00       		.byte	0
+ 822 002e 0B       		.uleb128 0xb
+ 823 002f 0B       		.uleb128 0xb
+ 824 0030 3E       		.uleb128 0x3e
+ 825 0031 0B       		.uleb128 0xb
+ 826 0032 03       		.uleb128 0x3
+ 827 0033 08       		.uleb128 0x8
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccnUhIRC.s 			page 21
+
+
+ 828 0034 00       		.byte	0
+ 829 0035 00       		.byte	0
+ 830 0036 05       		.uleb128 0x5
+ 831 0037 16       		.uleb128 0x16
+ 832 0038 00       		.byte	0
+ 833 0039 03       		.uleb128 0x3
+ 834 003a 0E       		.uleb128 0xe
+ 835 003b 3A       		.uleb128 0x3a
+ 836 003c 0B       		.uleb128 0xb
+ 837 003d 3B       		.uleb128 0x3b
+ 838 003e 05       		.uleb128 0x5
+ 839 003f 49       		.uleb128 0x49
+ 840 0040 13       		.uleb128 0x13
+ 841 0041 00       		.byte	0
+ 842 0042 00       		.byte	0
+ 843 0043 06       		.uleb128 0x6
+ 844 0044 0F       		.uleb128 0xf
+ 845 0045 00       		.byte	0
+ 846 0046 0B       		.uleb128 0xb
+ 847 0047 0B       		.uleb128 0xb
+ 848 0048 49       		.uleb128 0x49
+ 849 0049 13       		.uleb128 0x13
+ 850 004a 00       		.byte	0
+ 851 004b 00       		.byte	0
+ 852 004c 07       		.uleb128 0x7
+ 853 004d 13       		.uleb128 0x13
+ 854 004e 00       		.byte	0
+ 855 004f 03       		.uleb128 0x3
+ 856 0050 0E       		.uleb128 0xe
+ 857 0051 3C       		.uleb128 0x3c
+ 858 0052 19       		.uleb128 0x19
+ 859 0053 00       		.byte	0
+ 860 0054 00       		.byte	0
+ 861 0055 08       		.uleb128 0x8
+ 862 0056 2E       		.uleb128 0x2e
+ 863 0057 01       		.byte	0x1
+ 864 0058 3F       		.uleb128 0x3f
+ 865 0059 19       		.uleb128 0x19
+ 866 005a 03       		.uleb128 0x3
+ 867 005b 0E       		.uleb128 0xe
+ 868 005c 3A       		.uleb128 0x3a
+ 869 005d 0B       		.uleb128 0xb
+ 870 005e 3B       		.uleb128 0x3b
+ 871 005f 0B       		.uleb128 0xb
+ 872 0060 27       		.uleb128 0x27
+ 873 0061 19       		.uleb128 0x19
+ 874 0062 11       		.uleb128 0x11
+ 875 0063 01       		.uleb128 0x1
+ 876 0064 12       		.uleb128 0x12
+ 877 0065 06       		.uleb128 0x6
+ 878 0066 40       		.uleb128 0x40
+ 879 0067 18       		.uleb128 0x18
+ 880 0068 9642     		.uleb128 0x2116
+ 881 006a 19       		.uleb128 0x19
+ 882 006b 01       		.uleb128 0x1
+ 883 006c 13       		.uleb128 0x13
+ 884 006d 00       		.byte	0
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccnUhIRC.s 			page 22
+
+
+ 885 006e 00       		.byte	0
+ 886 006f 09       		.uleb128 0x9
+ 887 0070 05       		.uleb128 0x5
+ 888 0071 00       		.byte	0
+ 889 0072 03       		.uleb128 0x3
+ 890 0073 0E       		.uleb128 0xe
+ 891 0074 3A       		.uleb128 0x3a
+ 892 0075 0B       		.uleb128 0xb
+ 893 0076 3B       		.uleb128 0x3b
+ 894 0077 0B       		.uleb128 0xb
+ 895 0078 49       		.uleb128 0x49
+ 896 0079 13       		.uleb128 0x13
+ 897 007a 02       		.uleb128 0x2
+ 898 007b 18       		.uleb128 0x18
+ 899 007c 00       		.byte	0
+ 900 007d 00       		.byte	0
+ 901 007e 0A       		.uleb128 0xa
+ 902 007f 05       		.uleb128 0x5
+ 903 0080 00       		.byte	0
+ 904 0081 03       		.uleb128 0x3
+ 905 0082 08       		.uleb128 0x8
+ 906 0083 3A       		.uleb128 0x3a
+ 907 0084 0B       		.uleb128 0xb
+ 908 0085 3B       		.uleb128 0x3b
+ 909 0086 0B       		.uleb128 0xb
+ 910 0087 49       		.uleb128 0x49
+ 911 0088 13       		.uleb128 0x13
+ 912 0089 02       		.uleb128 0x2
+ 913 008a 18       		.uleb128 0x18
+ 914 008b 00       		.byte	0
+ 915 008c 00       		.byte	0
+ 916 008d 0B       		.uleb128 0xb
+ 917 008e 2E       		.uleb128 0x2e
+ 918 008f 01       		.byte	0x1
+ 919 0090 3F       		.uleb128 0x3f
+ 920 0091 19       		.uleb128 0x19
+ 921 0092 03       		.uleb128 0x3
+ 922 0093 0E       		.uleb128 0xe
+ 923 0094 3A       		.uleb128 0x3a
+ 924 0095 0B       		.uleb128 0xb
+ 925 0096 3B       		.uleb128 0x3b
+ 926 0097 0B       		.uleb128 0xb
+ 927 0098 49       		.uleb128 0x49
+ 928 0099 13       		.uleb128 0x13
+ 929 009a 11       		.uleb128 0x11
+ 930 009b 01       		.uleb128 0x1
+ 931 009c 12       		.uleb128 0x12
+ 932 009d 06       		.uleb128 0x6
+ 933 009e 40       		.uleb128 0x40
+ 934 009f 18       		.uleb128 0x18
+ 935 00a0 9642     		.uleb128 0x2116
+ 936 00a2 19       		.uleb128 0x19
+ 937 00a3 01       		.uleb128 0x1
+ 938 00a4 13       		.uleb128 0x13
+ 939 00a5 00       		.byte	0
+ 940 00a6 00       		.byte	0
+ 941 00a7 0C       		.uleb128 0xc
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccnUhIRC.s 			page 23
+
+
+ 942 00a8 34       		.uleb128 0x34
+ 943 00a9 00       		.byte	0
+ 944 00aa 03       		.uleb128 0x3
+ 945 00ab 0E       		.uleb128 0xe
+ 946 00ac 3A       		.uleb128 0x3a
+ 947 00ad 0B       		.uleb128 0xb
+ 948 00ae 3B       		.uleb128 0x3b
+ 949 00af 0B       		.uleb128 0xb
+ 950 00b0 49       		.uleb128 0x49
+ 951 00b1 13       		.uleb128 0x13
+ 952 00b2 02       		.uleb128 0x2
+ 953 00b3 18       		.uleb128 0x18
+ 954 00b4 00       		.byte	0
+ 955 00b5 00       		.byte	0
+ 956 00b6 0D       		.uleb128 0xd
+ 957 00b7 01       		.uleb128 0x1
+ 958 00b8 01       		.byte	0x1
+ 959 00b9 49       		.uleb128 0x49
+ 960 00ba 13       		.uleb128 0x13
+ 961 00bb 01       		.uleb128 0x1
+ 962 00bc 13       		.uleb128 0x13
+ 963 00bd 00       		.byte	0
+ 964 00be 00       		.byte	0
+ 965 00bf 0E       		.uleb128 0xe
+ 966 00c0 21       		.uleb128 0x21
+ 967 00c1 00       		.byte	0
+ 968 00c2 49       		.uleb128 0x49
+ 969 00c3 13       		.uleb128 0x13
+ 970 00c4 2F       		.uleb128 0x2f
+ 971 00c5 0B       		.uleb128 0xb
+ 972 00c6 00       		.byte	0
+ 973 00c7 00       		.byte	0
+ 974 00c8 0F       		.uleb128 0xf
+ 975 00c9 34       		.uleb128 0x34
+ 976 00ca 00       		.byte	0
+ 977 00cb 03       		.uleb128 0x3
+ 978 00cc 0E       		.uleb128 0xe
+ 979 00cd 3A       		.uleb128 0x3a
+ 980 00ce 0B       		.uleb128 0xb
+ 981 00cf 3B       		.uleb128 0x3b
+ 982 00d0 05       		.uleb128 0x5
+ 983 00d1 49       		.uleb128 0x49
+ 984 00d2 13       		.uleb128 0x13
+ 985 00d3 3F       		.uleb128 0x3f
+ 986 00d4 19       		.uleb128 0x19
+ 987 00d5 3C       		.uleb128 0x3c
+ 988 00d6 19       		.uleb128 0x19
+ 989 00d7 00       		.byte	0
+ 990 00d8 00       		.byte	0
+ 991 00d9 10       		.uleb128 0x10
+ 992 00da 35       		.uleb128 0x35
+ 993 00db 00       		.byte	0
+ 994 00dc 49       		.uleb128 0x49
+ 995 00dd 13       		.uleb128 0x13
+ 996 00de 00       		.byte	0
+ 997 00df 00       		.byte	0
+ 998 00e0 11       		.uleb128 0x11
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccnUhIRC.s 			page 24
+
+
+ 999 00e1 34       		.uleb128 0x34
+ 1000 00e2 00       		.byte	0
+ 1001 00e3 03       		.uleb128 0x3
+ 1002 00e4 0E       		.uleb128 0xe
+ 1003 00e5 3A       		.uleb128 0x3a
+ 1004 00e6 0B       		.uleb128 0xb
+ 1005 00e7 3B       		.uleb128 0x3b
+ 1006 00e8 0B       		.uleb128 0xb
+ 1007 00e9 49       		.uleb128 0x49
+ 1008 00ea 13       		.uleb128 0x13
+ 1009 00eb 3F       		.uleb128 0x3f
+ 1010 00ec 19       		.uleb128 0x19
+ 1011 00ed 02       		.uleb128 0x2
+ 1012 00ee 18       		.uleb128 0x18
+ 1013 00ef 00       		.byte	0
+ 1014 00f0 00       		.byte	0
+ 1015 00f1 00       		.byte	0
+ 1016              		.section	.debug_aranges,"",%progbits
+ 1017 0000 24000000 		.4byte	0x24
+ 1018 0004 0200     		.2byte	0x2
+ 1019 0006 00000000 		.4byte	.Ldebug_info0
+ 1020 000a 04       		.byte	0x4
+ 1021 000b 00       		.byte	0
+ 1022 000c 0000     		.2byte	0
+ 1023 000e 0000     		.2byte	0
+ 1024 0010 00000000 		.4byte	.LFB63
+ 1025 0014 50000000 		.4byte	.LFE63-.LFB63
+ 1026 0018 00000000 		.4byte	.LFB64
+ 1027 001c FC020000 		.4byte	.LFE64-.LFB64
+ 1028 0020 00000000 		.4byte	0
+ 1029 0024 00000000 		.4byte	0
+ 1030              		.section	.debug_ranges,"",%progbits
+ 1031              	.Ldebug_ranges0:
+ 1032 0000 00000000 		.4byte	.LFB63
+ 1033 0004 50000000 		.4byte	.LFE63
+ 1034 0008 00000000 		.4byte	.LFB64
+ 1035 000c FC020000 		.4byte	.LFE64
+ 1036 0010 00000000 		.4byte	0
+ 1037 0014 00000000 		.4byte	0
+ 1038              		.section	.debug_line,"",%progbits
+ 1039              	.Ldebug_line0:
+ 1040 0000 FB010000 		.section	.debug_str,"MS",%progbits,1
+ 1040      02007C01 
+ 1040      00000201 
+ 1040      FB0E0D00 
+ 1040      01010101 
+ 1041              	.LASF6:
+ 1042 0000 6C6F6E67 		.ascii	"long long int\000"
+ 1042      206C6F6E 
+ 1042      6720696E 
+ 1042      7400
+ 1043              	.LASF22:
+ 1044 000e 7046696C 		.ascii	"pFile\000"
+ 1044      6500
+ 1045              	.LASF8:
+ 1046 0014 756E7369 		.ascii	"unsigned int\000"
+ 1046      676E6564 
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccnUhIRC.s 			page 25
+
+
+ 1046      20696E74 
+ 1046      00
+ 1047              	.LASF24:
+ 1048 0021 73644669 		.ascii	"sdFile\000"
+ 1048      6C6500
+ 1049              	.LASF26:
+ 1050 0028 6D61696E 		.ascii	"main.c\000"
+ 1050      2E6300
+ 1051              	.LASF20:
+ 1052 002f 6D61696E 		.ascii	"main\000"
+ 1052      00
+ 1053              	.LASF5:
+ 1054 0034 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1054      20756E73 
+ 1054      69676E65 
+ 1054      6420696E 
+ 1054      7400
+ 1055              	.LASF7:
+ 1056 0046 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1056      206C6F6E 
+ 1056      6720756E 
+ 1056      7369676E 
+ 1056      65642069 
+ 1057              	.LASF3:
+ 1058 005d 73686F72 		.ascii	"short unsigned int\000"
+ 1058      7420756E 
+ 1058      7369676E 
+ 1058      65642069 
+ 1058      6E7400
+ 1059              	.LASF17:
+ 1060 0070 46535F46 		.ascii	"FS_FILE\000"
+ 1060      494C4500 
+ 1061              	.LASF27:
+ 1062 0078 433A5C55 		.ascii	"C:\\Users\\Caleb Cotter\\Documents\\GitHub\\STS\\Fi"
+ 1062      73657273 
+ 1062      5C43616C 
+ 1062      65622043 
+ 1062      6F747465 
+ 1063 00a5 726D7761 		.ascii	"rmware\\STS_Firmware\\emFile_Example.cydsn\000"
+ 1063      72655C53 
+ 1063      54535F46 
+ 1063      69726D77 
+ 1063      6172655C 
+ 1064              	.LASF25:
+ 1065 00ce 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1065      43313120 
+ 1065      352E342E 
+ 1065      31203230 
+ 1065      31363036 
+ 1066 0101 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 1066      20726576 
+ 1066      6973696F 
+ 1066      6E203233 
+ 1066      37373135 
+ 1067 0134 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 1067      66756E63 
+ 1067      74696F6E 
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccnUhIRC.s 			page 26
+
+
+ 1067      2D736563 
+ 1067      74696F6E 
+ 1068              	.LASF1:
+ 1069 015c 756E7369 		.ascii	"unsigned char\000"
+ 1069      676E6564 
+ 1069      20636861 
+ 1069      7200
+ 1070              	.LASF14:
+ 1071 016a 63686172 		.ascii	"char\000"
+ 1071      00
+ 1072              	.LASF4:
+ 1073 016f 6C6F6E67 		.ascii	"long int\000"
+ 1073      20696E74 
+ 1073      00
+ 1074              	.LASF13:
+ 1075 0178 646F7562 		.ascii	"double\000"
+ 1075      6C6500
+ 1076              	.LASF18:
+ 1077 017f 73746570 		.ascii	"step\000"
+ 1077      00
+ 1078              	.LASF23:
+ 1079 0184 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1079      52784275 
+ 1079      66666572 
+ 1079      00
+ 1080              	.LASF0:
+ 1081 0191 7369676E 		.ascii	"signed char\000"
+ 1081      65642063 
+ 1081      68617200 
+ 1082              	.LASF15:
+ 1083 019d 6C6F6E67 		.ascii	"long double\000"
+ 1083      20646F75 
+ 1083      626C6500 
+ 1084              	.LASF9:
+ 1085 01a9 5F5F696E 		.ascii	"__int32_t\000"
+ 1085      7433325F 
+ 1085      7400
+ 1086              	.LASF21:
+ 1087 01b3 7364566F 		.ascii	"sdVolName\000"
+ 1087      6C4E616D 
+ 1087      6500
+ 1088              	.LASF12:
+ 1089 01bd 666C6F61 		.ascii	"float\000"
+ 1089      7400
+ 1090              	.LASF19:
+ 1091 01c3 4E657874 		.ascii	"NextStep\000"
+ 1091      53746570 
+ 1091      00
+ 1092              	.LASF2:
+ 1093 01cc 73686F72 		.ascii	"short int\000"
+ 1093      7420696E 
+ 1093      7400
+ 1094              	.LASF11:
+ 1095 01d6 75696E74 		.ascii	"uint16\000"
+ 1095      313600
+ 1096              	.LASF10:
+ 1097 01dd 696E7433 		.ascii	"int32_t\000"
+ARM GAS  C:\Users\CALEBC~1\AppData\Local\Temp\ccnUhIRC.s 			page 27
+
+
+ 1097      325F7400 
+ 1098              	.LASF16:
+ 1099 01e5 73697A65 		.ascii	"sizetype\000"
+ 1099      74797065 
+ 1099      00
+ 1100              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

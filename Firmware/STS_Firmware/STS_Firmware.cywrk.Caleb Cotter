@@ -6,16 +6,35 @@
 <CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997 type_name="CyDesigner.Common.Base.CyCustomData" version="2">
 <userData>
 <dataGuid v="1b906a0f-a7b6-4e4d-a428-82f98b53cb35">
-<CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35 type_name="CyDesigner.Common.ProjMgmt.GUI.CyExplorerWindow+CyExplorerWindowState" version="3" SelectedTab="Output">
+<CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35 type_name="CyDesigner.Common.ProjMgmt.GUI.CyExplorerWindow+CyExplorerWindowState" version="3" SelectedTab="Source">
 <TreeKeys>
 <v>Source</v>
 <v>Components</v>
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="STS_Firmware">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="STS_Firmware\STS_Firmware">
 <ExpandedNodeIds>
 <v>STS_Firmware</v>
+<v>STS_Firmware\emFile_Example</v>
+<v>STS_Firmware\emFile_Example\TopDesign</v>
+<v>STS_Firmware\emFile_Example\emFile_Example.cydwr</v>
+<v>STS_Firmware\emFile_Example\emFile_Example.cydwr\Pins</v>
+<v>STS_Firmware\emFile_Example\emFile_Example.cydwr\Analog</v>
+<v>STS_Firmware\emFile_Example\emFile_Example.cydwr\Clocks</v>
+<v>STS_Firmware\emFile_Example\emFile_Example.cydwr\Interrupts</v>
+<v>STS_Firmware\emFile_Example\emFile_Example.cydwr\DMA</v>
+<v>STS_Firmware\emFile_Example\emFile_Example.cydwr\System</v>
+<v>STS_Firmware\emFile_Example\emFile_Example.cydwr\Directives</v>
+<v>STS_Firmware\emFile_Example\emFile_Example.cydwr\Flash Security</v>
+<v>STS_Firmware\emFile_Example\emFile_Example.cydwr\EEPROM</v>
+<v>STS_Firmware\emFile_Example\Header Files</v>
+<v>STS_Firmware\emFile_Example\Header Files\cyapicallbacks.h</v>
+<v>STS_Firmware\emFile_Example\Source Files</v>
+<v>STS_Firmware\emFile_Example\Source Files\main.c</v>
+<v>STS_Firmware\emFile_Example\emFile_Example.pdf</v>
+<v>STS_Firmware\emFile_Example\Generated_Source</v>
+<v>STS_Firmware\emFile_Example\Generated_Source\PSoC5</v>
 <v>STS_Firmware\STS_Firmware</v>
 <v>STS_Firmware\STS_Firmware\TopDesign</v>
 <v>STS_Firmware\STS_Firmware\STS_Firmware.cydwr</v>
@@ -29,6 +48,7 @@
 <v>STS_Firmware\STS_Firmware\STS_Firmware.cydwr\Flash Security</v>
 <v>STS_Firmware\STS_Firmware\STS_Firmware.cydwr\EEPROM</v>
 <v>STS_Firmware\STS_Firmware\Header Files</v>
+<v>STS_Firmware\STS_Firmware\Header Files\config.h</v>
 <v>STS_Firmware\STS_Firmware\Header Files\cyapicallbacks.h</v>
 <v>STS_Firmware\STS_Firmware\Source Files</v>
 <v>STS_Firmware\STS_Firmware\Source Files\main.c</v>
@@ -36,7 +56,52 @@
 <v>STS_Firmware\STS_Firmware\Generated_Source\PSoC5</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
-<v>STS_Firmware</v>
+<v>STS_Firmware\emFile_Example\emFile_Example.cydwr\Analog</v>
+<v>STS_Firmware\emFile_Example\emFile_Example.cydwr\Clocks</v>
+<v>STS_Firmware\emFile_Example\emFile_Example.cydwr\Interrupts</v>
+<v>STS_Firmware\emFile_Example\emFile_Example.cydwr\DMA</v>
+<v>STS_Firmware\emFile_Example\emFile_Example.cydwr\System</v>
+<v>STS_Firmware\emFile_Example\emFile_Example.cydwr\Directives</v>
+<v>STS_Firmware\emFile_Example\emFile_Example.cydwr\Flash Security</v>
+<v>STS_Firmware\emFile_Example\emFile_Example.cydwr\EEPROM</v>
+<v>STS_Firmware\emFile_Example\Header Files</v>
+<v>STS_Firmware\emFile_Example\Header Files\cyapicallbacks.h</v>
+<v>STS_Firmware\emFile_Example\Source Files</v>
+<v>STS_Firmware\emFile_Example\Source Files\main.c</v>
+<v>STS_Firmware\emFile_Example\emFile_Example.pdf</v>
+<v>STS_Firmware\emFile_Example\Generated_Source</v>
+<v>STS_Firmware\emFile_Example\Generated_Source\PSoC5</v>
+<v>STS_Firmware\emFile_Example\Generated_Source\PSoC5\cy_boot</v>
+<v>STS_Firmware\emFile_Example\Generated_Source\PSoC5\Em_EEPROM_Dynamic</v>
+<v>STS_Firmware\emFile_Example\Generated_Source\PSoC5\emFile</v>
+<v>STS_Firmware\emFile_Example\Generated_Source\PSoC5\emFile_Clock_1</v>
+<v>STS_Firmware\emFile_Example\Generated_Source\PSoC5\emFile_miso0</v>
+<v>STS_Firmware\emFile_Example\Generated_Source\PSoC5\emFile_mosi0</v>
+<v>STS_Firmware\emFile_Example\Generated_Source\PSoC5\emFile_sclk0</v>
+<v>STS_Firmware\emFile_Example\Generated_Source\PSoC5\emFile_SPI0</v>
+<v>STS_Firmware\emFile_Example\Generated_Source\PSoC5\emFile_SPI0_CS</v>
+<v>STS_Firmware\emFile_Example\Generated_Source\PSoC5\LCD</v>
+<v>STS_Firmware\emFile_Example\Generated_Source\PSoC5\LCD_LCDPort</v>
+<v>STS_Firmware\emFile_Example\Generated_Source\PSoC5\cycodeshareexport.ld</v>
+<v>STS_Firmware\emFile_Example\Generated_Source\PSoC5\cycodeshareimport.ld</v>
+<v>STS_Firmware\emFile_Example\Generated_Source\PSoC5\cycodeshareimport.scat</v>
+<v>STS_Firmware\emFile_Example\Generated_Source\PSoC5\cydevice.h</v>
+<v>STS_Firmware\emFile_Example\Generated_Source\PSoC5\cydevice_trm.h</v>
+<v>STS_Firmware\emFile_Example\Generated_Source\PSoC5\cydevicegnu.inc</v>
+<v>STS_Firmware\emFile_Example\Generated_Source\PSoC5\cydevicegnu_trm.inc</v>
+<v>STS_Firmware\emFile_Example\Generated_Source\PSoC5\cydeviceiar.inc</v>
+<v>STS_Firmware\emFile_Example\Generated_Source\PSoC5\cydeviceiar_trm.inc</v>
+<v>STS_Firmware\emFile_Example\Generated_Source\PSoC5\cydevicerv.inc</v>
+<v>STS_Firmware\emFile_Example\Generated_Source\PSoC5\cydevicerv_trm.inc</v>
+<v>STS_Firmware\emFile_Example\Generated_Source\PSoC5\cydisabledsheets.h</v>
+<v>STS_Firmware\emFile_Example\Generated_Source\PSoC5\cyfitter.h</v>
+<v>STS_Firmware\emFile_Example\Generated_Source\PSoC5\cyfitter_cfg.c</v>
+<v>STS_Firmware\emFile_Example\Generated_Source\PSoC5\cyfitter_cfg.h</v>
+<v>STS_Firmware\emFile_Example\Generated_Source\PSoC5\cyfittergnu.inc</v>
+<v>STS_Firmware\emFile_Example\Generated_Source\PSoC5\cyfitteriar.inc</v>
+<v>STS_Firmware\emFile_Example\Generated_Source\PSoC5\cyfitterrv.inc</v>
+<v>STS_Firmware\emFile_Example\Generated_Source\PSoC5\cymetadata.c</v>
+<v>STS_Firmware\emFile_Example\Generated_Source\PSoC5\project.h</v>
 <v>STS_Firmware\STS_Firmware</v>
 <v>STS_Firmware\STS_Firmware\TopDesign</v>
 <v>STS_Firmware\STS_Firmware\STS_Firmware.cydwr</v>
@@ -45,40 +110,23 @@
 <v>STS_Firmware\STS_Firmware\STS_Firmware.cydwr\Clocks</v>
 <v>STS_Firmware\STS_Firmware\STS_Firmware.cydwr\Interrupts</v>
 <v>STS_Firmware\STS_Firmware\STS_Firmware.cydwr\DMA</v>
-<v>STS_Firmware\STS_Firmware\STS_Firmware.cydwr\System</v>
-<v>STS_Firmware\STS_Firmware\STS_Firmware.cydwr\Directives</v>
-<v>STS_Firmware\STS_Firmware\STS_Firmware.cydwr\Flash Security</v>
-<v>STS_Firmware\STS_Firmware\STS_Firmware.cydwr\EEPROM</v>
-<v>STS_Firmware\STS_Firmware\Header Files</v>
-<v>STS_Firmware\STS_Firmware\Header Files\cyapicallbacks.h</v>
-<v>STS_Firmware\STS_Firmware\Source Files</v>
-<v>STS_Firmware\STS_Firmware\Source Files\main.c</v>
-<v>STS_Firmware\STS_Firmware\Generated_Source</v>
-<v>STS_Firmware\STS_Firmware\Generated_Source\PSoC5</v>
-<v>STS_Firmware\STS_Firmware\Generated_Source\PSoC5\ACC_ADC</v>
-<v>STS_Firmware\STS_Firmware\Generated_Source\PSoC5\ACC_ADC_FinalBuf</v>
-<v>STS_Firmware\STS_Firmware\Generated_Source\PSoC5\ACC_ADC_IntClock</v>
-<v>STS_Firmware\STS_Firmware\Generated_Source\PSoC5\ACC_ADC_IRQ</v>
-<v>STS_Firmware\STS_Firmware\Generated_Source\PSoC5\ACC_ADC_SAR</v>
-<v>STS_Firmware\STS_Firmware\Generated_Source\PSoC5\ACC_ADC_SAR_Bypass</v>
-<v>STS_Firmware\STS_Firmware\Generated_Source\PSoC5\ACC_ADC_TempBuf</v>
-<v>STS_Firmware\STS_Firmware\Generated_Source\PSoC5\ACC_X_PIN</v>
-<v>STS_Firmware\STS_Firmware\Generated_Source\PSoC5\ACC_Y_PIN</v>
-<v>STS_Firmware\STS_Firmware\Generated_Source\PSoC5\ACC_Z_PIN</v>
-<v>STS_Firmware\STS_Firmware\Generated_Source\PSoC5\ADC_DMA</v>
-<v>STS_Firmware\STS_Firmware\Generated_Source\PSoC5\ARM_ANGLE_ENCODER</v>
-<v>STS_Firmware\STS_Firmware\Generated_Source\PSoC5\ARM_ANGLE_ENCODER_Cnt16</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="STS_Firmware\STS_Firmware\TopDesign">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="STS_Firmware\STS_Firmware\TopDesign\TopDesign.cysch">
 <ExpandedNodeIds>
 <v>STS_Firmware</v>
+<v>STS_Firmware\emFile_Example</v>
+<v>STS_Firmware\emFile_Example\TopDesign</v>
+<v>STS_Firmware\emFile_Example\TopDesign\TopDesign.cysch</v>
 <v>STS_Firmware\STS_Firmware</v>
 <v>STS_Firmware\STS_Firmware\TopDesign</v>
 <v>STS_Firmware\STS_Firmware\TopDesign\TopDesign.cysch</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
 <v>STS_Firmware</v>
+<v>STS_Firmware\emFile_Example</v>
+<v>STS_Firmware\emFile_Example\TopDesign</v>
+<v>STS_Firmware\emFile_Example\TopDesign\TopDesign.cysch</v>
 <v>STS_Firmware\STS_Firmware</v>
 <v>STS_Firmware\STS_Firmware\TopDesign</v>
 <v>STS_Firmware\STS_Firmware\TopDesign\TopDesign.cysch</v>
@@ -87,6 +135,43 @@
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="STS_Firmware">
 <ExpandedNodeIds>
 <v>STS_Firmware</v>
+<v>STS_Firmware\emFile_Example</v>
+<v>STS_Firmware\emFile_Example\CortexM3</v>
+<v>STS_Firmware\emFile_Example\CortexM3\ARM_GCC_541</v>
+<v>STS_Firmware\emFile_Example\CortexM3\ARM_GCC_541\Debug</v>
+<v>STS_Firmware\emFile_Example\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
+<v>STS_Firmware\emFile_Example\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
+<v>STS_Firmware\emFile_Example\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>STS_Firmware\emFile_Example\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>STS_Firmware\emFile_Example\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
+<v>STS_Firmware\emFile_Example\CortexM3\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>STS_Firmware\emFile_Example\CortexM3\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>STS_Firmware\emFile_Example\CortexM3\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>STS_Firmware\emFile_Example\CortexM3\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>STS_Firmware\emFile_Example\CortexM3\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>STS_Firmware\emFile_Example\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
+<v>STS_Firmware\emFile_Example\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>STS_Firmware\emFile_Example\CortexM3\ARM_GCC_541\Debug\Listing Files\emFile_Clock_1.lst</v>
+<v>STS_Firmware\emFile_Example\CortexM3\ARM_GCC_541\Debug\Listing Files\emFile_ConfigMMC_SPI.lst</v>
+<v>STS_Firmware\emFile_Example\CortexM3\ARM_GCC_541\Debug\Listing Files\emFile_miso0.lst</v>
+<v>STS_Firmware\emFile_Example\CortexM3\ARM_GCC_541\Debug\Listing Files\emFile_MMC_HW_SPI.lst</v>
+<v>STS_Firmware\emFile_Example\CortexM3\ARM_GCC_541\Debug\Listing Files\emFile_mosi0.lst</v>
+<v>STS_Firmware\emFile_Example\CortexM3\ARM_GCC_541\Debug\Listing Files\emFile_PM.lst</v>
+<v>STS_Firmware\emFile_Example\CortexM3\ARM_GCC_541\Debug\Listing Files\emFile_sclk0.lst</v>
+<v>STS_Firmware\emFile_Example\CortexM3\ARM_GCC_541\Debug\Listing Files\emFile_SPI0.lst</v>
+<v>STS_Firmware\emFile_Example\CortexM3\ARM_GCC_541\Debug\Listing Files\emFile_SPI0_CS.lst</v>
+<v>STS_Firmware\emFile_Example\CortexM3\ARM_GCC_541\Debug\Listing Files\emFile_SPI0_INT.lst</v>
+<v>STS_Firmware\emFile_Example\CortexM3\ARM_GCC_541\Debug\Listing Files\emFile_SPI0_PM.lst</v>
+<v>STS_Firmware\emFile_Example\CortexM3\ARM_GCC_541\Debug\Listing Files\LCD.lst</v>
+<v>STS_Firmware\emFile_Example\CortexM3\ARM_GCC_541\Debug\Listing Files\LCD_LCDPort.lst</v>
+<v>STS_Firmware\emFile_Example\CortexM3\ARM_GCC_541\Debug\Listing Files\LCD_PM.lst</v>
+<v>STS_Firmware\emFile_Example\CortexM3\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>STS_Firmware\emFile_Example\CortexM3\ARM_GCC_541\Debug\emFile_Example.elf</v>
+<v>STS_Firmware\emFile_Example\CortexM3\ARM_GCC_541\Debug\emFile_Example.hex</v>
+<v>STS_Firmware\emFile_Example\CortexM3\ARM_GCC_541\Debug\emFile_Example.map</v>
+<v>STS_Firmware\emFile_Example\emFile_Example.gpdsc</v>
+<v>STS_Firmware\emFile_Example\emFile_Example.rpt</v>
+<v>STS_Firmware\emFile_Example\emFile_Example_timing.html</v>
 <v>STS_Firmware\STS_Firmware</v>
 <v>STS_Firmware\STS_Firmware\CortexM3</v>
 <v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541</v>
@@ -112,6 +197,7 @@
 <v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\ARM_ANGLE_ENCODER_Cnt16_PM.lst</v>
 <v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\ARM_ANGLE_ENCODER_PM.lst</v>
 <v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\BLUE_LED.lst</v>
+<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\BTN_CLK.lst</v>
 <v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\BUZZER.lst</v>
 <v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\BUZZER_CLK.lst</v>
 <v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\BUZZER_PWM.lst</v>
@@ -127,19 +213,39 @@
 <v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
 <v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
 <v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\DOWN_BTN.lst</v>
+<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\DOWN_CLICK_ISR.lst</v>
 <v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\ENC_A.lst</v>
 <v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\ENC_B.lst</v>
 <v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\ENC_CLK.lst</v>
 <v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\GREEN_LED.lst</v>
 <v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\LCD.lst</v>
+<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\LCD_CustChars.lst</v>
 <v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\LCD_LCDPort.lst</v>
 <v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\LCD_PM.lst</v>
 <v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\LED.lst</v>
 <v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\LED_PM.lst</v>
 <v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\main.lst</v>
 <v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\RED_LED.lst</v>
-<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\SD_EJECT_BTN.lst</v>
-<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\TARE_BTN.lst</v>
+<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\SD_CARD_Clock_1.lst</v>
+<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\SD_CARD_ConfigMMC_SPI.lst</v>
+<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\SD_CARD_miso0.lst</v>
+<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\SD_CARD_MMC_HW_SPI.lst</v>
+<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\SD_CARD_mosi0.lst</v>
+<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\SD_CARD_PM.lst</v>
+<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\SD_CARD_sclk0.lst</v>
+<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\SD_CARD_SPI0.lst</v>
+<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\SD_CARD_SPI0_CS.lst</v>
+<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\SD_CARD_SPI0_INT.lst</v>
+<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\SD_CARD_SPI0_PM.lst</v>
+<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\SELECT_BTN.lst</v>
+<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\SELECT_CLICK_ISR.lst</v>
+<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\timer_clock.lst</v>
+<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\UI_TIMER.lst</v>
+<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\UI_TIMER_PM.lst</v>
+<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\UP_BTN.lst</v>
+<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\UP_CLICK_ISR.lst</v>
+<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\UPDATE_UI_ISR.lst</v>
 <v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\STS_Firmware.elf</v>
 <v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\STS_Firmware.hex</v>
 <v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\STS_Firmware.map</v>
@@ -149,36 +255,10 @@
 </ExpandedNodeIds>
 <VisibleNodeIds>
 <v>STS_Firmware</v>
+<v>STS_Firmware\emFile_Example</v>
+<v>STS_Firmware\emFile_Example\emFile_Example.rpt</v>
+<v>STS_Firmware\emFile_Example\emFile_Example_timing.html</v>
 <v>STS_Firmware\STS_Firmware</v>
-<v>STS_Firmware\STS_Firmware\CortexM3</v>
-<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541</v>
-<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug</v>
-<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
-<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\ACC_ADC.lst</v>
-<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\ACC_ADC_FinalBuf_dma.lst</v>
-<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\ACC_ADC_INT.lst</v>
-<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\ACC_ADC_IntClock.lst</v>
-<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\ACC_ADC_IRQ.lst</v>
-<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\ACC_ADC_PM.lst</v>
-<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\ACC_ADC_SAR.lst</v>
-<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\ACC_ADC_SAR_Bypass.lst</v>
-<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\ACC_ADC_SAR_INT.lst</v>
-<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\ACC_ADC_SAR_PM.lst</v>
-<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\ACC_ADC_TempBuf_dma.lst</v>
-<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\ACC_X_PIN.lst</v>
-<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\ACC_Y_PIN.lst</v>
-<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\ACC_Z_PIN.lst</v>
-<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DMA_dma.lst</v>
-<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\ARM_ANGLE_ENCODER.lst</v>
-<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\ARM_ANGLE_ENCODER_Cnt16.lst</v>
-<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\ARM_ANGLE_ENCODER_Cnt16_PM.lst</v>
-<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\ARM_ANGLE_ENCODER_PM.lst</v>
-<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\BLUE_LED.lst</v>
-<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\BUZZER.lst</v>
-<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\BUZZER_CLK.lst</v>
-<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\BUZZER_PWM.lst</v>
-<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\BUZZER_PWM_PM.lst</v>
-<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -189,6 +269,13 @@
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="STS_Firmware">
 <ExpandedNodeIds>
 <v>STS_Firmware</v>
+<v>STS_Firmware\emFile_Example</v>
+<v>STS_Firmware\emFile_Example\PSoC 5LP Architecture TRM</v>
+<v>STS_Firmware\emFile_Example\CY8C58LP Family Datasheet</v>
+<v>STS_Firmware\emFile_Example\System Reference Guides</v>
+<v>STS_Firmware\emFile_Example\System Reference Guides\cy_boot_v5_60</v>
+<v>STS_Firmware\emFile_Example\CharLCD_v2_20.pdf</v>
+<v>STS_Firmware\emFile_Example\emFile_v1_20.pdf</v>
 <v>STS_Firmware\STS_Firmware</v>
 <v>STS_Firmware\STS_Firmware\PSoC 5LP Architecture TRM</v>
 <v>STS_Firmware\STS_Firmware\CY8C58LP Family Datasheet</v>
@@ -204,11 +291,22 @@
 <v>STS_Firmware\STS_Firmware\cy_pins_v2_20</v>
 <v>STS_Firmware\STS_Firmware\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
 <v>STS_Firmware\STS_Firmware\CyControlReg_v1_80.pdf</v>
+<v>STS_Firmware\STS_Firmware\Debouncer_v1_0.pdf</v>
+<v>STS_Firmware\STS_Firmware\emFile_v1_20.pdf</v>
 <v>STS_Firmware\STS_Firmware\PWM_v3_30.pdf</v>
 <v>STS_Firmware\STS_Firmware\QuadDec_v3_0.pdf</v>
+<v>STS_Firmware\STS_Firmware\Timer_v2_80.pdf</v>
+<v>STS_Firmware\STS_Firmware\ZeroTerminal.pdf</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
 <v>STS_Firmware</v>
+<v>STS_Firmware\emFile_Example</v>
+<v>STS_Firmware\emFile_Example\PSoC 5LP Architecture TRM</v>
+<v>STS_Firmware\emFile_Example\CY8C58LP Family Datasheet</v>
+<v>STS_Firmware\emFile_Example\System Reference Guides</v>
+<v>STS_Firmware\emFile_Example\System Reference Guides\cy_boot_v5_60</v>
+<v>STS_Firmware\emFile_Example\CharLCD_v2_20.pdf</v>
+<v>STS_Firmware\emFile_Example\emFile_v1_20.pdf</v>
 <v>STS_Firmware\STS_Firmware</v>
 <v>STS_Firmware\STS_Firmware\PSoC 5LP Architecture TRM</v>
 <v>STS_Firmware\STS_Firmware\CY8C58LP Family Datasheet</v>
@@ -224,8 +322,12 @@
 <v>STS_Firmware\STS_Firmware\cy_pins_v2_20</v>
 <v>STS_Firmware\STS_Firmware\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
 <v>STS_Firmware\STS_Firmware\CyControlReg_v1_80.pdf</v>
+<v>STS_Firmware\STS_Firmware\Debouncer_v1_0.pdf</v>
+<v>STS_Firmware\STS_Firmware\emFile_v1_20.pdf</v>
 <v>STS_Firmware\STS_Firmware\PWM_v3_30.pdf</v>
 <v>STS_Firmware\STS_Firmware\QuadDec_v3_0.pdf</v>
+<v>STS_Firmware\STS_Firmware\Timer_v2_80.pdf</v>
+<v>STS_Firmware\STS_Firmware\ZeroTerminal.pdf</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStatesV2>
@@ -242,7 +344,7 @@
 <OpenDocs>
 <name v=".\STS_Firmware.cydsn\TopDesign\TopDesign.cysch" />
 <name v=".\STS_Firmware.cydsn\main.c" />
-<name v=".\STS_Firmware.cydsn\STS_Firmware.cydwr" />
+<name v=".\STS_Firmware.cydsn\config.h" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -250,7 +352,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1029, 619" SelectedTabbedMdiWindow="abe79a13-c214-4fa2-aa47-7595d8d550a6"><DocumentWindow Key="C:\Users\Caleb Cotter\Documents\GitHub\STS\Firmware\STS_Firmware\STS_Firmware.cydsn\TopDesign\TopDesign.cysch" Guid="c53a1b36-6c48-4ecc-9f97-3dc9f556765b" /><DocumentWindow Key="C:\Users\Caleb Cotter\Documents\GitHub\STS\Firmware\STS_Firmware\STS_Firmware.cydsn\main.c" Guid="abe79a13-c214-4fa2-aa47-7595d8d550a6" /><DocumentWindow Key="C:\Users\Caleb Cotter\Documents\GitHub\STS\Firmware\STS_Firmware\STS_Firmware.cydsn\STS_Firmware.cydwr" Guid="250a3c3d-119e-4aeb-92b2-211b1215eb91" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="6de5bf63-a963-4566-8ab7-a6719b6e9aba" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="2823, 1030" SelectedTabbedMdiWindow="abe79a13-c214-4fa2-aa47-7595d8d550a6"><DocumentWindow Key="C:\Users\Caleb Cotter\Documents\GitHub\STS\Firmware\STS_Firmware\STS_Firmware.cydsn\TopDesign\TopDesign.cysch" Guid="c53a1b36-6c48-4ecc-9f97-3dc9f556765b" /><DocumentWindow Key="C:\Users\Caleb Cotter\Documents\GitHub\STS\Firmware\STS_Firmware\STS_Firmware.cydsn\main.c" Guid="abe79a13-c214-4fa2-aa47-7595d8d550a6" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="6de5bf63-a963-4566-8ab7-a6719b6e9aba" /><DocumentWindow Key="C:\Users\Caleb Cotter\Documents\GitHub\STS\Firmware\STS_Firmware\STS_Firmware.cydsn\config.h" Guid="c7bce26f-d53f-4cdd-bb07-7262fd6a5580" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
