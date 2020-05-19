@@ -35,10 +35,12 @@ u_zeros = zeros(length(t_zeros),1);
 t = vertcat(t_pulse,t_zeros);
 u = vertcat(u_pulse,u_zeros);
 
-<<<<<<< Updated upstream
-%plot(t_pulse,u_pulse);
-=======
->>>>>>> Stashed changes
+% plot(t*1000,u,'LineWidth',5);
+% set(gca,'FontSize',20)
+% xlabel("Time (ms)");
+% ylabel("Acceleration (g)");
+% legend("Acceleration Profile of UUT");
+% title("Shock Acceleration Profile");
 
 %% Processing
 k = 1;
@@ -55,6 +57,7 @@ for i = 1:length(w_n)
     %hold on;
     %lsim(sys,u,t);
 end
+set(gca,'FontSize',20)
 %%
 % Extract Max Magnitude of Each Frequency
 acc_max_w_n = zeros(1,length(w_n));
@@ -63,11 +66,11 @@ for i = 1:length(w_n)
 end
 
 hold on;
-plot(f_n,acc_max_w_n./g,'x-');
-plot(f_n,acc_g_n,'o-');
+plot(f_n,acc_max_w_n./g,'x-','LineWidth',3);
+%plot(f_n,acc_g_n,'o-','LineWidth',3);
 set(gca, 'XScale', 'log', 'YScale', 'log');
 xlabel("Frequency (Hz)");
 ylabel("Acceleration (g)");
 legend("Proposed System","NASA GEVS");
-
+set(gca,'FontSize',20)
 delta_x = 0.5*a_peak_pulse*t_pulse_duration^2
