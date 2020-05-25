@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DesignWideResources xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://cypress.com/xsd/cydwr">
+  <Group key="Component">
+    <Group key="v1">
+      <Data key="cy_boot" value="cy_boot_v5_70" />
+      <Data key="Em_EEPROM_Dynamic" value="Em_EEPROM_Dynamic_v2_0" />
+      <Data key="LIN_Dynamic" value="LIN_Dynamic_v4_0" />
+    </Group>
+  </Group>
+  <Data key="DataVersionKey" value="1" />
+  <Group key="DMA">
+    <Data key="5fd76e5d-abc3-42f8-8a25-8a7853b309d8" value="2" />
+    <Data key="65b10a45-33fe-4d9b-ad51-600cddcd316e" value="2" />
+  </Group>
+  <Group key="DWRInstGuidMapping">
+    <Group key="DMA">
+      <Data key="5fd76e5d-abc3-42f8-8a25-8a7853b309d8" value="DMA_ADC2Mem" />
+      <Data key="65b10a45-33fe-4d9b-ad51-600cddcd316e" value="DMA_Mem2Mem" />
+    </Group>
+    <Group key="Interrupt">
+      <Data key="4FEFF826-FE73-4552-BC78-338363449A6B/b6592af9-e743-4dfd-a597-27f9102033ee" value="ADC_DelSig_IRQ" />
+      <Data key="a05cc1ac-6f73-4a48-ba61-2c11caabc69b" value="ISR_DMA_Done" />
+      <Data key="cf3d3f1e-7afe-436d-9afa-2c9f63186c79" value="ISR_Switch" />
+    </Group>
+    <Group key="Pin">
+      <Data key="e4f4b6f0-2d15-4ae2-bb78-c4529eee0547" value="Pin_Switch" />
+      <Data key="fba880d4-0cca-49fb-b635-efacc24ef58a" value="Pin_ADC_In" />
+    </Group>
+  </Group>
+  <Group key="Interrupt">
+    <Group key="4FEFF826-FE73-4552-BC78-338363449A6B/b6592af9-e743-4dfd-a597-27f9102033ee">
+      <Group key="CortexM3">
+        <Data key="Assigned" value="True" />
+        <Data key="Priority" value="7" />
+        <Data key="Vector" value="-1" />
+      </Group>
+    </Group>
+    <Group key="a05cc1ac-6f73-4a48-ba61-2c11caabc69b">
+      <Group key="CortexM3">
+        <Data key="Assigned" value="True" />
+        <Data key="Priority" value="7" />
+        <Data key="Vector" value="-1" />
+      </Group>
+    </Group>
+    <Group key="cf3d3f1e-7afe-436d-9afa-2c9f63186c79">
+      <Group key="CortexM3">
+        <Data key="Assigned" value="True" />
+        <Data key="Priority" value="7" />
+        <Data key="Vector" value="-1" />
+      </Group>
+    </Group>
+  </Group>
+  <Group key="Pin2">
+    <Group key="e4f4b6f0-2d15-4ae2-bb78-c4529eee0547">
+      <Group key="0">
+        <Data key="Port Format" value="6,1" />
+      </Group>
+    </Group>
+    <Group key="fba880d4-0cca-49fb-b635-efacc24ef58a">
+      <Group key="0">
+        <Data key="Port Format" value="0,2" />
+      </Group>
+    </Group>
+  </Group>
+  <Group key="System3">
+    <Data key="CYDEV_CONFIG_FASTBOOT_ENABLED" value="True" />
+    <Data key="CYDEV_CONFIG_UNUSED_IO" value="AllowButWarn" />
+    <Data key="CYDEV_CONFIGURATION_ECC" value="True" />
+    <Data key="CYDEV_CONFIGURATION_MODE" value="COMPRESSED" />
+    <Data key="CYDEV_DEBUGGING_DPS" value="SWD_SWV" />
+    <Data key="CYDEV_DEBUGGING_XRES" value="False" />
+    <Data key="CYDEV_ECC_ENABLE" value="False" />
+    <Data key="CYDEV_HEAP_SIZE" value="0x80" />
+    <Data key="CYDEV_INSTRUCT_CACHE_ENABLED" value="False" />
+    <Data key="CYDEV_PROTECTION_ENABLE" value="False" />
+    <Data key="CYDEV_STACK_SIZE" value="0x0800" />
+    <Data key="CYDEV_TEMPERATURE" value="-40C - 85/125C" />
+    <Data key="CYDEV_TRACE_ENABLED" value="False" />
+    <Data key="CYDEV_USE_BUNDLED_CMSIS" value="True" />
+    <Data key="CYDEV_VARIABLE_VDDA" value="False" />
+    <Data key="CYDEV_VDDA" value="5.0" />
+    <Data key="CYDEV_VDDD" value="5.0" />
+    <Data key="CYDEV_VDDIO0" value="5.0" />
+    <Data key="CYDEV_VDDIO1" value="5.0" />
+    <Data key="CYDEV_VDDIO2" value="5.0" />
+    <Data key="CYDEV_VDDIO3" value="5.0" />
+    <Data key="CYDEV_WO_NVL_ENABLED" value="False" />
+  </Group>
+</DesignWideResources>

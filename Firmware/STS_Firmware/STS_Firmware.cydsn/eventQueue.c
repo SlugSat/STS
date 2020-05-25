@@ -10,9 +10,9 @@
  * ========================================
 */
 
-//#include "eventQueue.h"
+#include "eventQueue.h"
 
-#define RUN_TEST_HARNESS
+//#define RUN_TEST_HARNESS
 
 struct Node{
     event_t event;

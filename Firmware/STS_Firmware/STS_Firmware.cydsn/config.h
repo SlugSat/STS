@@ -16,9 +16,15 @@
  * ========================================
 */
 
-#define ENCODER_COUNTS_PER_REV 1024
-#define LIFT_THRESHOLD_DEG 10
+#define RECORD_DURATION_US  30000
 
+#define ENCODER_COUNTS_PER_REV 4096
+#define LIFT_THRESHOLD_DEG 10
+#define DROP_ANGLE_THRESHOLD_DEG 5
+#define RECORD_ANGLE_THRESHOLD_DEG 2
+
+#define ACC_SCALE_FACTOR    1.46484375
+#define ACC_OFFSET          2048
 
 /* Accelerometer Calibration Values */
 static const float accScaleMatrix[3][3] =  {{ 0.0037, -0.0000, -0.0000},

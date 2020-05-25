@@ -1,0 +1,151 @@
+/***************************************************************************
+* File Name: DMA_1_dma.c  
+* Version 1.0
+*
+*  Description:
+*   Provides an API for the DMAC component. The API includes functions
+*   for the DMA controller, DMA channels and Transfer Descriptors.
+*
+*
+*   Note:
+*     This module requires the developer to finish or fill in the auto
+*     generated funcions and setup the dma channel and TD's.
+*
+********************************************************************************
+* Copyright 2008-2009, Cypress Semiconductor Corporation.  All rights reserved.
+* You may use this file only in accordance with the license, terms, conditions, 
+* disclaimers, and limitations in the end user license agreement accompanying 
+* the software package with which this file was provided.
+********************************************************************************/
+#include <CYDEVICE.H>
+#include <DMA_1_dma.H>
+
+
+
+/****************************************************************************
+* 
+* The following defines are available in Cyfitter.h
+* 
+* 
+* 
+* DMA_1__DRQ_CTL_REG
+* 
+* 
+* DMA_1__DRQ_NUMBER
+* 
+* Number of TD's used by this channel.
+* DMA_1__NUMBEROF_TDS
+* 
+* Priority of this channel.
+* DMA_1__PRIORITY
+* 
+* True if DMA_1_TERMIN_SEL is used.
+* DMA_1__TERMIN_EN
+* 
+* TERMIN interrupt line to signal terminate.
+* DMA_1__TERMIN_SEL
+* 
+* 
+* True if DMA_1_TERMOUT0_SEL is used.
+* DMA_1__TERMOUT0_EN
+* 
+* 
+* TERMOUT0 interrupt line to signal completion.
+* DMA_1__TERMOUT0_SEL
+* 
+* 
+* True if DMA_1_TERMOUT1_SEL is used.
+* DMA_1__TERMOUT1_EN
+* 
+* 
+* TERMOUT1 interrupt line to signal completion.
+* DMA_1__TERMOUT1_SEL
+* 
+****************************************************************************/
+
+
+/* Zero based index of DMA_1 dma channel */
+uint8 DMA_1_DmaHandle = DMA_INVALID_CHANNEL;
+
+/*********************************************************************
+* Function Name: uint8 DMA_1_DmaInitalize
+**********************************************************************
+* Summary:
+*   Allocates and initialises a channel of the DMAC to be used by the
+*   caller.
+*
+* Parameters:
+*   BurstCount.
+*       
+*       
+*   ReqestPerBurst.
+*       
+*       
+*   UpperSrcAddress.
+*       
+*       
+*   UpperDestAddress.
+*       
+*
+* Return:
+*   The channel that can be used by the caller for DMA activity.
+*   DMA_INVALID_CHANNEL (0xFF) if there are no channels left. 
+*
+*
+*******************************************************************/
+uint8 DMA_1_DmaInitialize(uint8 BurstCount, uint8 ReqestPerBurst, uint16 UpperSrcAddress, uint16 UpperDestAddress)
+{
+
+    /* Allocate a DMA channel. */
+    DMA_1_DmaHandle = DMA_1__DRQ_NUMBER;
+
+    CYASSERT((DMA_1_DmaHandle));
+
+
+    if(DMA_1_DmaHandle != DMA_INVALID_CHANNEL)
+    {
+        /* Configure the channel. */
+        CyDmaChSetConfiguration(DMA_1_DmaHandle,
+                                BurstCount,
+                                ReqestPerBurst,
+                                DMA_1__TERMOUT0_SEL,
+                                DMA_1__TERMOUT1_SEL,
+                                DMA_1__TERMIN_SEL);
+
+        /* Set the extended address for the transfers */
+        CyDmaChSetExtendedAddress(DMA_1_DmaHandle, UpperSrcAddress, UpperDestAddress);
+
+        /* Set the priority for this channel */
+        CyDmaChPriority(DMA_1_DmaHandle, DMA_1__PRIORITY);
+    }
+
+    return DMA_1_DmaHandle;
+}
+
+/*********************************************************************
+* Function Name: void DMA_1_DmaRelease
+**********************************************************************
+* Summary:
+*   Frees the channel associated with DMA_1.
+*
+*
+* Parameters:
+*   void.
+*
+*
+*
+* Return:
+*   void.
+*
+*******************************************************************/
+void DMA_1_DmaRelease(void)
+{
+    /* Disable the channel, even if someone just did! */
+    CyDmaChDisable(DMA_1_DmaHandle);
+
+
+    /* Free Transfer Descriptors. */
+
+
+}
+

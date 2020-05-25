@@ -8,16 +8,18 @@
 
 // Event Type List
 typedef enum event_t{
-    NO_EVENT,
+    NO_EVENT = 0,
     UP_CLICK,
     DOWN_CLICK,
     SELECT_CLICK,
     HAMMER_LIFTED,
     HAMMER_DROPPED,
+    RECORD_TRIGGERED,
+    RECORD_COMPLETED
 }event_t;
 
 // Pointer to Event Queue Structure
-typedef struct EventQueue_t * EventQueuePtr_t;
+typedef struct EventQueue_t *EventQueuePtr_t;
 
 // Public Function Prototypes
 EventQueuePtr_t EventQueue_New(void);
