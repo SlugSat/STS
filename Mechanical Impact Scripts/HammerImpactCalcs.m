@@ -1,9 +1,17 @@
-%% Deflection Plate sizing and calculation of transfer function characteristics
+%%% HammerImpactCalcs.m
+%For usage with development of the SlugSat Shock Test Stand (STS)%
+%Created by : Nick Jannuzzi & Caleb Cotter%
+%Property of UCSC SlugSat program%
+%Each section can be run individually to calculate different portions fo
+%the system
 clear all
+
+
+%% Deflection Plate sizing and calculation of transfer function characteristics
 %Plate dimensions and material paramaters
-Plate_Length = 0.2;
+Plate_Length = 0.2; 
 Plate_Width = 0.1;
-Plate_Thickness = 0.00635*2;
+Plate_Thickness = 0.00635*3;
 %Look up this value for the material
 Youngs_Modulus = 69e9;
 
@@ -109,4 +117,6 @@ Desired_Deflection = 0.135e-3;
 %calculate impulse force needed to obtain desired deflection in aluminum
 %plate
 Load_Needed = (6*AI*Elasticity_Modulus*Desired_Deflection)/(2*a^3);
+
+%% Calculating Strain Energy Store in a beam
 
