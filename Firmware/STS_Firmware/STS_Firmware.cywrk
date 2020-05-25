@@ -8,6 +8,7 @@
 <files />
 <projects>
 <v>.\STS_Firmware.cydsn\STS_Firmware.cyprj</v>
+<v>.\emFile_Example.cydsn\emFile_Example.cyprj</v>
 </projects>
 <workspace_id v="900088d7-43d8-4978-8e46-9c1dcf9ab8d2" />
 <WriteAppVersionLastSavedWith v="4.2.0.641" />
