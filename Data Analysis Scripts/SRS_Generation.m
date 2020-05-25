@@ -53,9 +53,6 @@ sys_resp = zeros(length(w_n),length(t));
 for i = 1:length(w_n)
     sys = (k*w_n(i)^2)/(s^2+2*zeta*w_n(i)*s+w_n(i)^2);
     sys_resp(i,:) = lsim(sys,u,t);
-    %lsim(sys,u,t);
-    %hold on;
-    %lsim(sys,u,t);
 end
 set(gca,'FontSize',20)
 %%
