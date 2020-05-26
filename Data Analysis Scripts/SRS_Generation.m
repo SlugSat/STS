@@ -25,7 +25,8 @@ Q = 10;
 acc_g_n = [5, 100, 1500, 2400, 4000, 4000, 2000]; %G's
 
 % Half-Sine Shock Pulse
-t_pulse_duration = 0.37E-3; %seconds
+t_pulse_duration = 0.37E-3; %seconds (original)
+t_pulse_duration = 5.072724032366453e-04; %seconds
 a_peak_pulse = 3150; %G's
 
 [u_pulse,t_pulse] = gensig('sin', 2*t_pulse_duration, 2*t_pulse_duration, t_step); %Half-Sine
