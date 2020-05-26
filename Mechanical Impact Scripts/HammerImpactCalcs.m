@@ -8,7 +8,7 @@ clear all
 
 
 %% Deflection Plate sizing and calculation of transfer function characteristics
-%Plate dimensions and material paramaters
+%Plate dimensions and material paramaters (in meters)
 Plate_Length = 0.2; 
 Plate_Width = 0.1;
 Plate_Thickness = 0.00635*3;
