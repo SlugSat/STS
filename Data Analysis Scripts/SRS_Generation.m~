@@ -24,12 +24,12 @@ Q = 10;
 % SRS Goals
 acc_g_n = [5, 100, 1500, 2400, 4000, 4000, 2000]; %G's
 
-%Sine Shock Pulse
-t_pulse_duration = 0.74E-3; %seconds (original)
-t_pulse_duration = 8.775802299165001e-04; %seconds
+% Half-Sine Shock Pulse
+t_pulse_duration = 0.37E-3; %seconds (original)
+%t_pulse_duration = 5.072724032366453e-04; %seconds
 a_peak_pulse = 3150; %G's
 
-[u_pulse,t_pulse] = gensig('sin', t_pulse_duration, t_pulse_duration, t_step); %Half-Sine
+[u_pulse,t_pulse] = gensig('sin', 2*t_pulse_duration, 2*t_pulse_duration, t_step); %Half-Sine
 u_pulse = u_pulse*a_peak_pulse*g; %Scale to m/s^2
 t_zeros = ((length(t_pulse)*t_step):t_step:t_sim)';
 u_zeros = zeros(length(t_zeros),1);
@@ -72,17 +72,3 @@ ylabel("Acceleration (g)");
 legend("Proposed System","NASA GEVS",'Location','best');
 set(gca,'FontSize',20)
 delta_x = 0.5*a_peak_pulse*t_pulse_duration^2
-
-
- % --- Check Results against NASA GEVS Spec ---
-meetsRequirements = 1;
-for i = 1:length(f_n)
-    if(acc_max_w_n(i)/g < acc_g_n(i))
-        meetsRequirements = 0;
-    end
-end
-if(meetsRequirements)
-    disp("Meets GEVS spec!");
-else
-    disp("Does not meet GEVS spec!");
-end

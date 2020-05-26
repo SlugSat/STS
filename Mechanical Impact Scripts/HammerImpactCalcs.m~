@@ -11,8 +11,8 @@ clear all
 %Plate dimensions and material paramaters (in meters)
 Plate_Length = 0.2; 
 Plate_Width = 0.1;
-Plate_Thickness = 0.00635*2;
-%Look up this value for the material (no there is not an Old's Modulus)
+Plate_Thickness = 0.00635*4;
+%Look up this value for the material
 Youngs_Modulus = 69e9;
 Desired_Deflection = 0.135e-3;
 %calculate the equivalent spring constant K of the beam, in Newtons/meter^2
@@ -56,7 +56,7 @@ step(G,opt)
 Period = 1/(2*pi*Wo)
 
 
-%energy stored in the plate (joules)
+%energy stored i
 U_Plate = 0.5*Cantilever_K*Desired_Deflection^2;
 %% Calculation of Hammer Arm Kinetic Energy Given Masses and Length of Arm
 
