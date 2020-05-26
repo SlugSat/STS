@@ -23,7 +23,7 @@
 #include "eventQueue.h"
 #include "DS1307.h"
 
-#include <FS.h>
+#include "FS.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdbool.h>
@@ -58,6 +58,7 @@ typedef enum FSM_State{
     TIMEDATE_SET,
     ARMED,
     DROPPED,
+    PROCESSING,
     RECORDING,
     RESULTS,
     ERROR_DISPLAY
@@ -77,7 +78,13 @@ enum {
 // SD Variables
 char sdVolName[10];
 FS_FILE * pFile;
+FS_FILE * rawFile;
+FS_FILE * csvFile;
 char strbuff[80];
+char rawfilename[48];
+char csvfilename[48];
+U32 TimeStamp;
+FS_FILETIME FileTime;
 int i;
 
 // ADC Variables
@@ -137,18 +144,19 @@ int main(void)
     RECORDING_TIMER_Start();
     
     //Data Storage
+    FS_FAT_SupportLFN();
     FS_Init();
     FS_GetVolumeName(0u, &sdVolName[0], 9u);
     
     // Real-Time Clock
     RTC_Init();
-    now.seconds = 0;
-    now.minutes = 56;
-    now.hours = 14;
-    now.date = 25;
-    now.month = 5;
-    now.year = 2020;
-    RTC_SetTimeDate(now);
+    //now.seconds = 0;
+    //now.minutes = 56;
+    //now.hours = 18;
+    //now.date = 57;
+    //now.month = 5;
+    //now.year = 2020;
+    //RTC_SetTimeDate(now);
     
     //Encoder
     ARM_ANGLE_ENCODER_Start();
@@ -256,7 +264,6 @@ int main(void)
             case TARE_SELECT:
                 sprintf(LCD_MSG[0],">Tare");
                 sprintf(LCD_MSG[1]," Eject SD Card");
-                UpdateLCD();
                 LED_Write(YELLOW);
                 
                 switch(event){
@@ -292,7 +299,6 @@ int main(void)
             case EJECT_SELECT:
                 sprintf(LCD_MSG[0]," Tare");
                 sprintf(LCD_MSG[1],">Eject SD Card");
-                UpdateLCD();
                 LED_Write(YELLOW);
                 
                 switch(event){
@@ -438,7 +444,7 @@ int main(void)
                 break;
                 
             case TIMEDATE_SET:
-                sprintf(LCD_MSG[0],"%u:%u:%u",now.hours,now.minutes,now.seconds);
+                sprintf(LCD_MSG[0],"%02u:%02u:%02u",now.hours,now.minutes,now.seconds);
                 sprintf(LCD_MSG[1],"%u/%u/%u",now.month,now.date,now.year);
                 LED_Write(YELLOW);
                 
@@ -486,11 +492,18 @@ int main(void)
                 
                 // Check for Recording Trigger
                 if(encAngle < RECORD_ANGLE_THRESHOLD_DEG){
+                    sprintf(rawfilename,"\\Data\\STS_D_%u_%u_%u_T_%u_%u_%u",now.month,now.date,now.year,now.hours,now.minutes,now.seconds);
                     
-                    
-                    pFile = FS_FOpen("\\Data\\001", "w");
+                    FileTime.Year = now.year;
+                    FileTime.Month = now.month;
+                    FileTime.Day = now.date;
+                    FileTime.Hour = now.hours;
+                    FileTime.Minute = now.minutes;
+                    FileTime.Second = now.seconds;
+                    FS_FileTimeToTimeStamp (&FileTime, &TimeStamp);
+
+                    pFile = FS_FOpen(rawfilename, "w");
                     if(pFile){
-                        FS_Write(pFile, "X,Y,Z\n", 6u);
                         CyDmaChSetInitialTd(ADC_DMA_Chan, ADC_DMA_TD[0]);
                         CyDmaChEnable(ADC_DMA_Chan, 1);
                         ACC_ADC_StartConvert();
@@ -508,26 +521,74 @@ int main(void)
                 sprintf(LCD_MSG[0],"RECORDING");
                 sprintf(LCD_MSG[1]," ");
                 LED_Write(YELLOW);
-                
-                        
+                 
                         
                 switch(event){
                     case RECORD_COMPLETED:
                         FS_FClose(pFile);
-                        ui_state = RESULTS;
+                        ui_state = PROCESSING;
                         event = NO_EVENT;
                         break;
                     default:
                         break;
                 }
                 break;
+            
+            case PROCESSING:
+                sprintf(LCD_MSG[0],"PROCESSING");
+                
+                // Open Test Data
+                rawFile = FS_FOpen(rawfilename, "rb");
+                if(rawFile == NULL){
+                    ui_state = ERROR_DISPLAY;
+                    event = NO_EVENT;
+                    break;
+                }
+                sprintf(csvfilename,"%s.csv",rawfilename);
+                csvFile = FS_FOpen(csvfilename, "w");
+                if(csvFile == NULL){
+                    ui_state = ERROR_DISPLAY;
+                    event = NO_EVENT;
+                    break;
+                }
+                FS_FSeek(rawFile, 0, SEEK_END);          
+                long filelen = FS_FTell(rawFile);   
+                FS_FSeek(rawFile, 0, SEEK_SET);
+                // Convert Binary to CSV
+                FS_Write(csvFile, "X,Y,Z\n", 6u);
+                
+ 
+                uint16_t x_raw,y_raw,z_raw;
+                char line[80];
+                for(i=0;i < filelen; i+=3){
+                    FS_FRead(&x_raw,2,1,rawFile);
+                    FS_FRead(&y_raw,2,1,rawFile);
+                    FS_FRead(&z_raw,2,1,rawFile);
+                    sprintf(line,"%u,%u,%u\n",x_raw,y_raw,z_raw);
+                    FS_FWrite(line,strlen(line),1,csvFile);
+                    if(update_ui){
+                        sprintf(LCD_MSG[1],"%.1f%%",(i*100/(float)filelen));
+                        UpdateLCD();
+                    }
+                }
+                
+                FS_FClose(rawFile);
+                FS_FClose(csvFile);
+                
+                FS_SetFileTimeEx(rawfilename, TimeStamp, FS_FILETIME_CREATE);
+                FS_SetFileTimeEx(rawfilename, TimeStamp, FS_FILETIME_MODIFY);
+                FS_SetFileTimeEx(csvfilename, TimeStamp, FS_FILETIME_CREATE);
+                FS_SetFileTimeEx(csvfilename, TimeStamp, FS_FILETIME_MODIFY);
+                ui_state = RESULTS;
+                event = NO_EVENT;
+                break;
+                
                 
             case RESULTS:
                 sprintf(LCD_MSG[0],"TEST COMPLETE");
                 sprintf(LCD_MSG[1],"Press any key...");
                 LED_Write(MAGENTA);
-                
-                
+                    
                 switch(event){
                     case UP_CLICK:
                     case DOWN_CLICK:
@@ -543,6 +604,16 @@ int main(void)
                 sprintf(LCD_MSG[0],"Error: ");
                 sprintf(LCD_MSG[1],"No SD Card Found");
                 LED_Write(RED);
+                
+                switch(event){
+                    case UP_CLICK:
+                    case DOWN_CLICK:
+                    case SELECT_CLICK:
+                        ui_state = LIVE_READOUT;
+                        event = NO_EVENT;
+                    default:
+                        break;
+                }
                 break;
         }
 
