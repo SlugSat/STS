@@ -1,0 +1,78 @@
+close all
+clear all
+clc
+
+% --- Inputs --- %
+
+%Desired Acceleration Profile%
+peak_acc = 3200; %G's
+impulse_period = 740e-6; %seconds
+
+%Test Article% 
+M_mounted = 4; %Kg
+
+%Plate Parameters%
+L_plate = 0.2;          %meters
+W_plate = 0.1;          %meters
+T_plate = 0.00635*2;    %meters
+E_plate = 69E9;         %Pascals
+Rho_plate = 2.7E3;      %kg/m^3
+Damp_Ratio = 0.5E-4;     %ratio (unitless)
+Impact_Point = 0.150;   %meters relative to bottom of plate
+
+%Hammer Parameters%
+M_arm = 1;   %Kg
+M_head = 1;  %Kg
+Length_arm = 1; %metere
+
+%Universal Constants%
+g = 9.80665; % m/s^2
+s = tf('s'); %transfer function
+
+% --- Calculations --- %
+
+%Estimated Deflection
+
+%Generate sine wave for desired time 
+dT = impulse_period*0.001;
+time_vector = 0:dT:impulse_period/2;
+acc_curve_desired = peak_acc*sin((2*pi/impulse_period)*time_vector);
+
+position = zeros(1,length(time_vector));
+for i = 2:length(time_vector)
+    dX = 0.5.*acc_curve_desired(i).*dT^2;
+    position(i) = position(i-1)+dX;
+end
+displacement = sum(position);
+
+%calculate energy stored in deflected plate
+V_plate = L_plate*W_plate*T_plate;    % Meters^3
+M_plate = Rho_plate*V_plate; %Kg
+M_total = M_plate + M_mounted; %Kg
+
+
+
+K_plate = (W_plate*T_plate^3*E_plate)/(4*L_plate^2);
+Zeta_Plate = Damp_Ratio/(2*sqrt(K_plate*M_total)); %damping coefficent
+I_plate = L_plate*T_plate^3/12;  %2nd moment of inertia
+
+Wn_plate = 1.875^2*sqrt(E_plate*I_plate/M_total*L_plate); %Natural Frequency
+%1/(m*s^2+b*s+k);
+%2*pi*Zeta_plate
+sys_plate = 1/(M_total*s^2+Zeta_Plate*s+K_plate);  
+force_curve = acc_curve_desired * M_total + displacement * K_plate; 
+p_curve = force_curve .* time_vector; 
+p_total = sum(p_curve) 
+%simulate impulse on plate
+% plot(time_vector,force_curve)
+% lsim(sys_plate, position,time_vector)
+
+
+
+
+
+f_impulse = 1/impulse_period; %Hz
+w_impulse = f_impulse/(2*pi); %rad/sec
+
+
+
