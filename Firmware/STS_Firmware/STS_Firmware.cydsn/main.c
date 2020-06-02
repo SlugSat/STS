@@ -86,6 +86,8 @@ char csvfilename[48];
 U32 TimeStamp;
 FS_FILETIME FileTime;
 int i;
+uint16_t x_raw,y_raw,z_raw;
+char line[80];
 
 // ADC Variables
 uint16_t ADC_Buffer_A[4095]; //1365 per axis
@@ -150,14 +152,7 @@ int main(void)
     
     // Real-Time Clock
     RTC_Init();
-    //now.seconds = 0;
-    //now.minutes = 56;
-    //now.hours = 18;
-    //now.date = 57;
-    //now.month = 5;
-    //now.year = 2020;
-    //RTC_SetTimeDate(now);
-    
+
     //Encoder
     ARM_ANGLE_ENCODER_Start();
     
@@ -223,7 +218,7 @@ int main(void)
         switch(ui_state){
             case SPLASH_SCREEN:
                 sprintf(LCD_MSG[0],"Shock Test Stand");
-                sprintf(LCD_MSG[1]," ");
+                sprintf(LCD_MSG[1],"V1.0");
                 LED_Write(RED);
                 
                 switch(event){
@@ -240,9 +235,6 @@ int main(void)
             case LIVE_READOUT:
                 sprintf(LCD_MSG[0],"IDLE");
                 sprintf(LCD_MSG[1],"  %.1f deg", encAngle);
-                LCD_Position(1u, 0u);
-                LCD_PutChar(LCD_CUSTOM_0);
-                
                 LED_Write(GREEN);
                 
                 switch(event){
@@ -354,14 +346,8 @@ int main(void)
                 break;
             
             case FORMAT_CONFIRM:
-                LCD_Position(0u, 0u);
-                LCD_PrintString("Confirm Format");
-                LCD_Position(1u, 0u);
-                LCD_PutChar('Y');
-                LCD_PutChar(LCD_CUSTOM_2);
-                LCD_PutChar(' ');
-                LCD_PutChar('N');
-                LCD_PutChar(LCD_CUSTOM_3);
+                sprintf(LCD_MSG[0],"Confirm Format");
+                sprintf(LCD_MSG[1],"Y / N");
                 LED_Write(RED);
                 
                 switch(event){
@@ -554,12 +540,11 @@ int main(void)
                 FS_FSeek(rawFile, 0, SEEK_END);          
                 long filelen = FS_FTell(rawFile);   
                 FS_FSeek(rawFile, 0, SEEK_SET);
-                // Convert Binary to CSV
-                FS_Write(csvFile, "X,Y,Z\n", 6u);
                 
- 
-                uint16_t x_raw,y_raw,z_raw;
-                char line[80];
+                // Convert Binary to CSV
+                sprintf(line,"X,Y,Z,%f\n", ACC_CHANNEL_SAMPLE_PERIOD);
+                FS_Write(csvFile, line, strlen(line));
+
                 for(i=0;i < filelen; i+=3){
                     FS_FRead(&x_raw,2,1,rawFile);
                     FS_FRead(&y_raw,2,1,rawFile);
@@ -571,10 +556,11 @@ int main(void)
                         UpdateLCD();
                     }
                 }
-                
+                // Close Files
                 FS_FClose(rawFile);
                 FS_FClose(csvFile);
                 
+                // Set File Times
                 FS_SetFileTimeEx(rawfilename, TimeStamp, FS_FILETIME_CREATE);
                 FS_SetFileTimeEx(rawfilename, TimeStamp, FS_FILETIME_MODIFY);
                 FS_SetFileTimeEx(csvfilename, TimeStamp, FS_FILETIME_CREATE);

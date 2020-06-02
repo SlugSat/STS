@@ -289,26 +289,6 @@
 <v>STS_Firmware\emFile_Example\CortexM3\ARM_GCC_541\Debug\Listing Files\main.lst</v>
 <v>STS_Firmware\emFile_Example\CortexM3\ARM_GCC_541\Debug\emFile_Example.elf</v>
 <v>STS_Firmware\emFile_Example\CortexM3\ARM_GCC_541\Debug\emFile_Example.hex</v>
-<v>STS_Firmware\emFile_Example\CortexM3\ARM_GCC_541\Debug\emFile_Example.map</v>
-<v>STS_Firmware\emFile_Example\emFile_Example.gpdsc</v>
-<v>STS_Firmware\emFile_Example\emFile_Example.rpt</v>
-<v>STS_Firmware\emFile_Example\emFile_Example_timing.html</v>
-<v>STS_Firmware\STS_Firmware</v>
-<v>STS_Firmware\STS_Firmware\CortexM3</v>
-<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541</v>
-<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug</v>
-<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
-<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\ACC_ADC.lst</v>
-<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\ACC_ADC_FinalBuf_dma.lst</v>
-<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\ACC_ADC_INT.lst</v>
-<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\ACC_ADC_IntClock.lst</v>
-<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\ACC_ADC_IRQ.lst</v>
-<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\ACC_ADC_PM.lst</v>
-<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\ACC_ADC_SAR.lst</v>
-<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\ACC_ADC_SAR_Bypass.lst</v>
-<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\ACC_ADC_SAR_INT.lst</v>
-<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\ACC_ADC_SAR_PM.lst</v>
-<v>STS_Firmware\STS_Firmware\CortexM3\ARM_GCC_541\Debug\Listing Files\ACC_ADC_TempBuf_dma.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -406,9 +386,6 @@
 <name v=".\STS_Firmware.cydsn\TopDesign\TopDesign.cysch" />
 <name v=".\STS_Firmware.cydsn\config.h" />
 <name v=".\STS_Firmware.cydsn\main.c" />
-<name v=".\STS_Firmware.cydsn\eventQueue.h" />
-<name v=".\STS_Firmware.cydsn\eventQueue.c" />
-<name v="${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\ADC_SAR_SEQ_v2_10\PSoC5\ADC_SAR_SEQ_v2_10.cysch" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -416,7 +393,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Vertical"><TabbedMdiContainer Size="2879, 1022" SelectedTabbedMdiWindow="abe79a13-c214-4fa2-aa47-7595d8d550a6"><DocumentWindow Key="C:\Users\Caleb Cotter\Documents\GitHub\STS\Firmware\STS_Firmware\STS_Firmware.cydsn\STS_Firmware.cydwr" Guid="b2d57143-d422-4ab3-8bd3-9465f2e1d8cd" /><DocumentWindow Key="C:\Users\Caleb Cotter\Documents\GitHub\STS\Firmware\STS_Firmware\STS_Firmware.cydsn\TopDesign\TopDesign.cysch" Guid="c53a1b36-6c48-4ecc-9f97-3dc9f556765b" /><DocumentWindow Key="C:\Users\Caleb Cotter\Documents\GitHub\STS\Firmware\STS_Firmware\STS_Firmware.cydsn\config.h" Guid="c7bce26f-d53f-4cdd-bb07-7262fd6a5580" /><DocumentWindow Key="C:\Users\Caleb Cotter\Documents\GitHub\STS\Firmware\STS_Firmware\STS_Firmware.cydsn\main.c" Guid="abe79a13-c214-4fa2-aa47-7595d8d550a6" /><DocumentWindow Key="C:\Users\Caleb Cotter\Documents\GitHub\STS\Firmware\STS_Firmware\STS_Firmware.cydsn\eventQueue.h" Guid="0df6156f-34dd-48c1-b2ed-ee8cefdfcb82" /><DocumentWindow Key="C:\Users\Caleb Cotter\Documents\GitHub\STS\Firmware\STS_Firmware\STS_Firmware.cydsn\eventQueue.c" Guid="745082d1-2ded-4ada-80a3-6aa743a24b67" /><DocumentWindow Key="C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\ADC_SAR_SEQ_v2_10\PSoC5\ADC_SAR_SEQ_v2_10.cysch" Guid="d50ee969-707c-4b4a-be41-65863d0bda85" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Vertical"><TabbedMdiContainer Size="1229, 662" SelectedTabbedMdiWindow="abe79a13-c214-4fa2-aa47-7595d8d550a6"><DocumentWindow Key="C:\Users\Caleb Cotter\Documents\GitHub\STS\Firmware\STS_Firmware\STS_Firmware.cydsn\STS_Firmware.cydwr" Guid="b2d57143-d422-4ab3-8bd3-9465f2e1d8cd" /><DocumentWindow Key="C:\Users\Caleb Cotter\Documents\GitHub\STS\Firmware\STS_Firmware\STS_Firmware.cydsn\TopDesign\TopDesign.cysch" Guid="c53a1b36-6c48-4ecc-9f97-3dc9f556765b" /><DocumentWindow Key="C:\Users\Caleb Cotter\Documents\GitHub\STS\Firmware\STS_Firmware\STS_Firmware.cydsn\config.h" Guid="c7bce26f-d53f-4cdd-bb07-7262fd6a5580" /><DocumentWindow Key="C:\Users\Caleb Cotter\Documents\GitHub\STS\Firmware\STS_Firmware\STS_Firmware.cydsn\main.c" Guid="abe79a13-c214-4fa2-aa47-7595d8d550a6" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
