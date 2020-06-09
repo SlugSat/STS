@@ -1,6 +1,6 @@
 %% HammerImpactCalcs.m
-%   For usage with development of the SlugSat Shock Test Stand (STS)%
-%   Created by : Nick Jannuzzi & Caleb Cotter%
+%   For usage with development of the SlugSat Shock Test Stand (STS)
+%   Created by : Nick Jannuzzi & Caleb Cotter
 %   Property of UCSC SlugSat Program
 %   Each section can be run individually to calculate different portions
 %   for the system.
